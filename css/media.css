@@ -1,0 +1,112 @@
+@media (max-width: 574px) {
+  /* default xs */
+  /* Start Home Section */
+  .home {
+    min-height: 500px;
+    height: auto;
+  }
+  .content {
+    margin-top: 40px;
+  }
+
+  .content h1 {
+    font-size: 28px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+
+  .content p.lead {
+    font-size: 14px;
+    margin-bottom: 32px;
+    width: 100%;
+  }
+
+  /* Start Features Section */
+  .features h2:after {
+    width: 20%;
+    margin-left: -10%;
+  }
+
+  .features-list {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .d-center {
+    text-align: center;
+  }
+}
+
+@media (min-width: 575px) and (max-width: 767px) {
+  /* sm screen */
+  /* Home Section */
+  .content h1 {
+    font-size: 35px;
+  }
+  .content p.lead {
+    font-size: 16px;
+    margin-bottom: 32px;
+    width: 100%;
+  }
+
+  .data-box {
+    margin-bottom: 25%;
+  }
+
+  /* Start AboutUs Section */
+  .aboutus {
+    min-height: 600px;
+  }
+  .aboutus p.lead {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* md screen */
+  /* Start Home Section */
+  .content h1 {
+    font-size: 47px;
+  }
+
+  /* Start AboutUs Section */
+  .aboutus {
+    min-height: 500px;
+  }
+  .aboutus p.lead {
+    font-size: 1rem;
+  }
+
+  /* Start Remember Section */
+  .data-box img {
+    left: 30%;
+  }
+  .data-box > p.lead {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* lg screen */
+  /* Home Section */
+  .content h1 {
+    font-size: 48px;
+  }
+
+  .content p.lead {
+    font-size: 28px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* xl screen */
+  /* Home Section */
+  .content h1 {
+    color: #f2941b;
+  }
+
+  .content p.lead {
+    width: 75%;
+  }
+}

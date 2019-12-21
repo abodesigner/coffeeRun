@@ -1,0 +1,328 @@
+/*
+  Theme Name : Food Freshness Checker
+  UI/UX Web designer : Mohammed Abosalim
+  Website : ""
+  Version: 0.0.1
+
+  1- Global
+  2- Home Section
+  3- Features Section
+  4- AboutUs Section
+  5- Remember Section
+  6- Footer Section
+
+*/
+
+/* ======================================
+      Global
+====================================== */
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Raleway";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Raleway";
+}
+
+h2 {
+  text-transform: capitalize;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url(../fonts/Raleway/Raleway-Regular.ttf);
+}
+
+@font-face {
+  font-family: "PermanentMarker";
+  src: url(../fonts/Permanent_Marker/PermanentMarker-Regular.ttf);
+}
+
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: #f6f6f6;
+}
+
+.dark-orange-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(113, 64, 1, 0.85);
+  color: #f6f6f6;
+}
+
+/* ======================================
+    Home Section
+====================================== */
+.home {
+  height: 100vh;
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+  background: url(../img/hero-bg/hero-bg.png) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.home .navbar-brand {
+  font-family: "PermanentMarker";
+}
+
+.home .navbar .navbar-nav .nav-item .nav-link {
+  text-transform: capitalize;
+  transition: all 0.5s ease-in-out;
+}
+
+.home .navbar .navbar-nav > li.nav-item.active > a.nav-link::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  display: block;
+  background: #f2941b;
+}
+
+.home .navbar .navbar-nav > li.nav-item > a.nav-link:after {
+  content: "";
+  width: 0;
+  height: 3px;
+  display: block;
+  background: #f2941b;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.home .navbar .navbar-nav > li.nav-item > a.nav-link:hover:after {
+  width: 100%;
+}
+
+.home .navbar .navbar-nav .nav-item .nav-link:hover {
+  color: #f2941b;
+}
+
+.content {
+  margin-top: 130px;
+}
+
+.content h1 {
+  font-size: 66px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.content p.lead {
+  font-size: 21px;
+  margin-bottom: 62px;
+}
+
+.btn-orange {
+  background-color: #f2941b;
+  color: #f6f6f6;
+  margin-left: 16px;
+}
+
+/* ======================================
+    Features Section
+====================================== */
+.features {
+  padding: 45px 0;
+  min-height: 700px;
+}
+
+.features h2 {
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.features h2:after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  height: 5px;
+  width: 5%;
+  background-color: #f2941b;
+  border-radius: 5px;
+  margin-left: -3%;
+}
+
+.img-fluid {
+  margin: 0 auto;
+}
+
+.feature-container {
+  background: #f8f8f8;
+  box-shadow: 0 3px 4px #aaa;
+  padding: 10px 5px;
+  margin-bottom: 20px;
+}
+
+.feature-container img {
+  padding-top: 10px;
+}
+
+.feature-container-body h6 {
+  font-weight: bold;
+}
+.feature-container-body p {
+  font-size: 12px;
+  color: #7f7f7f;
+  margin-bottom: 0.125rem;
+}
+
+/* ======================================
+    AboutUs Section
+====================================== */
+.aboutus {
+  height: 100vh;
+  min-height: 700px;
+  background: url(../img/aboutus-bg.png) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  padding: 45px 0;
+}
+
+.aboutus h2 {
+  position: relative;
+  margin-top: 47px;
+}
+
+.aboutus h2:after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  height: 5px;
+  width: 5%;
+  background-color: #f2941b;
+  border-radius: 5px;
+  margin-left: -3%;
+}
+
+.aboutus p.lead {
+  margin-top: 61px;
+  text-align: center;
+  line-height: 2;
+  font-size: 1.5rem;
+  margin-bottom: 52px;
+}
+
+.aboutus h5 > span {
+  color: #f2941b;
+  display: block;
+}
+
+/* ======================================
+    Easy to remember Section
+====================================== */
+.remember {
+  min-height: 700px;
+  background: url(../img/remember-bg.jpg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  padding: 70px 0;
+}
+
+.remember h2 {
+  position: relative;
+}
+
+.remember h2:after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  height: 5px;
+  width: 5%;
+  background-color: #f2941b;
+  border-radius: 5px;
+  margin-left: -3%;
+}
+
+.remember p {
+  margin-top: 55px;
+  font-size: 22px;
+  font-style: italic;
+  color: #262525;
+  margin-bottom: 68px;
+}
+
+.data-box {
+  background: #f9f9f9;
+  padding: 15px;
+  text-align: center;
+  position: relative;
+  top: 80px;
+  box-shadow: 0 3px 4px #aaa;
+  height: 243px;
+}
+
+.data-box img {
+  position: absolute;
+  top: -89px;
+  left: 35%;
+}
+
+.data-box > p.lead {
+  font-size: 20px;
+  color: #252525;
+}
+
+.data-container {
+  min-height: 350px;
+}
+
+/* ======================================
+      Footer Section
+====================================== */
+
+.main-footer {
+  background: url(../img/icons/footer-bg.png) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  min-height: 400px;
+  position: relative;
+  padding: 45px 0;
+}
+
+.main-footer h5 {
+  color: #d6d6d6;
+  font-weight: bold;
+}
+
+.main-footer a {
+  color: #ccc;
+  font-weight: 400;
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
+}
+
+.main-footer a:hover {
+  color: #dcdcdc;
+  font-weight: bold;
+}
+
+.main-footer img {
+  padding-top: 25px;
+}
