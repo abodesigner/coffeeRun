@@ -231,6 +231,10 @@ h2 {
   display: block;
 }
 
+.aboutus a {
+  color: #f2941b;
+}
+
 /* ======================================
     Easy to remember Section
 ====================================== */
@@ -301,7 +305,7 @@ h2 {
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
-  min-height: 400px;
+  min-height: 450px;
   position: relative;
   padding: 45px 0;
 }
@@ -319,10 +323,14 @@ h2 {
 }
 
 .main-footer a:hover {
-  color: #dcdcdc;
+  color: #fcc900;
   font-weight: bold;
 }
 
 .main-footer img {
   padding-top: 25px;
+}
+
+.main-footer .copyright a {
+  color: #f2941b;
 }

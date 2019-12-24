@@ -10,7 +10,7 @@
   }
 
   .content h1 {
-    font-size: 28px;
+    font-size: 24px;
     line-height: 1.5;
     margin-bottom: 30px;
   }
@@ -21,7 +21,38 @@
     width: 100%;
   }
 
+  .home .navbar .navbar-nav {
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .home .navbar .navbar-nav > li:hover {
+    background: #f2941b;
+    width: 100%;
+    text-align: center;
+    margin-right: 0 !important;
+  }
+
+  .home .navbar .navbar-nav .nav-item .nav-link:hover {
+    color: #000;
+    font-weight: bold;
+  }
+
+  .home .navbar .navbar-nav > li.nav-item.active > a.nav-link::after {
+    display: none;
+  }
+
+  .home .navbar .navbar-nav > li.nav-item > a.nav-link:after {
+    display: none;
+  }
+
   /* Start Features Section */
+  .features {
+    padding: 20px 0;
+  }
+  .features h2 {
+    margin-bottom: 3rem;
+  }
   .features h2:after {
     width: 20%;
     margin-left: -10%;
@@ -34,6 +65,52 @@
 
   .d-center {
     text-align: center;
+  }
+
+  .data-box {
+    margin-bottom: 25%;
+  }
+
+  /* About US SECTION */
+  .aboutus p.lead {
+    font-size: 1rem;
+  }
+
+  .aboutus h2:after {
+    width: 20%;
+    left: 40%;
+  }
+
+  /* Remember section */
+  .remember {
+    padding: 30px 0;
+  }
+
+  .remember h2:after {
+    width: 20%;
+    left: 43%;
+  }
+
+  .remember p {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  .data-box {
+    height: auto;
+  }
+
+  .data-box > p.lead {
+    font-size: 18px;
+  }
+
+  /* Footer */
+  .main-footer {
+    min-height: 550px;
+  }
+  .main-footer img {
+    width: 150px;
+    display: block;
   }
 }
 

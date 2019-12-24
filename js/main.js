@@ -18,4 +18,20 @@ $(document).ready(function() {
       "linear"
     );
   });
+
+  $("#home a[href*='#']:not([href='#'])").on("click", function(event) {
+    // prevent normal link behaviour
+    event.preventDefault();
+
+    let target = $(this).attr("href");
+
+    // scroll with animate
+    $("html, body").animate(
+      {
+        scrollTop: $(target).offset().top
+      },
+      500,
+      "linear"
+    );
+  });
 });
