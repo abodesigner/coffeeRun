@@ -27,7 +27,7 @@
   }
 
   .home .navbar .navbar-nav > li:hover {
-    background: #f2941b;
+    background: #f8aa2a;
     width: 100%;
     text-align: center;
     margin-right: 0 !important;
@@ -180,7 +180,7 @@
   /* xl screen */
   /* Home Section */
   .content h1 {
-    color: #f2941b;
+    color: #f8aa2a;
   }
 
   .content p.lead {

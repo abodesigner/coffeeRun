@@ -97,7 +97,7 @@ h2 {
   width: 100%;
   height: 3px;
   display: block;
-  background: #f2941b;
+  background: #f8aa2a;
 }
 
 .home .navbar .navbar-nav > li.nav-item > a.nav-link:after {
@@ -105,7 +105,7 @@ h2 {
   width: 0;
   height: 3px;
   display: block;
-  background: #f2941b;
+  background: #f8aa2a;
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
 }
@@ -115,7 +115,7 @@ h2 {
 }
 
 .home .navbar .navbar-nav .nav-item .nav-link:hover {
-  color: #f2941b;
+  color: #f8aa2a;
 }
 
 .content {
@@ -134,7 +134,7 @@ h2 {
 }
 
 .btn-orange {
-  background-color: #f2941b;
+  background-color: #f8aa2a;
   color: #f6f6f6;
   margin-left: 16px;
 }
@@ -159,7 +159,7 @@ h2 {
   left: 50%;
   height: 5px;
   width: 5%;
-  background-color: #f2941b;
+  background-color: #f8aa2a;
   border-radius: 5px;
   margin-left: -3%;
 }
@@ -213,7 +213,7 @@ h2 {
   left: 50%;
   height: 5px;
   width: 5%;
-  background-color: #f2941b;
+  background-color: #f8aa2a;
   border-radius: 5px;
   margin-left: -3%;
 }
@@ -227,12 +227,12 @@ h2 {
 }
 
 .aboutus h5 > span {
-  color: #f2941b;
+  color: #f8aa2a;
   display: block;
 }
 
 .aboutus a {
-  color: #f2941b;
+  color: #f8aa2a;
 }
 
 /* ======================================
@@ -332,5 +332,5 @@ h2 {
 }
 
 .main-footer .copyright a {
-  color: #f2941b;
+  color: #f8aa2a;
 }
