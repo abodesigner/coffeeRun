@@ -34,4 +34,14 @@ $(document).ready(function() {
       "linear"
     );
   });
+
+  // Add background color to navbar when scsrooling
+  var target = $(window);
+  target.scroll(function() {
+    if (target.scrollTop() >= 150) {
+      $(".navbar").addClass("custom-navbar");
+    } else {
+      $(".navbar").removeClass("custom-navbar");
+    }
+  });
 });

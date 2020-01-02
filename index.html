@@ -18,325 +18,144 @@
     <!-- Custom Media Query CSS -->
     <link rel="stylesheet" href="css/media.css">
 
-    <title>Food Freshness Checker</title>
+    <title>CoffeeRun</title>
 </head>
 
 <body>
 
+    <!-- Start Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <a class="navbar-brand" href="#">
+            <img src="img/logo.png" alt="coffeeRun_logo" class="img-fluid">
+        </a>
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
+            aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="main-navbar">
+
+            <!-- <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+            </ul> -->
+
+            <form class="form ml-auto my-lg-0">
+                <a href="#" class="btn mr-sm-2 my-sm-0" role="button">Sign In</a>
+                <a href="#" class="btn btn-outline-brown my-2 my-sm-0" role="button">Sign Up</a>
+            </form>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
     <!-- Start Home Section -->
-    <section class="home" id="home">
-        <div class="dark-overlay">
-            <header>
-                <nav class="navbar navbar-expand-lg navbar-dark">
-                    <div class="container-fluid">
-                        <a class="navbar-brand"
-                            href="https://play.google.com/store/apps/details?id=com.wtxhub.manageproduct"
-                            target="_blank">Food Freshness Checker</a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
-                            aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
-                        <div class="collapse navbar-collapse" id="main-navbar">
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item active mr-2">
-                                    <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-                                </li>
-
-                                <li class="nav-item mr-2">
-                                    <a class="nav-link" href="#features">features</a>
-                                </li>
-
-                                <li class="nav-item mr-2">
-                                    <a class="nav-link" href="#aboutus">about us</a>
-                                </li>
-
-                                <li class="nav-item mr-2">
-                                    <a class="nav-link" href="#remember">easy to remember</a>
-                                </li>
-                                <li class="nav-item mr-2">
-                                    <a class="nav-link"
-                                        href="https://www.amazon.co.uk/WTX-HUB-Food-Freshness-Checker/dp/B07ZKZZ4K7/ref=sr_1_4?keywords=wtx+hub+app&qid=1576591548&sr=8-4"
-                                        target="_blank">Amazon</a>
-                                </li>
-                                <li class="nav-item mr-2">
-                                    <a class="nav-link"
-                                        href="https://play.google.com/store/apps/details?id=com.wtxhub.manageproduct"
-                                        target="_blank">Google
-                                        Play stores</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </header>
-            <div class="container">
-                <div class="content d-flex flex-column align-items-center justify-content-center text-center">
-                    <h1>
-                        The perfect app to always have
-                        fresh food in your kitchen.
-                    </h1>
-                    <p class="lead">
-                        Food wastage is a massive environmental concern and those looking to improve the climate and
-                        reduce
-                        the carbon footprint can utilize this fun and easy to use App.
-                    </p>
-                    <div class="action-btn">
-                        <a href="#features" class="btn btn-secondary" role="button" id="readmore">Read more</a>
-                        <a href="https://play.google.com/store/apps/details?id=com.wtxhub.manageproduct" target="_blank"
-                            class="btn btn-orange" role="button">download app</a>
-                    </div>
+    <div class="home-section">
+        <div class="container">
+            <div class="home-section-content">
+                <div class="home-title">
+                    <h1>Pick Up Your Favorite</h1>
+                    <p>Coffee, Sandwiches and Cakes.</p>
+                </div>
+                <div class="search-box">
+                    <input type="text" class="form-control" placeholder="Enter delivery address">
+                    <span class="marker">
+                        <img src="img/marker-24.png" alt="marker">
+                    </span>
+                    <span class="search">
+                        <img src="img/arrow-32.png" alt="search">
+                    </span>
                 </div>
             </div>
-
         </div>
-    </section>
+    </div>
     <!-- End Home Section -->
 
-    <!-- Start Features Section -->
-    <section class="features" id="features">
-        <h2 class="text-center">app main features</h2>
+    <!-- Start Services Section -->
+    <div class="services-section bg-dark text-white">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="features-list">
-                        <div class="feature-container d-flex align-items-start">
-                            <img src="img/icons/date.png" class="mx-3" alt="date-icon">
-                            <div class="feature-container-body">
-                                <h6>Date Management</h6>
-                                <p>You can set Best-if-used date or Expiration date for each goods.</p>
-                            </div>
-                        </div>
-                        <div class="feature-container d-flex align-items-start">
-                            <img src="img/icons/ring.png" class="mx-3" alt="ring-icon">
-                            <div class="feature-container-body">
-                                <h6>Get Notifications</h6>
-                                <p>Notifications to remind you to eat products before expiry date or after opening.</p>
-                            </div>
-                        </div>
-                        <div class="feature-container d-flex align-items-start">
-                            <img src="img/icons/alarm.png" class="mx-3" alt="alarm-icon">
-                            <div class="feature-container-body">
-                                <h6>Set Alarm</h6>
-                                <p>You can set Alarm by checking the number of days remaining displayed in the card.</p>
-                            </div>
-                        </div>
-                        <div class="feature-container d-flex align-items-start">
-                            <img src="img/icons/search.png" class="mx-3" alt="search-icon">
-                            <div class="feature-container-body">
-                                <h6>Easy Search</h6>
-                                <p>You can find the need information with easy manner.</p>
-                            </div>
-                        </div>
-                        <div class="feature-container d-flex align-items-start">
-                            <img src="img/icons/shoppinglist.png" class="mx-3" alt="shoppinglist-icon">
-                            <div class="feature-container-body">
-                                <h6>Shopping list</h6>
-                                <p>Add items to the shopping list with just a tap.</p>
-                            </div>
-                        </div>
-                        <div class="feature-container d-flex align-items-start">
-                            <img src="img/icons/tracking.png" class="mx-3" alt="tracking-icon">
-                            <div class="feature-container-body">
-                                <h6>Tracking</h6>
-                                <p>Track opened products and those close to expiry date.</p>
-                            </div>
-                        </div>
+                <div class="col-md-4">
+                    <div class="service-block text-center">
+                        <i class="fas fa-hands-helping fa-4x d-block mb-4"></i>
+                        <h2 class="service-title">Become a Partner</h2>
+                        <p class="srvice-description">Grow your business and reach new customers by partnering with us.
+                        </p>
+                        <a href="#" class="btn-link">sign up your store <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="col-sm-4">
-                    <div class="mobile-image">
-                        <img src="img/mobile-icon.png" alt="mobile-icon" class="img-fluid d-none d-lg-block">
+
+                <div class="col-md-4">
+                    <div class="service-block text-center">
+                        <i class="fas fa-hands-helping fa-4x d-block mb-4"></i>
+                        <h2 class="service-title">Become a Partner</h2>
+                        <p class="srvice-description">Grow your business and reach new customers by partnering with us.
+                        </p>
+                        <a href="#" class="btn-link">Sign up your store <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="features-list">
-                        <div class="feature-container d-flex align-items-start">
-                            <img src="img/icons/customize.png" class="mx-3" alt="customize-icon">
-                            <div class="feature-container-body">
-                                <h6>Simple Customization</h6>
-                                <p>Customization of categories, locations, units.</p>
-                            </div>
-                        </div>
-                        <div class="feature-container d-flex align-items-start">
-                            <img src="img/icons/list.png" class="mx-3" alt="list-icon">
-                            <div class="feature-container-body">
-                                <h6>Show Summary</h6>
-                                <p>Show a summary with the quantity of each product in each list (also the total).</p>
-                            </div>
-                        </div>
-                        <div class="feature-container d-flex align-items-start">
-                            <img src="img/icons/images.png" class="mx-3" alt="images-icon">
-                            <div class="feature-container-body">
-                                <h6>Add Images</h6>
-                                <p>Add images to products by taking a picture or choosing an image from your gallery.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="feature-container d-flex align-items-start">
-                            <img src="img/icons/tags.png" class="mx-3" alt="tags-icon">
-                            <div class="feature-container-body">
-                                <h6>Add Tags</h6>
-                                <p>You can set Best-if-used date or Expiration date for each goods.</p>
-                            </div>
-                        </div>
-                        <div class="feature-container d-flex align-items-start">
-                            <img src="img/icons/groups.png" class="mx-3" alt="groups-icon">
-                            <div class="feature-container-body">
-                                <h6>Groups</h6>
-                                <p>You can create as many groups as you want.</p>
-                            </div>
-                        </div>
-                        <div class="feature-container d-flex align-items-start">
-                            <img src="img/icons/remember.png" class="mx-3" alt="remember-icon">
-                            <div class="feature-container-body">
-                                <h6>Easy to Remember</h6>
-                                <p>You will remember what is stored in the fridge.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="d-flex w-100 justify-content-center">
-                    <div class="col-lg-3 col-md-4 text-right">
-                        <a href="https://www.amazon.co.uk/WTX-HUB-Food-Freshness-Checker/dp/B07ZKZZ4K7/ref=sr_1_4?keywords=wtx+hub+app&qid=1576591548&sr=8-4"
-                            target="_blank">
-                            <img src="img/amazon-btn.png" alt="amazon-button">
-                        </a>
-                    </div>
-                    <div class="col-lg-3 col-md-4">
-                        <a href="https://play.google.com/store/apps/details?id=com.wtxhub.manageproduct"
-                            target="_blank">
-                            <img src="img/get-it-on-google-play.png" alt="googleplay-button">
-                        </a>
+
+                <div class="col-md-4">
+                    <div class="service-block text-center">
+                        <i class="fas fa-mobile-alt fa-4x d-block mb-4"></i>
+                        <h2 class="service-title">Try the App</h2>
+                        <p class="srvice-description">Get the best CoffeeRun experience with live order tracking.
+                        </p>
+                        <a href="#" class="btn-link">Get the app <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- End Features Section -->
+    </div>
+    <!-- End Services Section -->
 
-    <!-- Start AboutUs Section -->
-    <section class="aboutus" id="aboutus">
-        <div class="dark-overlay">
-            <h2 class="text-center">who we are</h2>
-            <div class="container">
-
-                <p class="lead">
-                    WTX Hub is based in Manchester in the United Kingdom and develops and operates food and beverage
-                    focused apps for smartphones in conjunction with developing WTX Hub's own software eco-system for
-                    the food & beverage sector. <br>
-
-                    Since launch WTX Hub has developed and expanded WTX Hub's software and technological eco-system
-                    predominantly aimed at the food and beverage sector. <br>
-
-                    As WTX Hub further develop and launch software products for the eco-system, WTX Hub intend to become
-                    the leading technology based eco-system for the food and beverage sector in Europe and North
-                    America.
-                </p>
-
-                <h5 class="text-center">For more information about WTX Hub,
-                    <span>please visit <a href="https://www.wtxhub.com"
-                            target="_blank">https://www.wtxhub.com.</a></span></h5>
-            </div>
-        </div>
-    </section>
-    <!-- End AboutUs Section -->
-
-    <!-- Start Remember Section -->
-    <section class="remember" id="remember">
-        <h2 class="text-center">easy to remember</h2>
+    <!-- Start Info Section -->
+    <div class="info-section">
         <div class="container">
-            <p class="text-center">Consumers refrigerator and food stocks maximise Freshness of Food and minimise Food
-                waste.</p>
-
-
-            <div class="row data-container">
-                <div class="col-md-6">
-                    <div class="data-box">
-                        <img src="img/enviroment.png" alt="enviroment-icon">
-                        <p class="lead">Food wastage is a massive environmental concern and those looking to improve the
-                            climate and
-                            reduce the carbon footprint can utilize this fun and easy to use App</p>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="info-box">
+                        <h2>Every Flavor Welcome</h2>
+                        <p>From your neighborhood sushi spot to the burger and fries you crave, choose from over 300,000
+                            local and national favorites across the U.S. and Canada.</p>
+                        <a href="#" class="btn btn-orange">Find Restaurents</a>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="data-box">
-                        <img src="img/fresh.png" alt="fresh-icon">
-                        <p class="lead">As important as it is to eat well, it is just as important to eat fresh produce
-                            and to ensure that no Food that has gone off is eaten.</p>
+                <div class="col-lg-6">
+                    <div class="image-box">
+                        <img src="img/CR14.jpg" alt="cr14" class="img-fluid">
                     </div>
                 </div>
             </div>
-
         </div>
-    </section>
-    <!-- End Remember Section -->
+    </div>
+    <!-- End Info Section -->
 
-    <!-- Start Footer Section -->
-    <footer class="main-footer" id="main-footer">
-        <div class="dark-orange-overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <a href="https://www.wtxhub.com" target="_blank">
-                            <img src="img/WTX-logo.png" width="200px" alt="WTX-HUB-logo" class="img-fluid">
-                        </a>
-                    </div>
-
-                    <div class="col-md-4 mt-5 text-center">
-
-                        <ul class="list-unstyled">
-                            <li><a href="https://wtxhub.com/privacy-policy" target="_blank">Privacy Policy</a></li>
-                            <li><a href="https://wtxhub.com/terms-and-conditions" target="_blank">Terms and
-                                    Conditions</a></li>
-                            <li><a href="https://wtxhub.com/disclaimer" target="_blank">Disclaimer</a></li>
-                            <li><a href="https://wtxhub.com/application-end-user-license-agreement/" target="_blank">
-                                    Application End User Agreement</a></li>
-                        </ul>
+    <!-- Start Info Section -->
+    <div class="info-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 order-2">
+                    <div class="info-box">
+                        <h2>You’ve got stuff to do. We’ve got options.</h2>
+                        <p>Get it delivered right to your door. Or, try Pickup on your way home. It’s mealtime on your
+                            time.
+                        </p>
+                        <a href="#" class="btn btn-orange">order now</a>
                     </div>
                 </div>
-
-                <div class="d-flex justify-content-center">
-                    <div class="amazon-btn mr-2">
-                        <a href="https://www.amazon.co.uk/WTX-HUB-Food-Freshness-Checker/dp/B07ZKZZ4K7/ref=sr_1_4?keywords=wtx+hub+app&qid=1576591548&sr=8-4"
-                            target="_blank">
-                            <img src="img/amazon-btn.png" alt="amazon-button">
-                        </a>
+                <div class="col-lg-6 order-1">
+                    <div class="image-box">
+                        <img src="img/CR15.jpg" alt="cr15" class="img-fluid">
                     </div>
-                    <div class="googlePlay-btn">
-                        <a href="https://play.google.com/store/apps/details?id=com.wtxhub.manageproduct"
-                            target="_blank">
-                            <img src="img/get-it-on-google-play.png" alt="googleplay-button">
-                        </a>
-                    </div>
-                </div>
-
-
-
-                <div class="socila-link">
-                    <ul class="list-unstyled d-flex justify-content-center">
-
-                        <li class="p-2">
-                            <a href="https://twitter.com/WtxHub" target="_blank">
-                                <i class="fab fa-twitter-square fa-2x"></i>
-                            </a>
-                        </li>
-                        <li class="p-2"><a href="https://www.instagram.com/wtxhub/" target="_blank"><i
-                                    class="fab fa-instagram fa-2x"></i></a></li>
-                        <li class="p-2"><a href="https://www.linkedin.com/company/wtx-hub/" target="_blank"><i
-                                    class="fab fa-linkedin fa-2x"></i></a></li>
-                    </ul>
-                </div>
-                <div class="copyright text-center">
-                    &copy;copyright are reserved to <a href="https://wtxhub.com" target="_blank"> wtxhub</a> <span
-                        id="year"></span>.
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- End Footer Section -->
+    </div>
+    <!-- End Info Section -->
 
 
     <!-- JavaScript liberaries -->
