@@ -176,11 +176,44 @@ h2 {
 /* ======================================
     Info Section
 ====================================== */
-
 .info-section {
   padding: 50px 0;
 }
 
 .info-box {
   padding-top: 100px;
+}
+
+/* ======================================
+    Footer Section
+====================================== */
+.footer {
+  min-height: 300px;
+  padding: 40px 0;
+  background-color: #335d7f;
+}
+
+.list-content ul li {
+  list-style-type: none;
+  padding: 5px;
+}
+
+.list-content ul li a {
+  color: #fff;
+  text-transform: capitalize;
+  transition: all 0.6s ease-in-out;
+}
+
+.list-content ul li a:hover {
+  color: #d9751e;
+  font-weight: bold;
+}
+
+.icons i.fab {
+  color: #fff;
+  transition: all 0.6s ease-in-out;
+}
+
+.icons i.fab:hover {
+  color: #d9751e;
 }
