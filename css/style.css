@@ -83,10 +83,10 @@ h2 {
 ====================================== */
 .navbar {
   padding: 0.15rem 1rem;
+  transition: all 0.7s ease-in-out;
 }
 .custom-navbar {
   background-color: #d9751e;
-  transition: all 0.7s ease-in-out;
 }
 
 .main-navbar form a.btn {
@@ -171,6 +171,10 @@ h2 {
 
 .service-description {
   min-height: 72px;
+}
+
+.service-block a.btn-link {
+  text-decoration: none;
 }
 
 /* ======================================
