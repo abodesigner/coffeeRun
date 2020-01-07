@@ -41,6 +41,10 @@ h2 {
   text-transform: capitalize;
 }
 
+.custom-body {
+  padding-top: 70px;
+}
+
 .btn-outline-brown {
   color: #3b2414;
   border-color: #3b2414;
@@ -90,6 +94,19 @@ h2 {
 }
 
 .btn-blue {
+  background-color: #f2c24f;
+  border-color: #f2c24f;
+  color: #335d7f;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.btn-blue:hover {
+  background-color: #335d7f;
+  border-color: #335d7f;
+  color: #fff;
+}
+.btn-outline-blue {
   background-color: transparent;
   border-color: transparent;
   border-radius: 20px;
@@ -97,8 +114,8 @@ h2 {
   font-weight: bold;
 }
 
-.btn-blue:hover,
-.btn-blue:focus {
+.btn-outline-blue:hover,
+.btn-outline-blue:focus {
   background-color: #335d7f;
   border-color: #335d7f;
   color: #fff;
@@ -353,4 +370,31 @@ header {
   font-weight: 300;
   letter-spacing: 0.05em;
   color: #7c7b88;
+}
+
+/* ======================================
+    Business Page
+====================================== */
+
+.page-header {
+  position: relative;
+  min-height: 600px;
+  background-attachment: fixed;
+  margin-bottom: 200px;
+  padding-top: 100px;
+}
+
+.left-content h2 {
+  color: #335d7f;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.left-content p {
+  font-size: 1.25rem;
+}
+
+.right-content {
+  margin-bottom: -100px;
 }

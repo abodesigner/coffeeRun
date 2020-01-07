@@ -37,7 +37,7 @@ $(document).ready(function() {
 
   // Add background color to navbar when scsrooling
   var target = $(window);
-  var homeSection = $(".home-section").offset().top;
+  var homeSection = $("#targetSection").offset().top;
   target.scroll(function() {
     if (target.scrollTop() > homeSection) {
       $(".navbar").addClass("custom-navbar");
