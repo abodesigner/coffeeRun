@@ -47,6 +47,20 @@ h2 {
   border-radius: 20px;
 }
 
+.btn-brown {
+  color: #7b5236;
+  border-color: transparent;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+.btn-brown:hover,
+.btn-brown:focus {
+  background-color: #7b5236;
+  color: #fff;
+  font-weight: bold;
+}
+
 .btn-outline-brown:hover {
   color: #fff;
   background-color: #3b2414;
@@ -57,6 +71,36 @@ h2 {
   background-color: #d9751e;
   border-color: #d9751e;
   border-radius: 20px;
+  color: #fff;
+}
+
+.btn-orange:hover,
+.btn-orange:focus {
+  color: #fff;
+}
+
+.btn-white {
+  border-color: #fff;
+  color: #333;
+  background-color: #fff;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.btn-blue {
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 20px;
+  color: #335d7f;
+  font-weight: bold;
+}
+
+.btn-blue:hover,
+.btn-blue:focus {
+  background-color: #335d7f;
+  border-color: #335d7f;
   color: #fff;
 }
 
@@ -97,6 +141,7 @@ header {
 
 .main-navbar form a.btn {
   font-weight: bold;
+  outline: none;
 }
 
 .navbar .navbar-brand img {
@@ -132,7 +177,8 @@ header {
 .home-section-content p {
   font-size: 40px;
   font-weight: bold;
-  color: #3b2414;
+  font-style: italic;
+  color: #d9751e;
 }
 
 .search-box {
@@ -191,7 +237,20 @@ header {
 }
 
 .info-box {
-  padding-top: 100px;
+  padding-top: 60px;
+}
+
+.image-box {
+  position: relative;
+  overflow: hidden;
+}
+.image-box img {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+}
+
+.image-box img:hover {
+  transform: scale(1.1);
 }
 
 /* ======================================

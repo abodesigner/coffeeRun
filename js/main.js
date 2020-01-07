@@ -37,11 +37,16 @@ $(document).ready(function() {
 
   // Add background color to navbar when scsrooling
   var target = $(window);
+  var homeSection = $(".home-section").offset().top;
   target.scroll(function() {
-    if (target.scrollTop() >= 150) {
+    if (target.scrollTop() > homeSection) {
       $(".navbar").addClass("custom-navbar");
+      $(".navbar form a.btn-orange").addClass("btn-white");
+      $(".navbar form a.btn-brown").addClass("text-white");
     } else {
       $(".navbar").removeClass("custom-navbar");
+      $(".navbar form a.btn-orange").removeClass("btn-white");
+      $(".navbar form a.btn-brown").removeClass("text-white");
     }
   });
 });
