@@ -180,8 +180,8 @@ header {
 
 .home-section-content {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 30%;
+  transform: translateY(-30%);
 }
 
 .home-section-content h1 {
