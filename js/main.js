@@ -36,7 +36,7 @@ $(document).ready(function() {
   });
 
   // Add background color to navbar when scsrooling
-  var target = $(window);
+  /*var target = $(window);
   var homeSection = $("#targetSection").offset().top;
   target.scroll(function() {
     if (target.scrollTop() > homeSection) {
@@ -48,5 +48,5 @@ $(document).ready(function() {
       $(".navbar form a.btn-orange").removeClass("btn-white");
       $(".navbar form a.btn-brown").removeClass("text-white");
     }
-  });
+  });*/
 });

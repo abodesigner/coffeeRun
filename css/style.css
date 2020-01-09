@@ -89,10 +89,6 @@ h2 {
   background-color: #fff;
 }
 
-.text-white {
-  color: #fff;
-}
-
 .text-blue {
   color: #335d7f;
 }
@@ -125,6 +121,10 @@ h2 {
   color: #fff;
 }
 
+.bg-lightBlue {
+  background-color: #ecfbfb;
+}
+
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(59,36,20, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
@@ -152,12 +152,7 @@ header {
     Navbar Section
 ====================================== */
 .navbar {
-  padding: 0.15rem 1rem;
-  height: 70px;
-  transition: all 0.7s ease-in-out;
-}
-.custom-navbar {
-  background-color: #d9751e;
+  border-bottom: 1px solid #d0d0d0;
 }
 
 .main-navbar form a.btn {
@@ -318,6 +313,117 @@ header {
 }
 
 /* ======================================
+    Get Parteners Page
+====================================== */
+.partener-page-header {
+  position: relative;
+  overflow: hidden;
+  min-height: 600px;
+}
+
+.custom-bg {
+  background: url(../img/PR.jpg) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top center;
+  height: 100vh;
+}
+
+.dark-overlay {
+  min-height: 600px;
+  background: rgba(134, 193, 234, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.partener-page-header .left-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.partener-page-header .left-content h2 {
+  color: #fff;
+  margin-bottom: 0;
+  font-size: 4rem;
+}
+.partener-page-header .left-content h3 {
+  color: #fff;
+  text-align: center;
+}
+
+.partener-page-content {
+  position: absolute;
+  width: 90%;
+  top: 20%;
+  min-height: 400px;
+  transform: translateY(-20%);
+}
+
+.mb-sm-2 {
+  margin-bottom: 20px;
+}
+
+.card-title {
+  color: #17a2b8;
+}
+
+.arrow-right {
+  color: #a1d8d9;
+}
+
+.partener-steps h2.main-heading {
+  color: #00838a;
+}
+
+.card-list .card {
+  min-height: 300px;
+  border-color: transparent;
+}
+
+.card-list h2.step {
+  color: #a1d8d9;
+  font-size: 40px;
+}
+
+.card-list .card .card-body h3 {
+  font-size: 1.5rem;
+}
+
+/* ======================================
+    Help Business Page
+====================================== */
+
+.help-business .nav-tabs .nav-item {
+  width: 33.33%;
+}
+
+.help-business .nav-tabs .nav-item .nav-link.active {
+  color: #191919;
+  border-top: 4px solid #eb1700;
+}
+
+.help-business .nav-tabs .nav-item a.nav-link {
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  color: #767676;
+  border: none;
+  height: 100%;
+  padding: 24px 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.help-business .tab-content .tab-pane {
+  background: #fff;
+  padding: 40px 80px;
+}
+
+/* ======================================
     Orders Page
 ====================================== */
 
@@ -383,7 +489,6 @@ header {
 .page-header {
   position: relative;
   min-height: 600px;
-  background-attachment: fixed;
   margin-bottom: 200px;
   padding-top: 100px;
 }
