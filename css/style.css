@@ -14,7 +14,7 @@
 */
 
 /* ======================================
-      Global
+      Global Styles
 ====================================== */
 a:hover,
 a:focus {
@@ -39,10 +39,6 @@ p {
 
 h2 {
   text-transform: capitalize;
-}
-
-.custom-body {
-  padding-top: 70px;
 }
 
 .btn-outline-brown {
@@ -133,11 +129,6 @@ h2 {
   border-color: rgb(59, 36, 20);
 }
 
-header {
-  width: 100%;
-  height: 100px;
-}
-
 @font-face {
   font-family: "Raleway";
   src: url(../fonts/Raleway/Raleway-Regular.ttf);
@@ -174,7 +165,6 @@ header {
   height: 100vh;
   background: url(../img/home-1.png) no-repeat;
   background-size: cover;
-  background-attachment: fixed;
   background-position: center center;
 }
 
@@ -217,7 +207,7 @@ header {
 .search-box span.search {
   position: absolute;
   top: 7px;
-  right: 163px;
+  right: 168px;
 }
 
 /* ======================================
@@ -323,7 +313,6 @@ header {
 
 .custom-bg {
   background: url(../img/PR.jpg) no-repeat;
-  background-attachment: fixed;
   background-size: cover;
   background-position: top center;
   height: 100vh;
@@ -452,7 +441,7 @@ header {
 
 .media-description {
   font-size: 12px;
-  font-family: "Roboto Condensed", serif;
+  font-family: "Roboto", serif;
   text-transform: uppercase;
   font-weight: 300;
   letter-spacing: 0.05em;
@@ -475,7 +464,7 @@ header {
 .media-hourse span {
   line-height: 18px;
   font-size: 12px;
-  font-family: "Roboto Condensed", serif;
+  font-family: "Roboto", serif;
   text-transform: uppercase;
   font-weight: 300;
   letter-spacing: 0.05em;
