@@ -5,11 +5,14 @@
   Version: 0.0.1
 
   1- Global
-  2- Home Section
-  3- Features Section
-  4- AboutUs Section
-  5- Remember Section
-  6- Footer Section
+  2- Home Page
+      1- Home Section
+      2- Features Section
+      3- AboutUs Section
+      4- Remember Section
+      5- Footer Section
+
+  3- Business Page     
 
 */
 
@@ -156,7 +159,7 @@ h2 {
 }
 
 /* ======================================
-    Home Section
+    Home Page
 ====================================== */
 .home-section {
   position: relative;
@@ -293,6 +296,88 @@ h2 {
 
 .icons i.fab:hover {
   color: #d9751e;
+}
+
+/* ======================================
+    Business Page
+====================================== */
+.business-page-header {
+  position: relative;
+
+  height: 100vh;
+  background: url(../img/BUS.jpg) no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.business-page-content {
+  width: 50%;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-40%);
+}
+.business-page-content h2 {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.business-page-content p {
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.business-features-section .feature-box img {
+  width: 100px;
+}
+
+.business-features-section .feature-box h5 {
+  color: #335d7f;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.custom-margin {
+  margin-top: 50px;
+}
+
+/* ======================================
+    Group-order Page
+====================================== */
+.group-order-page-header {
+  position: relative;
+
+  height: 100vh;
+  background: url(../img/GO.jpg) no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.group-order-page-content {
+  width: 50%;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-40%);
+}
+.group-order-page-content h2 {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.group-order-page-content p {
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.group-order-features-section .feature-box img {
+  width: 100px;
+}
+
+.group-order-features-section .feature-box h5 {
+  color: #335d7f;
+  margin-top: 20px;
+  margin-bottom: 25px;
 }
 
 /* ======================================
@@ -473,48 +558,4 @@ h2 {
   font-weight: 300;
   letter-spacing: 0.05em;
   color: #7c7b88;
-}
-
-/* ======================================
-    Business Page
-====================================== */
-
-.page-header {
-  position: relative;
-  min-height: 600px;
-  height: 100vh;
-  background: url(../img//BUS.jpg) no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-.page-content {
-  width: 50%;
-  position: absolute;
-  top: 40%;
-  transform: translateY(-40%);
-}
-.page-content h2 {
-  color: #fff;
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-
-.page-content p {
-  font-size: 1.25rem;
-  color: #fff;
-}
-
-.how-section .feature-box img {
-  width: 100px;
-}
-
-.how-section .feature-box h5 {
-  color: #335d7f;
-  margin-top: 20px;
-  margin-bottom: 25px;
-}
-
-.custom-margin {
-  margin-top: 50px;
 }
