@@ -482,23 +482,27 @@ h2 {
 .page-header {
   position: relative;
   min-height: 600px;
-  margin-bottom: 200px;
-  padding-top: 100px;
+  height: 100vh;
+  background: url(../img//BUS.jpg) no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
-
-.left-content h2 {
-  color: #335d7f;
+.page-content {
+  width: 50%;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-40%);
+}
+.page-content h2 {
+  color: #fff;
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 30px;
 }
 
-.left-content p {
+.page-content p {
   font-size: 1.25rem;
-}
-
-.right-content {
-  margin-bottom: -100px;
+  color: #fff;
 }
 
 .how-section .feature-box img {
