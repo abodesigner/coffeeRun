@@ -320,11 +320,13 @@ h2 {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 30px;
+  text-shadow: 2px 2px 5px rgb(53, 53, 53, 1);
 }
 
 .business-page-content p {
   font-size: 1.25rem;
   color: #fff;
+  text-shadow: 2px 2px 5px rgb(53, 53, 53, 1);
 }
 
 .business-features-section .feature-box img {
@@ -363,11 +365,13 @@ h2 {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 30px;
+  text-shadow: 2px 2px 5px rgb(53, 53, 53, 1);
 }
 
 .group-order-page-content p {
   font-size: 1.25rem;
   color: #fff;
+  text-shadow: 2px 2px 5px rgb(53, 53, 53, 1);
 }
 
 .group-order-features-section .feature-box img {
