@@ -178,6 +178,7 @@ h2 {
   font-size: 65px;
   font-weight: bold;
   color: #3b2414;
+  text-shadow: 2px 2px 5px rgb(53, 53, 53, 1);
 }
 
 .home-section-content p {
@@ -185,6 +186,7 @@ h2 {
   font-weight: bold;
   font-style: italic;
   color: #d9751e;
+  text-shadow: 2px 2px 5px rgb(53, 53, 53, 1);
 }
 
 .search-box {
@@ -337,10 +339,12 @@ h2 {
   color: #fff;
   margin-bottom: 0;
   font-size: 4rem;
+  text-shadow: 2px 2px 5px rgb(53, 53, 53, 1);
 }
 .partener-page-header .left-content h3 {
   color: #fff;
   text-align: center;
+  text-shadow: 2px 2px 5px rgb(53, 53, 53, 1);
 }
 
 .partener-page-content {
@@ -495,4 +499,18 @@ h2 {
 
 .right-content {
   margin-bottom: -100px;
+}
+
+.how-section .feature-box img {
+  width: 100px;
+}
+
+.how-section .feature-box h5 {
+  color: #335d7f;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.custom-margin {
+  margin-top: 50px;
 }
