@@ -563,3 +563,31 @@ h2 {
   letter-spacing: 0.05em;
   color: #7c7b88;
 }
+
+/* ======================================
+    AboutUs Page
+====================================== */
+
+.aboutus-home-section {
+  min-height: 449px;
+}
+
+.aboutus-img-box img {
+  /* clip-path: polygon(63% 0, 100% 0%, 100% 100%, 20% 100%); */
+  clip-path: polygon(30% 0, 100% 0%, 100% 100%, 0 100%);
+}
+
+.aboutus-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.aboutus-content h2 {
+  font-weight: bold;
+  color: #d9751e;
+}
+
+.aboutus-content p {
+  color: #888;
+}
