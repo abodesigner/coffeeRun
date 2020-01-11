@@ -569,7 +569,7 @@ h2 {
 ====================================== */
 
 .aboutus-home-section {
-  min-height: 449px;
+  height: auto;
 }
 
 .aboutus-img-box img {
