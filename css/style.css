@@ -569,25 +569,23 @@ h2 {
 ====================================== */
 
 .aboutus-home-section {
-  height: auto;
+  min-height: 500px;
+  background: url(../img//aboutus.jpg) no-repeat;
+  background-size: cover;
 }
 
-.aboutus-img-box img {
-  /* clip-path: polygon(63% 0, 100% 0%, 100% 100%, 20% 100%); */
-  clip-path: polygon(30% 0, 100% 0%, 100% 100%, 0 100%);
+.aboutus-who-section {
+  min-height: 500px;
 }
 
-.aboutus-content {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.aboutus-who-section p.lead {
+  color: #999;
 }
 
-.aboutus-content h2 {
-  font-weight: bold;
-  color: #d9751e;
+.aboutus-customers-section h2 {
+  color: #77b7c4;
 }
 
-.aboutus-content p {
-  color: #888;
+.aboutus-customers-section p {
+  color: #999;
 }
