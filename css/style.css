@@ -574,7 +574,10 @@ h2 {
   background-size: cover;
 }
 
-.aboutus-who-section {
+.aboutus-who-section,
+.aboutus-customers-section,
+.aboutus-businsss-section,
+.aboutus-parteners-section {
   min-height: 500px;
 }
 
