@@ -602,3 +602,15 @@ h2 {
 .contact-section span.star {
   color: #f00;
 }
+
+.merchant-button {
+  background: #fff;
+  padding: 10px 25px;
+  border-radius: 5px;
+  border: 1px solid #e8e8e8;
+}
+
+.merchant-button span {
+  font-size: 1.4rem;
+  color: #333;
+}

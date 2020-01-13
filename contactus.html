@@ -85,37 +85,28 @@
                             <div class="form-group">
                                 <span class="star">*</span>
                                 <label for="">Category</label>
-                                <select name="" id="" class="form-control">
+                                <select name="category" id="category" class="form-control">
                                     <option value="0">Select an Option</option>
-                                    <option value="1">Account Settings</option>
-                                    <option value="2">Payments</option>
-                                    <option value="3">Troubleshooting</option>
-                                    <option value="4">Live Order Issue</option>
-                                    <option value="5">Order Support</option>
-                                    <option value="6">Health, Safety or Legal Issue</option>
-                                    <option value="7"> App Troubleshooting</option>
-                                    <option value="8">Order in Progress Support</option>
-                                    <option value="9">Post pick up Support</option>
-                                    <option value="10">Other</option>
+                                    <option value="account settings" id="account settings" data-target="as">Account
+                                        Settings</option>
+                                    <option value="payments">Payments</option>
+                                    <option value="troubleshooting">Troubleshooting</option>
+                                    <option value="live order issue">Live Order Issue</option>
+
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <span class="star">*</span>
-                                <label for="">Subcategory</label>
-                                <select name="" id="" class="form-control">
-                                    <option value="0">Select an Option</option>
-                                    <option value="1">Account Settings</option>
-                                    <option value="2">Payments</option>
-                                    <option value="3">Troubleshooting</option>
-                                    <option value="4">Live Order Issue</option>
-                                    <option value="5">Order Support</option>
-                                    <option value="6">Health, Safety or Legal Issue</option>
-                                    <option value="7"> App Troubleshooting</option>
-                                    <option value="8">Order in Progress Support</option>
-                                    <option value="9">Post pick up Support</option>
-                                    <option value="10">Other</option>
-                                </select>
+                                <div class="main-dropdwon">
+                                    <span class="star">*</span>
+                                    <label for="">Subcategory</label>
+
+                                    <select name="as" id="as" class="form-control">
+                                        <option value="0">None</option>
+                                        <option value="1">Change Credit Card</option>
+                                        <option value="2">Password Assistance</option>
+                                    </select>
+                                </div>
                             </div>
 
                             <div class="form-group">
@@ -158,6 +149,21 @@
         </div>
     </div>
     <!-- End Home Section -->
+
+    <!-- Start Merchant Section -->
+    <div class="merchant-section py-5 bg-light">
+        <div class="container">
+
+            <div class="d-flex justify-content-center">
+                <div class="merchant-button w-40">
+                    <img src="img/shop.png" alt="shop" class="img-fluid mr-sm-2">
+                    <span class="mr-sm-2">I'm a Merchant</span>
+                    <i class="fas fa-angle-double-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Merchant Section -->
 
     <!-- Start Footer Section -->
     <section class="footer">

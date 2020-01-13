@@ -49,4 +49,19 @@ $(document).ready(function() {
       $(".navbar form a.btn-brown").removeClass("text-white");
     }
   });*/
+
+  // Build dropdown-list based on another one
+
+  $("select#category").on("change", function() {
+    var target = $(this)
+      .find(":selected")
+      .attr("data-target");
+
+    //var id = $(this).attr("id");
+
+    //$("div[id^='"+id+"']").hide();
+    //$("#"+id+"-"+target).show();
+
+    console.log(target);
+  });
 });
