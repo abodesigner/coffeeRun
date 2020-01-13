@@ -592,3 +592,13 @@ h2 {
 .aboutus-customers-section p {
   color: #999;
 }
+
+/* ======================================
+    Contact Page
+====================================== */
+.contact-section span {
+  color: #999;
+}
+.contact-section span.star {
+  color: #f00;
+}
