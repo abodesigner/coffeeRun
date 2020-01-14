@@ -614,3 +614,13 @@ h2 {
   font-size: 1.4rem;
   color: #333;
 }
+
+/* ======================================
+    Merchant_Support_Form Page
+====================================== */
+.merchant-page-header {
+  background: url(../img/merchant_bg.jpg) no-repeat;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center center;
+}
