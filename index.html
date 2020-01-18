@@ -36,12 +36,103 @@
         <div class="collapse navbar-collapse" id="main-navbar">
 
             <form class="form-inline ml-auto my-lg-0">
-                <a href="#" class="btn btn-brown mr-sm-2" role="button">Sign In</a>
-                <a href="#" class="btn btn-orange my-2" role="button">Sign Up</a>
+                <a href="#" class="btn btn-brown mr-sm-2" role="button" data-toggle="modal"
+                    data-target="#signInModal">Sign In</a>
+                <a href="#" class="btn btn-orange my-2" role="button" data-toggle="modal"
+                    data-target="#signUpModal">Sign Up</a>
             </form>
         </div>
     </nav>
     <!-- End Navbar -->
+
+    <!-- Start signUpModal -->
+    <div class="modal fade" id="signUpModal" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" placeholder="FirstName" class="form-control mb-2">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" placeholder="LastName" class="form-control mb-2">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="email" class="form-control mb-2" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <select class="form-control mb-2">
+                                    <option value="us">+1(US)</option>
+                                    <option value="ca">+1(CA)</option>
+                                    <option value="au">+61(AU)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="number" class="form-control" placeholder="Mobile">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="password" class="form-control" placeholder="Passsowrd">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-danger btn-block">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start signInModal -->
+    <div class="modal fade" id="signInModal" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" placeholder="FullName" class="form-control mb-2">
+                            </div>
+                            <div class="col-md-12">
+                                <input type="password" class="form-control" placeholder="Passsowrd">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-primary btn-block">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Start Home Section -->
     <div class="home-section" id="targetSection">
