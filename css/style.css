@@ -518,13 +518,15 @@ h2 {
 }
 
 .media-list .media {
-  background: #fff;
+  background: #efefef;
   padding: 15px;
+  border: 1px solid transparent;
   transition: all 0.6s ease-in-out;
+  margin-bottom: 5px;
 }
 
 .media-list .media:hover {
-  background-color: #ffeb3b;
+  border-color: #333;
 }
 
 .media-tags {
