@@ -12,6 +12,9 @@
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="css/all.css">
 
+    <!-- Social-Media Buttons Lib -->
+    <link rel="stylesheet" href="css/bootstrap-social.css">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -104,31 +107,66 @@
     <div class="modal fade" id="signInModal" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold" id="exampleModalLabel">Sign In</h4>
+
+
 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
 
                 </div>
+                <div class="modal-span h-50 text-center d-flex flex-column justify-content-center align-items-center">
+                    <h6 class="mb-0 py-2">New to CoffeeRun?
+                        <a href="#" data-toggle="modal" data-target="#signUpModal" data-dismiss="modal">
+                            Sign Up</a>
+                    </h6>
+                </div>
 
                 <div class="modal-body">
+                    <form action="" method="POST">
+
+                        <div class="container-fluid">
+
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a class="btn btn-block btn-social btn-google mb-2">
+                                        <span class="fab fa-google text-white"></span> <span
+                                            class="text-white d-block text-center">Sign
+                                            in with Google</span>
+                                    </a>
+                                </div>
+                                <div class="col-md-12">
+                                    <a class="btn btn-block btn-social btn-facebook mb-2">
+                                        <span class="fab fa-facebook-f text-white"></span> <span
+                                            class="text-white d-block text-center">Sign
+                                            in with Facebook</span>
+                                    </a>
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="Email" placeholder="Email" class="form-control mb-2">
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="password" class="form-control" placeholder="Passowrd">
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
-                                <input type="Email" placeholder="Email" class="form-control mb-2">
-                            </div>
-                            <div class="col-md-12">
-                                <input type="password" class="form-control" placeholder="Passowrd">
+                                <a href="#" role="button" class="btn btn-orange-br-5 btn-block">Sign In</a>
                             </div>
                         </div>
-
                     </div>
-                </div>
-                <div class="modal-footer">
 
-                    <button type="button" class="btn btn-primary btn-block">Sign In</button>
                 </div>
             </div>
         </div>
