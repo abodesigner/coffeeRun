@@ -44,6 +44,10 @@ h2 {
   text-transform: capitalize;
 }
 
+.custom-navbar {
+  padding: 0 0.5rem;
+}
+
 .btn-outline-brown {
   color: #3b2414;
   border-color: #3b2414;
@@ -222,6 +226,10 @@ h2 {
   right: 168px;
 }
 
+.signin-form {
+  min-height: 500px;
+}
+
 .modal-span h6 {
   color: #767676;
 }
@@ -229,6 +237,10 @@ h2 {
 .terms span {
   font-size: 14px;
   color: #767676;
+}
+
+.btn-social > :first-child {
+  line-height: 40px;
 }
 
 /* ======================================

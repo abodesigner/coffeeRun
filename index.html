@@ -12,9 +12,6 @@
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="css/all.css">
 
-    <!-- Social-Media Buttons Lib -->
-    <link rel="stylesheet" href="css/bootstrap-social.css">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -39,179 +36,14 @@
         <div class="collapse navbar-collapse" id="main-navbar">
 
             <form class="form-inline ml-auto my-lg-0">
-                <a href="#" class="btn btn-brown mr-sm-2" role="button" data-toggle="modal"
-                    data-target="#signInModal">Sign In</a>
-                <a href="#" class="btn btn-orange my-2" role="button" data-toggle="modal"
-                    data-target="#signUpModal">Sign Up</a>
+                <a href="signin.html" class="btn btn-brown mr-sm-2" role="button">
+                    Sign In</a>
+                <a href="signup.html" class="btn btn-orange my-2" role="button">
+                    Sign Up</a>
             </form>
         </div>
     </nav>
     <!-- End Navbar -->
-
-    <!-- Start signUpModal -->
-    <div class="modal fade" id="signUpModal" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h5 class=" modal-title w-100 font-weight-bold" id="exampleModalLabel">Sign Up</h5>
-
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-
-                </div>
-
-                <div class="modal-span h-50 text-center d-flex flex-column justify-content-center align-items-center">
-                    <h6 class="mb-0 py-2">Alreay have an account?
-                        <a href="#" data-toggle="modal" data-target="#signInModal" data-dismiss="modal">
-                            Sign In</a>
-                    </h6>
-                </div>
-
-                <div class="modal-body">
-                    <form action="" method="POST">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <a class="btn btn-block btn-social btn-google mb-2">
-                                        <span class="fab fa-google text-white"></span> <span
-                                            class="text-white d-block text-center">Continue with Google</span>
-                                    </a>
-                                </div>
-                                <div class="col-md-12">
-                                    <a class="btn btn-block btn-social btn-facebook mb-2">
-                                        <span class="fab fa-facebook-f text-white"></span> <span
-                                            class="text-white d-block text-center">Continue with Facebook</span>
-                                    </a>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" placeholder="First Name" class="form-control mb-2">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" placeholder="Last Name" class="form-control mb-2">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <input type="email" class="form-control mb-2" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <select class="form-control mb-2">
-                                        <option value="us">+44(UK)</option>
-                                        <option value="ca">+44(UK)</option>
-                                        <option value="au">+44(UK)</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-8">
-                                    <input type="number" class="form-control" placeholder="Mobile">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <input type="password" class="form-control" placeholder="Password">
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="terms py-2 text-center">
-                                        <span>
-                                            By clicking Sign up, Continue with Facebook, or Continue with Google, you
-                                            agree
-                                            to
-                                            our
-                                            <a href=" terms&conditions.html">Terms and Conditions</a> and <a
-                                                href="privacy.html">Privacy Policy</a>.
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-
-                    <a role="button" class="btn btn-orange-br-5 text-white btn-block">Sign Up</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Start signInModal -->
-    <div class="modal fade" id="signInModal" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h4 class="modal-title w-100 font-weight-bold" id="exampleModalLabel">Sign In</h4>
-
-
-
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-
-                </div>
-                <div class="modal-span h-50 text-center d-flex flex-column justify-content-center align-items-center">
-                    <h6 class="mb-0 py-2">New to CoffeeRun?
-                        <a href="#" data-toggle="modal" data-target="#signUpModal" data-dismiss="modal">
-                            Sign Up</a>
-                    </h6>
-                </div>
-
-                <div class="modal-body">
-                    <form action="" method="POST">
-
-                        <div class="container-fluid">
-
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <a class="btn btn-block btn-social btn-google mb-2">
-                                        <span class="fab fa-google text-white"></span> <span
-                                            class="text-white d-block text-center">Continue with Google</span>
-                                    </a>
-                                </div>
-                                <div class="col-md-12">
-                                    <a class="btn btn-block btn-social btn-facebook mb-2">
-                                        <span class="fab fa-facebook-f text-white"></span> <span
-                                            class="text-white d-block text-center">Continue with Facebook</span>
-                                    </a>
-                                </div>
-                                <div class="col-md-12">
-                                    <input type="Email" placeholder="Email" class="form-control mb-2">
-                                </div>
-                                <div class="col-md-12">
-                                    <input type="password" class="form-control" placeholder="Passowrd">
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="terms py-2 text-center">
-                                        <span>
-                                            By clicking Sign up, Continue with Facebook, or Continue with Google, you
-                                            agree
-                                            to
-                                            our
-                                            <a href=" terms&conditions.html">Terms and Conditions</a> and <a
-                                                href="privacy.html">Privacy Policy</a>.
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <a href="#" role="button" class="btn btn-orange-br-5 btn-block">Sign In</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Start Home Section -->
     <div class="home-section" id="targetSection">
