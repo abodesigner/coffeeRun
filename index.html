@@ -52,13 +52,20 @@
     <div class="modal fade" id="signUpModal" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+                <div class="modal-header text-center">
+                    <h5 class=" modal-title w-100 font-weight-bold" id="exampleModalLabel">Sign Up</h5>
 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
 
+                </div>
+
+                <div class="modal-span h-50 text-center d-flex flex-column justify-content-center align-items-center">
+                    <h6 class="mb-0 py-2">Alreay have an account?
+                        <a href="#" data-toggle="modal" data-target="#signInModal" data-dismiss="modal">
+                            Sign In</a>
+                    </h6>
                 </div>
 
                 <div class="modal-body">
@@ -79,9 +86,9 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <select class="form-control mb-2">
-                                    <option value="us">+1(US)</option>
-                                    <option value="ca">+1(CA)</option>
-                                    <option value="au">+61(AU)</option>
+                                    <option value="us">+44(UK)</option>
+                                    <option value="ca">+44(UK)</option>
+                                    <option value="au">+44(UK)</option>
                                 </select>
                             </div>
                             <div class="col-md-8">
@@ -92,12 +99,23 @@
                             <div class="col-md-12">
                                 <input type="password" class="form-control" placeholder="Passsowrd">
                             </div>
+                            <div class="col-md-12">
+                                <div class="terms py-2 text-center">
+                                    <span>
+                                        By clicking Sign up, Continue with Facebook, or Continue with Google, you agree
+                                        to
+                                        our
+                                        <a href=" terms&conditions.html">Terms and Conditions</a> and <a
+                                            href="privacy.html">Privacy Statement</a>.
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
 
-                    <button type="button" class="btn btn-danger btn-block">Sign Up</button>
+                    <a role="button" class="btn btn-orange-br-5 text-white btn-block">Sign Up</a>
                 </div>
             </div>
         </div>
@@ -129,21 +147,17 @@
 
                         <div class="container-fluid">
 
-
-
                             <div class="row">
                                 <div class="col-md-12">
                                     <a class="btn btn-block btn-social btn-google mb-2">
                                         <span class="fab fa-google text-white"></span> <span
-                                            class="text-white d-block text-center">Sign
-                                            in with Google</span>
+                                            class="text-white d-block text-center">Continue with Google</span>
                                     </a>
                                 </div>
                                 <div class="col-md-12">
                                     <a class="btn btn-block btn-social btn-facebook mb-2">
                                         <span class="fab fa-facebook-f text-white"></span> <span
-                                            class="text-white d-block text-center">Sign
-                                            in with Facebook</span>
+                                            class="text-white d-block text-center">Continue with Facebook</span>
                                     </a>
                                 </div>
                                 <div class="col-md-12">
@@ -151,6 +165,18 @@
                                 </div>
                                 <div class="col-md-12">
                                     <input type="password" class="form-control" placeholder="Passowrd">
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="terms py-2 text-center">
+                                        <span>
+                                            By clicking Sign up, Continue with Facebook, or Continue with Google, you
+                                            agree
+                                            to
+                                            our
+                                            <a href=" terms&conditions.html">Terms and Conditions</a> and <a
+                                                href="privacy.html">Privacy Statement</a>.
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
 

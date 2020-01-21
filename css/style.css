@@ -27,7 +27,7 @@ a:focus {
 
 a {
   text-decoration: none;
-  font-family: "Raleway";
+  font-family: "Roboto";
 }
 
 h1,
@@ -220,6 +220,15 @@ h2 {
   position: absolute;
   top: 7px;
   right: 168px;
+}
+
+.modal-span h6 {
+  color: #767676;
+}
+
+.terms span {
+  font-size: 14px;
+  color: #767676;
 }
 
 /* ======================================
