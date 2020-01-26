@@ -35,31 +35,114 @@
     </nav>
     <!-- End Navbar -->
 
-    <!-- Start Order-Head Section -->
-    <div class="order-head-section">
+    <!-- Start Cart Section -->
+    <div class="cart-section bg-light">
         <div class="container">
             <div class="row">
-                <div class="col-md-9 px-0">
-                    <div class="order-header">
-                        <div class="dark-overlay">
-                            <div class="order-content bg-warning p-2">
-                                <h2 class="mb-0">19grams (Karl-Liebknecht Str)</h2>
-                                <p>Coffee, Breakfast & Lunch</p>
+                <div class="col-md-8 offset-md-2 px-0">
+                    <div class="cart bg-white p-4">
+                        <div class="cart-header">
+
+                            <div class="cart-header-content">
+                                <h2 class="mb-0">Flat White</h2>
+                                <p class="time mb-0">READY IN ABOUT 2 MINS</p>
+                                <p class="open">AVAILABLE 9:00 AM TO 7:45 PM</p>
+                            </div>
+
+                            <hr>
+
+                        </div>
+
+                        <div class="cart-description">
+                            <div class="cart-description-content">
+                                <p>Espresso with fresh, steamed milk poured over it. Perfect for those who like a latte
+                                    with
+                                    a little less foam.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-3 px-0">
-                    <div class="order-address bg-dark text-white">
-                        <div class="order-address-content">
-                            <ul class="list-unstyled">
-                                <li class="street">Karl-Liebknecht-Straße 13. Berlin</li>
-                                <li class="tel">P:3027577809</li>
-                                <li class="b-hours">Business Hours Open 8:00 AM - 7:45 PM</li>
-                            </ul>
+
+                        <div class="form-order">
+                            <form>
+                                <label for="" class="mb-0">choose milk</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radio" id="radio1">
+                                    <label class="form-check-label" for="radio1">
+                                        Whole Milk
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radio" id="radio2">
+                                    <div class="d-flex justify-content-between">
+                                        <label class="form-check-label" for="radio2">Lactose Free Milk</label>
+                                        <div class="price-container">€0.50</div>
+                                    </div>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radio" id="radio3">
+
+                                    <div class="d-flex justify-content-between">
+                                        <label class="form-check-label" for="radio3">OATLY Milk</label>
+                                        <div class="price-container">€0.50</div>
+                                    </div>
+                                </div>
+
+                                <label for="" class="mb-0 mt-4">MODIFICATIONS</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="" id="check1" disabled>
+                                    <label class="form-check-label" for="check1">Make it Decaf - Currently not
+                                        available</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="" id="check2">
+                                    <label class="form-check-label" for="check2">Extra Espresso Shot</label>
+                                </div>
+
+                                <label for="" class="mb-0 mt-4">add sugar</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="r1" id="r1">
+                                    <label class="form-check-label" for="r1">1 sugar</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="r2" id="r2">
+                                    <label class="form-check-label" for="r2">2 sugar</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="r3" id="r3">
+                                    <label class="form-check-label" for="r3">no sugar</label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="" class="mt-4">LIST ANY SPECIAL REQUESTS YOU MAY HAVE (IE. ALLERGIES,
+                                        EXTRA SPICY,
+                                        ETC.)</label>
+                                    <input class="form-control" type="text" name="" id=""
+                                        placeholder="Max of 160 characters">
+                                </div>
+
+                                <div class="menu-item-container mb-4 d-flex justify-content-center">
+                                    <div class="menu-item-control" id="minus">-</div>
+                                    <div class="menu-item-quantity p-2">1</div>
+                                    <div class="menu-item-control" id="add">+</div>
+                                </div>
+
+
+                                <div class="form-actions">
+                                    <button type="button" value="Submit" class="btn btn-orange-br-5 btn-block">
+                                        Add to order</button>
+
+                                    <a href="#" role="button" class="btn btn-light text-danger btn-block">Cancel</a>
+                                </div>
+                            </form>
                         </div>
+
+
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

@@ -64,4 +64,20 @@ $(document).ready(function() {
 
     console.log(target);
   });
+
+  // Menu Cart
+  $("#add").on("click", function() {
+    var currentVal = parseInt($(".menu-item-quantity").html(), 10);
+    $(".menu-item-quantity").html(currentVal + 1);
+  });
+
+  $("#minus").on("click", function() {
+    var currentVal = parseInt($(".menu-item-quantity").html(), 10);
+
+    if (currentVal === 0) {
+      $(".menu-item-quantity").html(currentVal);
+    } else {
+      $(".menu-item-quantity").html(currentVal - 1);
+    }
+  });
 });

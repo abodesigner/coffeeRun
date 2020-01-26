@@ -757,3 +757,23 @@ ul.menu-items li.menu-item a.menu-item-inner h2.menu-item-title {
 ul.menu-items li.menu-item a.menu-item-inner span.menu-item-price {
   font-weight: bold;
 }
+
+/* Start Cart */
+.cart-header-content p.time,
+.cart-header-content p.open {
+  font-size: 12px;
+}
+
+.price-container {
+  color: #82828e;
+}
+
+.form-order form > label {
+  text-transform: uppercase;
+}
+
+.menu-item-control {
+  border: 1px solid #dee2e6;
+  padding: 6px 14px;
+  cursor: pointer;
+}
