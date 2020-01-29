@@ -252,6 +252,15 @@ h2 {
 ====================================== */
 .services-section {
   padding: 50px 0;
+  background: #162022;
+}
+
+.services-section h4 {
+  font-weight: bold;
+}
+
+.services-section .service-description {
+  color: #ccc;
 }
 
 .service-block .fas:before {
@@ -260,7 +269,6 @@ h2 {
 
 .service-block a.btn-link {
   font-size: 18px;
-  font-weight: bold;
   color: #d9751e;
 }
 
@@ -313,17 +321,16 @@ h2 {
 .list-content ul li a {
   color: #fff;
   text-transform: capitalize;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .list-content ul li a:hover {
   color: #d9751e;
-  font-weight: bold;
 }
 
 .icons i.fab {
   color: #fff;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.8s ease-in-out;
 }
 
 .icons i.fab:hover {
@@ -776,4 +783,20 @@ ul.menu-items li.menu-item a.menu-item-inner span.menu-item-price {
   border: 1px solid #dee2e6;
   padding: 6px 14px;
   cursor: pointer;
+}
+
+.order-card {
+  min-height: 1000px;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-left: 1px solid #d0d0d0;
+}
+
+.order-card h6,
+.order-card p {
+  color: #ccc;
 }
