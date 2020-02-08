@@ -50,22 +50,7 @@ $(document).ready(function() {
     }
   });*/
 
-  // Build dropdown-list based on another one
-
-  $("select#category").on("change", function() {
-    var target = $(this)
-      .find(":selected")
-      .attr("data-target");
-
-    //var id = $(this).attr("id");
-
-    //$("div[id^='"+id+"']").hide();
-    //$("#"+id+"-"+target).show();
-
-    console.log(target);
-  });
-
-  // Menu Cart
+  // Menu Cart Counter
   $("#add").on("click", function() {
     var currentVal = parseInt($(".menu-item-quantity").html(), 10);
     $(".menu-item-quantity").html(currentVal + 1);
@@ -79,5 +64,28 @@ $(document).ready(function() {
     } else {
       $(".menu-item-quantity").html(currentVal - 1);
     }
+  });
+
+  // Remove placeholder when press
+  $("#group_name").on("focus", function() {
+    $("#group_name").attr("placeholder", "");
+  });
+
+  $("#group_name").on("blur", function() {
+    $("#group_name").attr("placeholder", "Name of Group");
+  });
+
+  $("#friends").on("focus", function() {
+    $("#friends").attr("placeholder", "");
+  });
+
+  $("#friends").attr("placeholder", "Invite your friends");
+
+  $("#friends").on("blur", function() {
+    $("#friends").attr("placeholder", "Invite your friends");
+  });
+
+  $("#friends").tagsinput({
+    confirmKeys: [13, 44]
   });
 });

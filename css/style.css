@@ -44,6 +44,9 @@ h2 {
   text-transform: capitalize;
 }
 
+.group-order-form .bootstrap-tagsinput .badge {
+  margin-right: 5px;
+}
 .custom-navbar {
   padding: 0 0.5rem;
 }
@@ -793,7 +796,7 @@ ul.menu-items li.menu-item a.menu-item-inner span.menu-item-price {
   right: 0;
   left: 0;
   bottom: 0;
-  z-index:-1;
+  z-index: -1;
   border-left: 1px solid #d0d0d0;
 }
 
