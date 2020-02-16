@@ -265,7 +265,8 @@
     <script src="js/intlTelInput-jquery.min.js"></script>
     <script>
         // show countries with flags
-        $("#telephone").intlTelInput();
+        var input = document.querySelector("#telephone");
+        window.intlTelInput(input);
     </script>
     <script src="js/main.js"></script>
 </body>
