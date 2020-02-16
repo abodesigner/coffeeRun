@@ -6,11 +6,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Description Meta Attribute -->
+    <meta name="description" content="CoffeeRun provides to Customers
+    With your favourite coffee shops, cafes and restaurants at your fingertips, CoffeeRun satisfies your cravings and connects you with possibilities — more time and energy for yourself and those you love.
+    Start an order" />
+
+    <!-- Keywords Meta Attribute -->
+    <meta name="keywords" content="Coffee shops, sandwitches, cakes" />
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="css/all.css">
+
+    <!-- animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -23,31 +34,37 @@
 
 <body>
 
-    <!-- Start Navbar -->
-    <nav class="navbar navbar-expand-lg bg-light">
-        <a class="navbar-brand" href="index.html">
-            <img src="img/logo.png" alt="coffeeRun_logo" class="img-fluid">
-        </a>
-        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
-            aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <!-- Start Home-Section -->
+    <section class="home-section">
+        <!-- Start Home-Section-Header -->
+        <div class="home-section-header">
+            <!-- Start Navbar -->
+            <nav class="navbar custom-navbar navbar-expand-lg">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/logo.png" alt="coffeeRun_logo" class="img-fluid">
+                </a>
+                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+                    data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <div class="collapse navbar-collapse" id="main-navbar">
+                <div class="collapse navbar-collapse" id="main-navbar">
 
-            <form class="form-inline ml-auto my-lg-0">
-                <a href="signin.html" class="btn btn-brown mr-sm-2" role="button">
-                    Sign In</a>
-                <a href="signup.html" class="btn btn-orange my-2" role="button">
-                    Sign Up</a>
-            </form>
+                    <form class="form-inline ml-auto my-lg-0">
+                        <a href="signin.html" class="btn btn-outline-brown mr-sm-2" role="button">
+                            Sign In</a>
+                        <a href="signup.html" class="btn btn-orange my-2" role="button">
+                            Sign Up</a>
+                    </form>
+                </div>
+            </nav>
+            <!-- End Navbar -->
         </div>
-    </nav>
-    <!-- End Navbar -->
+        <!-- End Home-Section-Header -->
 
-    <!-- Start Home Section -->
-    <div class="home-section" id="targetSection">
         <div class="container">
+            <!-- Start home-section-content -->
             <div class="home-section-content">
                 <div class="home-title">
                     <h1>Pick Up Your Favourite</h1>
@@ -59,31 +76,34 @@
                         <img src="img/marker-24.png" alt="marker">
                     </span>
                     <span class="search">
-                        <img src="img/arrow.png" alt="search">
+                        <a href="#">
+                            <img src="img/arrow.png" alt="search-input">
+                        </a>
                     </span>
                 </div>
             </div>
+            <!-- End home-section-content -->
         </div>
-    </div>
-    <!-- End Home Section -->
+    </section>
+    <!-- End Home-Section -->
 
     <!-- Start Services Section -->
-    <div class="services-section text-white">
+    <div class="services-section bg-brown text-white">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
-                    <div class="service-block text-center">
+                    <div class="service-block-content text-center">
                         <i class="fas fa-briefcase fa-4x d-block mb-4"></i>
                         <h4 class="service-title mb-3">Business</h4>
                         <p class="service-description">There is no better place to build a team than around a
                             food-packed table</p>
-                        <a href="business.html" class="btn-link" target="_blank">Start Connect <i
-                                class="fas fa-angle-double-right"></i></a>
+                        <a href="business.html" class="btn-link" target="_blank">Start Connect
+                            <i class="fas fa-angle-double-right"></i></a>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <div class="service-block text-center">
+                    <div class="service-block-content text-center">
                         <i class="fas fa-users fa-4x d-block mb-4"></i>
                         <h4 class="service-title mb-3">Group Order</h4>
                         <p class="service-description">Allows multiple people to add their individual items into a
@@ -95,7 +115,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <div class="service-block text-center">
+                    <div class="service-block-content text-center">
                         <i class="fas fa-hands-helping fa-4x d-block mb-4"></i>
                         <h4 class="service-title mb-3">Become a Partner</h4>
                         <p class="service-description">Grow your business and reach new customers by partnering with us.
@@ -106,7 +126,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <div class="service-block text-center">
+                    <div class="service-block-content text-center">
                         <i class="fas fa-mobile-alt fa-4x d-block mb-4"></i>
                         <h4 class="service-title mb-3">Try the App</h4>
                         <p class="service-description">Get the best CoffeeRun experience with live order tracking.
@@ -125,7 +145,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="info-box">
+                    <div class="info-box wow slideInLeft" data-wow-duration="2s">
                         <h2>Gets you what you want, when you want it.</h2>
                         <p> Order ahead for coffee, sandwiches ,salads, burgers, sushi,
                             pizza and more with CoffeeRun
@@ -135,7 +155,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="image-box">
+                    <div class="image-box wow slideInRight" data-wow-duration="2s">
                         <img src="img/CR14.jpg" alt="cr14" class="img-fluid">
                     </div>
                 </div>
@@ -227,7 +247,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="icons text-center w-100 mb-3">
+                <div class="icons text-center w-100 mb-4">
                     <a href="https://twitter.com/CoffeeRunApp1">
                         <i class="fab fa-twitter-square fa-2x mr-sm-2"></i>
                     </a>
@@ -254,6 +274,12 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- WOW animation -->
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
     <!-- Custom JS -->
     <script src="js/main.js"></script>
 </body>

@@ -1,8 +1,8 @@
 /*
-  Theme Name : CoffeeRun
-  Front End Developer : Mohammed Abosalim
-  Website : "www.thecoffeerunapp.com"
-  Version: 0.0.1
+  Theme Name   : CoffeeRun
+  UI Developer : Mohammed Abosalim
+  Website URL  : "www.thecoffeerunapp.com"
+  Version      : 0.0.1
 
   1- Global
   2- Home Page
@@ -16,9 +16,9 @@
 
 */
 
-/* ======================================
+/*=======================
       Global Styles
-====================================== */
+========================*/
 a:hover,
 a:focus {
   text-decoration: none;
@@ -47,34 +47,18 @@ h2 {
 .group-order-form .bootstrap-tagsinput .badge {
   margin-right: 5px;
 }
-.custom-navbar {
-  padding: 0 0.5rem;
-}
 
+/* CUSTOM BUTTONS */
 .btn-outline-brown {
   color: #3b2414;
   border-color: #3b2414;
   border-radius: 20px;
-}
-
-.btn-brown {
-  color: #7b5236;
-  border-color: transparent;
-  font-weight: 600;
-  border-radius: 20px;
-}
-
-.btn-brown:hover,
-.btn-brown:focus {
-  background-color: #7b5236;
-  color: #fff;
-  font-weight: bold;
+  transition: all 0.5s ease-in-out;
 }
 
 .btn-outline-brown:hover {
   color: #fff;
   background-color: #3b2414;
-  border-color: #3b2414;
 }
 
 .btn-orange {
@@ -95,6 +79,18 @@ h2 {
 .btn-orange:focus {
   color: #fff;
 }
+
+/* .btn-brown {
+  color: #7b5236;
+  border-color: transparent;
+  border-radius: 20px;
+} */
+
+/* .btn-brown:hover,
+.btn-brown:focus {
+  background-color: #392413;
+  color: #fff;
+} */
 
 .btn-white {
   border-color: #fff;
@@ -119,6 +115,7 @@ h2 {
   border-color: #335d7f;
   color: #fff;
 }
+
 .btn-outline-blue {
   background-color: transparent;
   border-color: transparent;
@@ -138,18 +135,7 @@ h2 {
   background-color: #ecfbfb;
 }
 
-.custom-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(59,36,20, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
-
-.custom-toggler.navbar-toggler {
-  border-color: rgb(59, 36, 20);
-}
-
-.overflow-hidden {
-  overflow: hidden;
-}
-
+/* Fonts */
 @font-face {
   font-family: "Raleway";
   src: url(../fonts/Raleway/Raleway-Regular.ttf);
@@ -163,8 +149,13 @@ h2 {
 /* ======================================
     Navbar Section
 ====================================== */
-.navbar {
+.home-section-header .navbar {
   border-bottom: 1px solid #d0d0d0;
+}
+
+.custom-navbar {
+  padding: 0 1rem;
+  background: rgba(237, 223, 188, 0.8);
 }
 
 .main-navbar form a.btn {
@@ -172,13 +163,25 @@ h2 {
   outline: none;
 }
 
-.navbar .navbar-brand img {
+.home-section-header .navbar .navbar-brand img {
   width: 45px;
 }
 
-/* ======================================
-    Home Page
-====================================== */
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(57,36,19, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: rgb(57, 36, 19);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* ====================
+    Home Section
+======================= */
 .home-section {
   position: relative;
   overflow: hidden;
@@ -191,8 +194,8 @@ h2 {
 
 .home-section-content {
   position: absolute;
-  top: 30%;
-  transform: translateY(-30%);
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .home-section-content h1 {
@@ -212,10 +215,10 @@ h2 {
 
 .search-box {
   position: relative;
+  width: 75%;
 }
 
 .search-box input {
-  width: 75%;
   border-radius: 20px;
   height: 45px;
   padding-left: 40px;
@@ -230,7 +233,7 @@ h2 {
 .search-box span.search {
   position: absolute;
   top: 7px;
-  right: 168px;
+  right: 5px;
 }
 
 .signin-form {
@@ -255,32 +258,33 @@ h2 {
 ====================================== */
 .services-section {
   padding: 50px 0;
-  background: #162022;
+  /* background: #392413; */
+  background-color: #eddfbc;
 }
 
-.services-section h4 {
+.service-block-content .service-title {
   font-weight: bold;
+  color: #392413;
 }
 
-.services-section .service-description {
-  color: #ccc;
-}
-
-.service-block .fas:before {
-  color: #d9751e;
-}
-
-.service-block a.btn-link {
-  font-size: 18px;
-  color: #d9751e;
-}
-
-.service-description {
+.service-block-content .service-description {
+  color: #392413;
   min-height: 72px;
 }
 
-.service-block a.btn-link {
+.service-block-content .fas:before {
+  color: #d9751e;
+}
+
+.service-block-content a.btn-link {
+  font-size: 18px;
+  color: #d9751e;
+  font-weight: 700;
+}
+
+.service-block-content a.btn-link:hover {
   text-decoration: none;
+  color: #d9751e;
 }
 
 /* ======================================
@@ -292,11 +296,25 @@ h2 {
 
 .info-box {
   padding-top: 60px;
+  animation-duration: 3s;
+}
+
+.info-box h2 {
+  color: #2b3b55;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.info-box p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 .image-box {
   position: relative;
   overflow: hidden;
+  animation-duration: 3s;
 }
 .image-box img {
   transition: all 0.3s ease-in-out;
@@ -311,9 +329,9 @@ h2 {
     Footer Section
 ====================================== */
 .footer {
-  min-height: 300px;
-  padding: 40px 0;
-  background-color: #335d7f;
+  min-height: 200px;
+  padding: 20px 0;
+  background: #2b3b55;
 }
 
 .list-content ul li {
@@ -324,7 +342,7 @@ h2 {
 .list-content ul li a {
   color: #fff;
   text-transform: capitalize;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .list-content ul li a:hover {
@@ -333,7 +351,7 @@ h2 {
 
 .icons i.fab {
   color: #fff;
-  transition: all 0.8s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .icons i.fab:hover {

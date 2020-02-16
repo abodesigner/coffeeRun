@@ -1,4 +1,10 @@
 @media (max-width: 574px) {
+  /* GLOBAL STYLES */
+  .btn-outline-brown {
+    color: #fff;
+    border-color: #fff;
+  }
+
   /* NAVBAR */
   .navbar form.form-inline {
     display: flex;
@@ -84,6 +90,12 @@
 }
 
 @media (min-width: 575px) and (max-width: 767px) {
+  /* GLOBAL STYLES */
+  .btn-outline-brown {
+    color: #fff;
+    border-color: #fff;
+  }
+
   /* NAVBAR */
   .navbar form.form-inline {
     display: flex;
@@ -169,6 +181,12 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+  /* GLOBAL STYLES */
+  .btn-outline-brown {
+    color: #fff;
+    border-color: #fff;
+  }
+
   /* NAVBAR */
   .navbar form.form-inline {
     display: flex;
