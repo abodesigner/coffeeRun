@@ -173,7 +173,7 @@ h2 {
 }
 
 .navbar .navbar-brand img {
-  width: 55px;
+  width: 45px;
 }
 
 /* ======================================
@@ -429,6 +429,35 @@ h2 {
 /* ======================================
     Restuarant Page
 ====================================== */
+.resto-navbar ul.navbar-nav {
+  width: 45%;
+}
+
+.resto-navbar ul li.nav-item {
+  padding: 0.5rem 1rem;
+}
+.resto-navbar ul li.nav-item a.nav-link {
+  color: #267886;
+  text-align: center;
+  padding: 0;
+}
+
+.resto-navbar ul li.nav-item:after {
+  content: "";
+}
+
+.resto-navbar form.form-inline {
+  width: 50%;
+}
+.resto-navbar form.form-inline input.form-control {
+  border-radius: 0;
+  border-color: #bbdefb;
+  background-color: #bbdefb;
+}
+
+.resto-navbar form.form-inline input.form-control::placeholder {
+  color: #267886;
+}
 
 .restaurant-section {
   margin-top: 100px;
@@ -606,6 +635,35 @@ h2 {
   font-weight: 300;
   letter-spacing: 0.05em;
   color: #7c7b88;
+}
+
+.orders-section .app {
+  background-color: #bbdefb;
+}
+
+.orders-section .app a {
+  color: #267886;
+}
+
+.app-download-form {
+  display: none;
+}
+
+.rotate {
+  -moz-transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+.rotate.down {
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.m-Number {
+  color: #a2a4b6;
+  font-weight: bold;
+  margin-bottom: 0;
 }
 
 /* ======================================

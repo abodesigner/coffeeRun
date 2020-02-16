@@ -85,7 +85,28 @@ $(document).ready(function() {
     $("#friends").attr("placeholder", "Invite your friends");
   });
 
-  $("#friends").tagsinput({
-    confirmKeys: [13, 44]
+  // show/hide download app form
+  $(".app a").on("click", function() {
+    $(".app-download-form").slideToggle();
+    $(".rotate").toggleClass("down");
   });
 });
+
+// // show app download form using vanilia JS
+// let app = document.querySelector(".orders-section .app a");
+
+// // addEventListener
+// app.addEventListener("click", runHandler);
+
+// // event Handker function
+// function runHandler() {
+//   // toggle show/hide app form
+//   const appDownloadLink = document.querySelector(".app-download-link");
+//   if (appDownloadLink.style.display === "none") {
+//     appDownloadLink.style.display = "flex";
+//     appDownloadLink.classList.add("toggle-content");
+//   } else {
+//     appDownloadLink.style.display = "none";
+//     appDownloadLink.classList.remove("toggle-content");
+//   }
+// }
