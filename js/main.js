@@ -90,9 +90,4 @@ $(document).ready(function() {
     $(".app-download-form").slideToggle();
     $(".rotate").toggleClass("down");
   });
-
-  // show countries with flags
-  $("#telephone").intlTelInput({
-    // whether or not to allow the dropdown
-  });
 });
