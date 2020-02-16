@@ -94,25 +94,5 @@ $(document).ready(function() {
   // show countries with flags
   $("#telephone").intlTelInput({
     // whether or not to allow the dropdown
-    allowDropdown: true
   });
 });
-
-// // show app download form using vanilia JS
-// let app = document.querySelector(".orders-section .app a");
-
-// // addEventListener
-// app.addEventListener("click", runHandler);
-
-// // event Handker function
-// function runHandler() {
-//   // toggle show/hide app form
-//   const appDownloadLink = document.querySelector(".app-download-link");
-//   if (appDownloadLink.style.display === "none") {
-//     appDownloadLink.style.display = "flex";
-//     appDownloadLink.classList.add("toggle-content");
-//   } else {
-//     appDownloadLink.style.display = "none";
-//     appDownloadLink.classList.remove("toggle-content");
-//   }
-// }
