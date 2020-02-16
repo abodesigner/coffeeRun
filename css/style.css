@@ -149,7 +149,7 @@ h2 {
 /* ======================================
     Navbar Section
 ====================================== */
-.home-section-header .navbar {
+.navbar {
   border-bottom: 1px solid #d0d0d0;
 }
 
@@ -163,9 +163,9 @@ h2 {
   outline: none;
 }
 
-.home-section-header .navbar .navbar-brand img {
+/* .home-section-header .navbar .navbar-brand img {
   width: 45px;
-}
+} */
 
 .custom-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(57,36,19, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
@@ -361,19 +361,18 @@ h2 {
 /* ======================================
     Business Page
 ====================================== */
-.business-page-header {
+.business-page-section {
   position: relative;
-
   height: 100vh;
   background: url(../img/BUS.jpg) no-repeat;
   background-position: center center;
   background-size: cover;
 }
 .business-page-content {
-  width: 50%;
+  width: 60%;
   position: absolute;
-  top: 40%;
-  transform: translateY(-40%);
+  top: 50%;
+  transform: translateY(-50%);
 }
 .business-page-content h2 {
   color: #fff;
