@@ -99,7 +99,8 @@ h2 {
 }
 
 .text-blue {
-  color: #335d7f;
+  /* color: #335d7f; */
+  color: #2b3b55;
 }
 
 .btn-blue {
@@ -405,9 +406,8 @@ h2 {
 /* ======================================
     Group-order Page
 ====================================== */
-.group-order-page-header {
+.group-order-page {
   position: relative;
-
   height: 100vh;
   background: url(../img/GO.jpg) no-repeat;
   background-position: center center;
@@ -416,8 +416,8 @@ h2 {
 .group-order-page-content {
   width: 50%;
   position: absolute;
-  top: 40%;
-  transform: translateY(-40%);
+  top: 50%;
+  transform: translateY(-50%);
 }
 .group-order-page-content h2 {
   color: #fff;
@@ -433,14 +433,21 @@ h2 {
   text-shadow: 2px 2px 5px rgb(53, 53, 53, 1);
 }
 
+.group-order-features-section {
+  background: #eddfbc;
+}
 .group-order-features-section .feature-box img {
   width: 100px;
 }
 
-.group-order-features-section .feature-box h5 {
-  color: #335d7f;
+.group-order-features-section .feature-box h4 {
+  color: #d9751e;
   margin-top: 20px;
   margin-bottom: 25px;
+}
+
+.group-order-features-section .feature-box p {
+  color: #2b3b55;
 }
 
 /* ======================================
@@ -499,7 +506,7 @@ h2 {
 
 .dark-overlay {
   min-height: 600px;
-  background: rgba(134, 193, 234, 0.2);
+  background: rgba(134, 193, 234, 0.3);
   position: absolute;
   top: 0;
   left: 0;
