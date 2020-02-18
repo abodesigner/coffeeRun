@@ -36,7 +36,7 @@
 
     <!-- Start signIn -->
     <div class="signup-form bg-light py-5 d-flex justify-content-center">
-        <form action="" method="POST" class="bg-white py-4 w-25 ">
+        <form action="#" id="signup-form" method="POST" class="bg-white py-4 w-25">
             <h2 class="text-center font-weight-bold mb-4">Sign Up</h2>
             <div class="container">
 
@@ -45,7 +45,7 @@
                         <div
                             class="modal-span h-50 text-center d-flex flex-column justify-content-center align-items-center">
                             <h6 class="mb-0 py-2">Already have an account?
-                                <a href="signup.html" class="">
+                                <a href="signin.html" class="">
                                     Sign In</a>
                             </h6>
                         </div>
@@ -67,34 +67,37 @@
                 </div>
 
                 <div class="row">
+                    <div id="error"></div>
                     <div class="col-md-6">
-                        <input type="text" placeholder="First Name" class="form-control mb-2">
+                        <input type="text" id="fname" name="fname" placeholder="First Name" class="form-control mb-2"
+                            required>
                     </div>
                     <div class="col-md-6">
-                        <input type="text" placeholder="Last Name" class="form-control mb-2">
+                        <input type="text" id="lname" name="lname" placeholder="Last Name" class="form-control mb-2"
+                            required>
                     </div>
                 </div>
                 <div class="row">
 
                     <div class="col-md-12">
-                        <input type="email" class="form-control mb-2" placeholder="Email">
+                        <input type="email" class="form-control mb-2" placeholder="Email" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-5">
-                        <select name="" id="" class="form-control mb-2">
+                        <select name="c-key" id="c-key" class="form-control mb-2" required>
                             <option value="uk">+44(UK)</option>
                             <option value="uk">+44(UK)</option>
                             <option value="uk">+44(UK)</option>
                         </select>
                     </div>
                     <div class="col-md-7">
-                        <input type="number" class="form-control mb-2" placeholder="Mobile">
+                        <input type="tel" class="form-control mb-2" placeholder="Mobile" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="password" class="form-control mb-2" placeholder="Passowrd">
+                        <input type="password" class="form-control mb-2" placeholder="Passowrd" required>
                     </div>
                 </div>
                 <div class="row">
@@ -114,7 +117,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <a href="#" role="button" class="btn btn-orange-br-5 btn-block">Sign Up</a>
+                        <button type="submit" class="btn btn-orange-br-5 btn-block">Sign Up</button>
                     </div>
                 </div>
             </div>
