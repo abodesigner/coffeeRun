@@ -461,7 +461,7 @@ h2 {
   padding: 0.5rem 1rem;
 }
 .resto-navbar ul li.nav-item a.nav-link {
-  color: #267886;
+  color: #392413;
   text-align: center;
   padding: 0;
 }
@@ -475,12 +475,12 @@ h2 {
 }
 .resto-navbar form.form-inline input.form-control {
   border-radius: 0;
-  border-color: #bbdefb;
-  background-color: #bbdefb;
+  border-color: #fff;
+  /* background-color: #bbdefb; */
 }
 
 .resto-navbar form.form-inline input.form-control::placeholder {
-  color: #267886;
+  color: #aaa;
 }
 
 .restaurant-section {
