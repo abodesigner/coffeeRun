@@ -25,7 +25,7 @@
 
     <!-- Start Navbar -->
     <nav class="navbar custom-navbar navbar-expand-lg">
-        <a class="navbar-brand w-100 d-flex justify-content-center" href="#">
+        <a class="navbar-brand w-100 d-flex justify-content-center" href="index.html">
             <img src="img/logo.png" alt="coffeeRun_logo" class="img-fluid">
         </a>
         <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
@@ -34,6 +34,75 @@
         </button>
     </nav>
     <!-- End Navbar -->
+
+    <!-- Start Order-Head Section -->
+    <div class="order-head-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="order-header">
+                        <div class="dark-overlay">
+                            <div class="order-content bg-warning p-2">
+                                <h2 class="r-name mb-0">V69 COFFEE (GRESHAM ST)</h2>
+                                <p class="r-address">30 Gresham Street</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="order-card text-center">
+                        <div class="cart-empty">
+                            <img src="img/cart.jpg" alt="cart" class="img-fluid py-4" width="250px">
+                            <h6 class="mt-5">Your cart is empty</h6>
+                            <p>Add items to get started</p>
+                        </div>
+                        <div class="order-card-container">
+                            <div class="order-card-header p-2">
+                                <h5 class="r-name">V69 COFFEE (GRESHAM ST)</h5>
+                                <p class="r-address mb-0">30 Gresham Street</p>
+                            </div>
+
+                            <div class="order-card-body py-2">
+                                <div class="d-flex">
+                                    <div class=" order-qty p-2">1</div>
+                                    <div class="order-description p-2">
+                                        <span class="name">Flat White</span>
+                                        <div class="extra-options ml-3">
+                                            <span class="size">large,</span>
+                                            <span class="milk">whole</span>
+                                        </div>
+                                    </div>
+                                    <div class="order-price p-2 flex-grow-1 text-right">$2.80</div>
+                                </div>
+
+                            </div>
+                            <hr>
+                            <div class="order-card-footer">
+                                <div class="d-flex px-2 justify-content-between">
+                                    <span class="subtotal">Subtotal</span>
+                                    <span>$2.34</span>
+                                </div>
+                                <div class="d-flex px-2 justify-content-between">
+                                    <span class="tax">Tax</span>
+                                    <span>$0.20</span>
+                                </div>
+                                <div class="d-flex px-2 justify-content-between">
+                                    <span class="total"><strong>Total</strong></span>
+                                    <span>$2.80</span>
+                                </div>
+                                <div class="d-flex px-2 justify-content-between">
+                                    <span class="rewards">Rewards</span>
+                                    <span>28pt</span>
+                                </div>
+                                <small class="h-details d-block text-left px-2">Hide Details</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Order-Head Section -->
 
     <!-- Start Cart Section -->
     <div class="cart-section">
@@ -59,76 +128,112 @@
                         </div>
 
                         <div class="form-order">
-                            <form method="POST" action="" id="">
-                                <label for="" class="mb-0">choose milk</label>
+                            <form action="#" method="POST" id="menu-order">
+
+                                <!-- Select Size -->
+                                <label for="" class="mb-0"><strong> choose size</strong></label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="milk" id="radio1">
+                                    <input class="form-check-input" type="radio" name="size" id="regular"
+                                        value="regular">
                                     <label class="form-check-label" for="radio1">
-                                        Whole Milk
+                                        Regular
                                     </label>
+                                    <div class="price-container">€0.50</div>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="size" id="large" value="large">
+                                    <div class="d-flex justify-content-between">
+                                        <label class="form-check-label" for="radio2">Large</label>
+                                        <div class="price-container">€2.50</div>
+                                    </div>
+                                </div>
+
+                                <!-- Select Milk -->
+                                <label for="" class="mb-0 mt-4">
+                                    <strong>
+                                        choose milk</strong></label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="milk" id="radio1" value="whole">
+                                    <div class="d-flex justify-content-between">
+                                        <label class="form-check-label" for="radio1">
+                                            Whole
+                                        </label>
+                                        <div class="price-container">€1.50</div>
+                                    </div>
                                 </div>
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="milk" id="radio2"
-                                        value="lactose">
+                                        value="Semi-Skimmed">
                                     <div class="d-flex justify-content-between">
-                                        <label class="form-check-label" for="radio2">Lactose Free Milk</label>
+                                        <label class="form-check-label" for="radio2">Semi-Skimmed</label>
                                         <div class="price-container">€0.50</div>
                                     </div>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="milk" id="radio3" value="otaly">
+                                    <input class="form-check-input" type="radio" name="milk" id="radio3" value="almond">
 
                                     <div class="d-flex justify-content-between">
-                                        <label class="form-check-label" for="radio3">OATLY Milk</label>
-                                        <div class="price-container">€0.50</div>
+                                        <label class="form-check-label" for="radio3">Almond</label>
+                                        <div class="price-container">€0.75</div>
                                     </div>
                                 </div>
 
-                                <label for="" class="mb-0 mt-4">MODIFICATIONS</label>
+                                <!-- Extra Options -->
+                                <label for="" class="mb-0 mt-4">
+                                    <strong>extra options</strong></label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="" id="check1" disabled>
+                                    <input class="form-check-input" type="checkbox" id="check1" value="Make it Decaf - Currently not
+                                    available" name="options[]" disabled>
                                     <label class="form-check-label" for="check1">Make it Decaf - Currently not
                                         available</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="" id="check2">
+                                    <input class="form-check-input" type="checkbox" id="check2"
+                                        value="Extra Espresso Shot" name="options[]">
                                     <label class="form-check-label" for="check2">Extra Espresso Shot</label>
                                 </div>
 
-                                <label for="" class="mb-0 mt-4">add sugar</label>
+                                <!-- Sugar -->
+                                <label for="" class="mb-0 mt-4">
+                                    <strong>add sugar</strong> </label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r1" id="r1">
-                                    <label class="form-check-label" for="r1">1 sugar</label>
+                                    <input class="form-check-input" type="radio" name="sugar" id="sugar1" value="1">
+                                    <label class="form-check-label" for="sugar1">1 sugar</label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r2" id="r2">
-                                    <label class="form-check-label" for="r2">2 sugar</label>
+                                    <input class="form-check-input" type="radio" name="sugar" id="sugar2" value="2">
+                                    <label class="form-check-label" for="sugar2">2 sugar</label>
                                 </div>
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="r3" id="r3">
-                                    <label class="form-check-label" for="r3">no sugar</label>
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="radio" name="sugar" id="sugar3" value="no">
+                                    <label class="form-check-label" for="sugar3">no sugar</label>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="" class="mt-4">LIST ANY SPECIAL REQUESTS YOU MAY HAVE (IE. ALLERGIES,
-                                        EXTRA SPICY,
-                                        ETC.)</label>
-                                    <input class="form-control" type="text" name="" id=""
-                                        placeholder="Max of 160 characters">
+
+                                <small class="text-danger">LIST ANY SPECIAL REQUESTS YOU MAY HAVE (IE.
+                                    ALLERGIES,
+                                    EXTRA SPICY,
+                                    ETC.)</small>
+                                <!-- TAGS Input -->
+                                <div class="tag-container">
+                                    <input type="text">
                                 </div>
 
                                 <div class="menu-item-container mb-4 d-flex justify-content-center">
-                                    <div class="menu-item-control" id="minus">-</div>
+                                    <div class="menu-item-control" id="minus">
+                                        -
+                                    </div>
                                     <div class="menu-item-quantity p-2">1</div>
                                     <div class="menu-item-control" id="add">+</div>
                                 </div>
 
                                 <div class="form-actions d-flex flex-column justify-content-center align-items-center">
-                                    <button type="button" value="Submit"
+                                    <button type="submit" id="addToCart"
                                         class="btn btn-orange-br-5 mb-sm-2 w-25 text-uppercase">
                                         Add to Cart</button>
 
@@ -138,18 +243,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="order-card text-center">
-                        <img src="img/cart.jpg" alt="cart" class="img-fluid py-4" width="250px">
-                        <h6 class="mt-5">Your cart is empty</h6>
-                        <p>Add items from menu to get started</p>
-                    </div>
-                </div>
+
 
             </div>
         </div>
     </div>
-    <!-- End Order-Head Section -->
+    <!-- End Cart Section -->
 
     <!-- Start Footer Section -->
     <section class="footer">

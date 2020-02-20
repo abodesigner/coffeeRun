@@ -688,6 +688,79 @@ h2 {
   font-weight: bold;
   margin-bottom: 0;
 }
+/* ======================================
+    AddToCart Page
+====================================== */
+.tag-container {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  margin-top: 0;
+  margin-bottom: 40px;
+  padding: 8px;
+  display: flex;
+}
+
+.tag-container .tag {
+  display: flex;
+  border: 1px solid #444;
+  margin: 0 5px;
+  padding: 3px 6px;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 3px;
+  /* background: #ffc107; */
+  background-color: #f2f2f2;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.tag-container input {
+  flex: 1;
+  outline: none;
+  border: 0;
+}
+
+.tag-container .tag span {
+  margin-right: 8px;
+}
+
+.tag-container .tag i {
+  cursor: default;
+}
+
+.order-card-header {
+  background: #d9751e;
+  color: #fff;
+}
+
+.order-card-body {
+  /* background: #f8f8f8; */
+  color: #333;
+}
+
+.options {
+  margin-left: 25px;
+}
+
+.order-card-footer {
+  /* background: #eddfbc; */
+  color: #333;
+}
+
+.h-details {
+  color: #8c8c8c;
+  cursor: pointer;
+}
+
+.subtotal,
+.tax,
+.rewards {
+  color: #444;
+}
+
+.r-address {
+  color: #333;
+}
 
 /* ======================================
     AboutUs Page
@@ -879,9 +952,4 @@ ul.menu-items li.menu-item a.menu-item-inner span.menu-item-price {
   bottom: 0;
   z-index: -1;
   border-left: 1px solid #d0d0d0;
-}
-
-.order-card h6,
-.order-card p {
-  color: #ccc;
 }
