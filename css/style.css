@@ -953,3 +953,8 @@ ul.menu-items li.menu-item a.menu-item-inner span.menu-item-price {
   z-index: -1;
   border-left: 1px solid #d0d0d0;
 }
+
+.order-card h6,
+.order-card p {
+  color: #999;
+}

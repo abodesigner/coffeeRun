@@ -92,12 +92,25 @@ $(document).ready(function() {
   });
 });
 
-// add items to cart
-const restName = document.querySelector(".order-content .r-name");
-const restAddress = document.querySelector(".order-content .r-address");
+// add items to cart dynamically
 
-const addToCartBtn = document.getElementById("addToCart");
+// grab elements
+const addToCartBtn = document.querySelector("#addToCart");
+const orderCartContainer = document.querySelector(".order-cart-container");
+const restName = document.querySelector("h2.r-name");
+const restAddress = document.querySelector("p.r-address");
+const itemQty = document.querySelector(".menu-item-quantity");
+const orderName = document.querySelector(".cart-header-content h2");
+
+const orderSize = document.querySelector(".size");
+const orderMilk = document.querySelector(".milk");
+const orderPrice = document.querySelector(".order-price");
+
+// add eventListener
 addToCartBtn.addEventListener("click", function(e) {
+  // prevent efault pehaviour of form
+  e.preventDefault();
+
   // get checked value from Size radio buttons
   const radioSizeBtns = document.getElementsByName("size");
   let checkedSizeVal;
@@ -134,13 +147,205 @@ addToCartBtn.addEventListener("click", function(e) {
     }
   });
 
+  // Remove cart-empty div
+  const childDiv = document.querySelector(".cart-empty");
+  const parent = childDiv.parentNode;
+  parent.removeChild(childDiv);
+
+  /*======================== 
+     Create Order-Cart-Hader
+    ========================
+  */
+  const divHeader = document.createElement("div");
+  divHeader.setAttribute("class", "order-card-header p-2");
+
+  // Create Restaurant Name & add value from user selection
+  const restNameElm = document.createElement("h5");
+  restNameElm.setAttribute("class", "r-name");
+  restNameElm.textContent = restName.textContent;
+
+  // Create Restaurant Address & add value from user selection
+  const restAddressElm = document.createElement("p");
+  restAddressElm.setAttribute("class", "r-address mb-0");
+  restAddressElm.textContent = restAddress.textContent;
+
+  //append children to divHeader
+  divHeader.appendChild(restNameElm);
+  divHeader.appendChild(restAddressElm);
+
+  // append divHeader to orderCartContainer
+  orderCartContainer.prepend(divHeader);
+
+  /*======================== 
+     Create Order-Cart-Body
+    ========================
+  */
+
+  // Create Order-Cart-Body
+  const divBody = document.createElement("div");
+  divBody.setAttribute("class", "order-card-body py-2");
+
+  const flexDiv = document.createElement("div");
+  flexDiv.setAttribute("class", "d-flex");
+
+  const qtyDiv = document.createElement("div");
+  qtyDiv.setAttribute("class", "order-qty p-2");
+  qtyDiv.textContent = itemQty.textContent;
+
+  const descDiv = document.createElement("div");
+  qtyDiv.setAttribute("class", "order-description p-2");
+
+  const priceDiv = document.createElement("div");
+  priceDiv.setAttribute("class", "order-price p-2 flex-grow-1 text-right");
+  //priceDiv.textContent = orderPrice.textContent;
+
+  const orderNameElm = document.createElement("span");
+  orderNameElm.setAttribute("class", "name");
+  orderNameElm.textContent = orderName.textContent;
+
+  const extraOptionsDiv = document.createElement("div");
+  extraOptionsDiv.setAttribute("class", "extra-options ml-3");
+
+  // child of extraOptionsDiv
+  const sizeSpan = document.createElement("span");
+  sizeSpan.setAttribute("class", "size");
+  sizeSpan.textContent = checkedSizeVal;
+  sizeSpan.textContent += ",";
+  const milkSpan = document.createElement("span");
+  milkSpan.setAttribute("class", "milk");
+  milkSpan.textContent = checkedMilkVal;
+  // add child to extraOptionsDiv
+  extraOptionsDiv.appendChild(sizeSpan);
+  extraOptionsDiv.appendChild(milkSpan);
+
+  // add child to descDiv
+  descDiv.appendChild(orderNameElm);
+  descDiv.appendChild(extraOptionsDiv);
+
+  // add child to flexDiv
+  flexDiv.appendChild(qtyDiv);
+  flexDiv.appendChild(descDiv);
+  flexDiv.appendChild(priceDiv);
+
+  // add flexDiv to divContainer
+  divBody.prepend(flexDiv);
+
+  const line = document.createElement("hr");
+  divBody.appendChild(line);
+
+  // add divBody to orderCartContainer
+  orderCartContainer.appendChild(divBody);
+
+  /*=========================== 
+     Create Order-Cart-Footer
+    =========================
+  */
+
+  // create
+  const divFooter = document.createElement("div");
+  divFooter.setAttribute("class", "order-card-footer");
+
+  // create subtotal item
+  const subTotalContainer = document.createElement("div");
+  subTotalContainer.setAttribute(
+    "class",
+    "d-flex px-2 justify-content-between"
+  );
+
+  const subtTotal = document.createElement("span");
+  subtTotal.setAttribute("class", "subtotal");
+  subtTotal.textContent = "SUBTOTAL";
+
+  const subtTotalVal = document.createElement("span");
+  subtTotalVal.setAttribute("class", "total");
+  subtTotalVal.textContent = "$2.22";
+
+  subTotalContainer.appendChild(subtTotal);
+  subTotalContainer.appendChild(subtTotalVal);
+
+  divFooter.appendChild(subTotalContainer);
+
+  // create subtotal item
+  const taxContainer = document.createElement("div");
+  taxContainer.setAttribute("class", "d-flex px-2 justify-content-between");
+
+  const tax = document.createElement("span");
+  tax.textContent = "TAX";
+
+  const taxVal = document.createElement("span");
+  taxVal.setAttribute("class", "item-price");
+  taxVal.textContent = "$0.22";
+
+  taxContainer.appendChild(tax);
+  taxContainer.appendChild(taxVal);
+
+  divFooter.appendChild(taxContainer);
+
+  // create Total item
+  const totalContainer = document.createElement("div");
+  totalContainer.setAttribute("class", "d-flex px-2 justify-content-between");
+
+  const total = document.createElement("span");
+  total.textContent = "TOTAL";
+
+  const totalVal = document.createElement("span");
+  totalVal.setAttribute("class", "item-price");
+  totalVal.textContent = "$8.50";
+
+  totalContainer.appendChild(total);
+  totalContainer.appendChild(totalVal);
+
+  divFooter.appendChild(totalContainer);
+
+  // create Rewards item
+  const rewardContainer = document.createElement("div");
+  rewardContainer.setAttribute("class", "d-flex px-2 justify-content-between");
+
+  const reward = document.createElement("span");
+  reward.textContent = "REWARD";
+
+  const rewardVal = document.createElement("span");
+  rewardVal.setAttribute("class", "item-price");
+  rewardVal.textContent = "28pt";
+
+  rewardContainer.appendChild(reward);
+  rewardContainer.appendChild(rewardVal);
+
+  divFooter.appendChild(rewardContainer);
+
+  // add item to parent
+  orderCartContainer.appendChild(divFooter);
+
+  /**
+   * <div class="order-card-footer">
+                                <div class="d-flex px-2 justify-content-between">
+                                    <span class="subtotal">Subtotal</span>
+                                    <span class="total">$2.34</span>
+                                </div>
+                                <div class="d-flex px-2 justify-content-between">
+                                    <span class="tax">Tax</span>
+                                    <span class="total">$0.20</span>
+                                </div>
+                                <div class="d-flex px-2 justify-content-between">
+                                    <span class="total"><strong>Total</strong></span>
+                                    <span class="total">$2.80</span>
+                                </div>
+                                <div class="d-flex px-2 justify-content-between">
+                                    <span class="rewards">Rewards</span>
+                                    <span class="total">28pt</span>
+                                </div>
+                                <small class="h-details d-block text-left px-2">Hide Details</small>
+                            </div>
+   */
+
   console.log(`${restName.textContent} 
                ${restAddress.textContent} `);
+
   console.log(`Size: ${checkedSizeVal}`);
   console.log(`Milk: ${checkedMilkVal}`);
   console.log(`Sugar: ${checkedSugarVal} sugar`);
-  console.log(`${checkedFeatureVal}`);
-  e.preventDefault();
+  console.log(`Extra Options: ${checkedFeatureVal}`);
+  console.log(`qty : ${qtyDiv.textContent}`);
 });
 
 // create tags input
@@ -189,16 +394,22 @@ function addTags() {
     .slice()
     .reverse()
     .forEach(function(tag) {
-      const input = createTag(tag);
-      tagContainer.prepend(input);
+      if (tag == "") {
+        alert("please ennter value");
+      } else {
+        const input = createTag(tag);
+        tagContainer.prepend(input);
+      }
     });
-  console.log(tags);
+  return tags;
 }
 
 input.addEventListener("keyup", function(e) {
+  e.stopPropagation();
   if (e.key === "Enter") {
     tags.push(input.value); // add values to array
-    addTags(); // show values on input
+    const result = addTags(); // show values on input
+    console.log(result.join());
     input.value = ""; // reset input
   }
 });
