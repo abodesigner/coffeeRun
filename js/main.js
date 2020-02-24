@@ -313,6 +313,17 @@ addToCartBtn.addEventListener("click", function(e) {
 
   divFooter.appendChild(rewardContainer);
 
+  // add placeOrder button
+  const a = document.createElement("a");
+  const linkText = document.createTextNode("place order");
+  a.appendChild(linkText);
+  a.title = "placeOrder";
+  a.href = "signin.htm";
+  a.type = "button";
+  a.classList.add("btn", "btn-danger", "mt-3");
+
+  divFooter.appendChild(a);
+
   // add item to parent
   orderCartContainer.appendChild(divFooter);
 
