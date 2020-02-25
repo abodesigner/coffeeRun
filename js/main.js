@@ -324,30 +324,14 @@ addToCartBtn.addEventListener("click", function(e) {
 
   divFooter.appendChild(a);
 
+  // create hideelement
+  const smallElem = document.createElement("small");
+  smallElem.classList.add("h-details", "d-block", "text-left", "px-2");
+  smallElem.textContent = "Hide Details";
+
   // add item to parent
   orderCartContainer.appendChild(divFooter);
-
-  /**
-   * <div class="order-card-footer">
-                                <div class="d-flex px-2 justify-content-between">
-                                    <span class="subtotal">Subtotal</span>
-                                    <span class="total">$2.34</span>
-                                </div>
-                                <div class="d-flex px-2 justify-content-between">
-                                    <span class="tax">Tax</span>
-                                    <span class="total">$0.20</span>
-                                </div>
-                                <div class="d-flex px-2 justify-content-between">
-                                    <span class="total"><strong>Total</strong></span>
-                                    <span class="total">$2.80</span>
-                                </div>
-                                <div class="d-flex px-2 justify-content-between">
-                                    <span class="rewards">Rewards</span>
-                                    <span class="total">28pt</span>
-                                </div>
-                                <small class="h-details d-block text-left px-2">Hide Details</small>
-                            </div>
-   */
+  orderCartContainer.appendChild(smallElem);
 
   console.log(`${restName.textContent} 
                ${restAddress.textContent} `);
