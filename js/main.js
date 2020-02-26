@@ -313,25 +313,24 @@ addToCartBtn.addEventListener("click", function(e) {
 
   divFooter.appendChild(rewardContainer);
 
-  // add placeOrder button
-  const a = document.createElement("a");
-  const linkText = document.createTextNode("place order");
-  a.appendChild(linkText);
-  a.title = "placeOrder";
-  a.href = "signin.htm";
-  a.type = "button";
-  a.classList.add("btn", "btn-danger", "mt-3");
-
-  divFooter.appendChild(a);
-
   // create hideelement
   const smallElem = document.createElement("small");
   smallElem.classList.add("h-details", "d-block", "text-left", "px-2");
   smallElem.textContent = "Hide Details";
+  divFooter.appendChild(smallElem);
+  orderCartContainer.appendChild(divFooter);
+
+  //add place Order button
+  const a = document.createElement("a");
+  const linkText = document.createTextNode("place order");
+  a.appendChild(linkText);
+  a.setAttribute("href", "signin.html");
+  a.setAttribute("role", "button");
+  a.classList.add("btn", "btn-danger", "mt-3");
+  divFooter.appendChild(a);
 
   // add item to parent
   orderCartContainer.appendChild(divFooter);
-  orderCartContainer.appendChild(smallElem);
 
   console.log(`${restName.textContent} 
                ${restAddress.textContent} `);
