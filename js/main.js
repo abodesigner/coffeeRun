@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  // initialize all tooltips on a page
+  $('[data-toggle="tooltip"]').tooltip();
+
   // get current year @ footer
   $("#year").text(new Date().getFullYear());
 
@@ -324,9 +327,10 @@ addToCartBtn.addEventListener("click", function(e) {
   const a = document.createElement("a");
   const linkText = document.createTextNode("place order");
   a.appendChild(linkText);
-  a.setAttribute("href", "signin.html");
+  a.setAttribute("href", "user_profile.html");
   a.setAttribute("role", "button");
-  a.classList.add("btn", "btn-danger", "mt-3");
+  a.classList.add("btn", "btn-blue", "mt-3");
+  a.style.textTransform = "capitalize";
   divFooter.appendChild(a);
 
   // add item to parent
