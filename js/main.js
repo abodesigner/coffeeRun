@@ -4,6 +4,7 @@ $(document).ready(function() {
 
   // get current year @ footer
   $("#year").text(new Date().getFullYear());
+  
 
   // smooth scroll
   $("#main-navbar a[href*='#']:not([href='#'])").on("click", function(event) {
@@ -36,6 +37,7 @@ $(document).ready(function() {
       500,
       "linear"
     );
+    
   });
 
   // Add background color to navbar when scsrooling
@@ -69,7 +71,7 @@ $(document).ready(function() {
     }
   });
 
-  // Remove placeholder when press
+  // Remove placeholder when focus
   $("#group_name").on("focus", function() {
     $("#group_name").attr("placeholder", "");
   });
@@ -93,61 +95,66 @@ $(document).ready(function() {
     $(".app-download-form").slideToggle();
     $(".rotate").toggleClass("down");
   });
+
+
 });
 
 // add items to cart dynamically
 
-// grab elements
-const addToCartBtn = document.querySelector("#addToCart");
-const orderCartContainer = document.querySelector(".order-cart-container");
-const restName = document.querySelector("h2.r-name");
-const restAddress = document.querySelector("p.r-address");
-const itemQty = document.querySelector(".menu-item-quantity");
-const orderName = document.querySelector(".cart-header-content h2");
+//  grab elements
+ const addToCartBtn = document.getElementById("#addToCart");
+ const orderCartContainer = document.querySelector(".order-cart-container");
+ const restName    = document.querySelector("h2.r-name");
+ const restAddress = document.querySelector("p.r-address");
+ const itemQty     = document.querySelector(".menu-item-quantity");
+ const orderName   = document.querySelector(".cart-header-content h2");
 
-const orderSize = document.querySelector(".size");
-const orderMilk = document.querySelector(".milk");
-const orderPrice = document.querySelector(".order-price");
+ const orderSize  = document.querySelector(".size");
+ const orderMilk  = document.querySelector(".milk");
+ const orderPrice = document.querySelector(".order-price");
 
 // add eventListener
-addToCartBtn.addEventListener("click", function(e) {
-  // prevent efault pehaviour of form
-  e.preventDefault();
 
-  // get checked value from Size radio buttons
-  const radioSizeBtns = document.getElementsByName("size");
-  let checkedSizeVal;
-  radioSizeBtns.forEach(radioSize => {
-    if (radioSize.checked) {
-      checkedSizeVal = radioSize.value;
-    }
-  });
+// check if element exist
+if(addToCartBtn){
+ addToCartBtn.addEventListener("click", function(e) {
+   // prevent efault pehaviour of form
+   e.preventDefault();
 
-  // get checked value from Milk radio buttons
-  const radioMilkBtns = document.getElementsByName("milk");
-  let checkedMilkVal;
-  radioMilkBtns.forEach(radioMilk => {
+// get checked value from Size radio buttons
+    const radioSizeBtns = document.getElementsByName("size");
+   let checkedSizeVal;
+   radioSizeBtns.forEach(radioSize => {
+     if (radioSize.checked) {
+       checkedSizeVal = radioSize.value;
+     }
+   });
+
+   // get checked value from Milk radio buttons
+   const radioMilkBtns = document.getElementsByName("milk");
+   let checkedMilkVal;
+   radioMilkBtns.forEach(radioMilk => {
     if (radioMilk.checked) {
       checkedMilkVal = radioMilk.value;
     }
   });
 
-  // get checked value from Modification checkbox
-  const feauresBtns = document.getElementsByName("options[]");
-  let checkedFeatureVal;
-  feauresBtns.forEach(feature => {
-    if (feature.checked) {
-      checkedFeatureVal = feature.value;
-    }
+   // get checked value from Modification checkbox
+   const feauresBtns = document.getElementsByName("options[]");
+   let checkedFeatureVal;
+   feauresBtns.forEach(feature => {
+     if (feature.checked) {
+       checkedFeatureVal = feature.value;
+     }
   });
 
-  // get checked value from Sugar radio buttons
-  const radioSugarBtns = document.getElementsByName("sugar");
+   // get checked value from Sugar radio buttons
+   const radioSugarBtns = document.getElementsByName("sugar");
   let checkedSugarVal;
   radioSugarBtns.forEach(radioSugar => {
-    if (radioSugar.checked) {
-      checkedSugarVal = radioSugar.value;
-    }
+     if (radioSugar.checked) {
+       checkedSugarVal = radioSugar.value;
+     }
   });
 
   // Remove cart-empty div
@@ -155,10 +162,10 @@ addToCartBtn.addEventListener("click", function(e) {
   const parent = childDiv.parentNode;
   parent.removeChild(childDiv);
 
-  /*======================== 
-     Create Order-Cart-Hader
-    ========================
-  */
+//   /*========================
+//      Create Order-Cart-Hader
+//     ========================
+//   */
   const divHeader = document.createElement("div");
   divHeader.setAttribute("class", "order-card-header p-2");
 
@@ -167,40 +174,40 @@ addToCartBtn.addEventListener("click", function(e) {
   restNameElm.setAttribute("class", "r-name");
   restNameElm.textContent = restName.textContent;
 
-  // Create Restaurant Address & add value from user selection
-  const restAddressElm = document.createElement("p");
-  restAddressElm.setAttribute("class", "r-address mb-0");
+   // Create Restaurant Address & add value from user selection
+   const restAddressElm = document.createElement("p");
+   restAddressElm.setAttribute("class", "r-address mb-0");
   restAddressElm.textContent = restAddress.textContent;
 
-  //append children to divHeader
+   //append children to divHeader
   divHeader.appendChild(restNameElm);
   divHeader.appendChild(restAddressElm);
 
-  // append divHeader to orderCartContainer
-  orderCartContainer.prepend(divHeader);
+   // append divHeader to orderCartContainer
+   orderCartContainer.prepend(divHeader);
 
-  /*======================== 
-     Create Order-Cart-Body
-    ========================
-  */
+//   /*========================
+//      Create Order-Cart-Body
+//     ========================
+//   */
 
-  // Create Order-Cart-Body
-  const divBody = document.createElement("div");
-  divBody.setAttribute("class", "order-card-body py-2");
+//   Create Order-Cart-Body
+    const divBody = document.createElement("div");
+    divBody.setAttribute("class", "order-card-body py-2");
 
-  const flexDiv = document.createElement("div");
-  flexDiv.setAttribute("class", "d-flex");
+    const flexDiv = document.createElement("div");
+   flexDiv.setAttribute("class", "d-flex");
 
-  const qtyDiv = document.createElement("div");
-  qtyDiv.setAttribute("class", "order-qty p-2");
-  qtyDiv.textContent = itemQty.textContent;
+   const qtyDiv = document.createElement("div");
+    qtyDiv.setAttribute("class", "order-qty p-2");
+    qtyDiv.textContent = itemQty.textContent;
 
-  const descDiv = document.createElement("div");
-  qtyDiv.setAttribute("class", "order-description p-2");
+    const descDiv = document.createElement("div");
+    qtyDiv.setAttribute("class", "order-description p-2");
 
-  const priceDiv = document.createElement("div");
-  priceDiv.setAttribute("class", "order-price p-2 flex-grow-1 text-right");
-  //priceDiv.textContent = orderPrice.textContent;
+    const priceDiv = document.createElement("div");
+   priceDiv.setAttribute("class", "order-price p-2 flex-grow-1 text-right");
+   priceDiv.textContent = orderPrice.textContent;
 
   const orderNameElm = document.createElement("span");
   orderNameElm.setAttribute("class", "name");
@@ -209,7 +216,7 @@ addToCartBtn.addEventListener("click", function(e) {
   const extraOptionsDiv = document.createElement("div");
   extraOptionsDiv.setAttribute("class", "extra-options ml-3");
 
-  // child of extraOptionsDiv
+//  child of extraOptionsDiv
   const sizeSpan = document.createElement("span");
   sizeSpan.setAttribute("class", "size");
   sizeSpan.textContent = checkedSizeVal;
@@ -221,34 +228,34 @@ addToCartBtn.addEventListener("click", function(e) {
   extraOptionsDiv.appendChild(sizeSpan);
   extraOptionsDiv.appendChild(milkSpan);
 
-  // add child to descDiv
+// add child to descDiv
   descDiv.appendChild(orderNameElm);
   descDiv.appendChild(extraOptionsDiv);
 
-  // add child to flexDiv
+// add child to flexDiv
   flexDiv.appendChild(qtyDiv);
   flexDiv.appendChild(descDiv);
   flexDiv.appendChild(priceDiv);
 
-  // add flexDiv to divContainer
+// add flexDiv to divContainer
   divBody.prepend(flexDiv);
 
   const line = document.createElement("hr");
   divBody.appendChild(line);
 
-  // add divBody to orderCartContainer
+//  add divBody to orderCartContainer
   orderCartContainer.appendChild(divBody);
 
-  /*=========================== 
-     Create Order-Cart-Footer
-    =========================
-  */
+//   /*===========================
+//      Create Order-Cart-Footer
+//     =========================
+//   */
 
-  // create
+//   // create
   const divFooter = document.createElement("div");
   divFooter.setAttribute("class", "order-card-footer");
 
-  // create subtotal item
+//   // create subtotal item
   const subTotalContainer = document.createElement("div");
   subTotalContainer.setAttribute(
     "class",
@@ -268,7 +275,7 @@ addToCartBtn.addEventListener("click", function(e) {
 
   divFooter.appendChild(subTotalContainer);
 
-  // create subtotal item
+//   // create subtotal item
   const taxContainer = document.createElement("div");
   taxContainer.setAttribute("class", "d-flex px-2 justify-content-between");
 
@@ -284,14 +291,13 @@ addToCartBtn.addEventListener("click", function(e) {
 
   divFooter.appendChild(taxContainer);
 
-  // create Total item
+//   // create Total item
   const totalContainer = document.createElement("div");
   totalContainer.setAttribute("class", "d-flex px-2 justify-content-between");
 
   const total = document.createElement("span");
   total.textContent = "TOTAL";
-
-  const totalVal = document.createElement("span");
+   const totalVal = document.createElement("span");
   totalVal.setAttribute("class", "item-price");
   totalVal.textContent = "$8.50";
 
@@ -300,7 +306,7 @@ addToCartBtn.addEventListener("click", function(e) {
 
   divFooter.appendChild(totalContainer);
 
-  // create Rewards item
+//   // create Rewards item
   const rewardContainer = document.createElement("div");
   rewardContainer.setAttribute("class", "d-flex px-2 justify-content-between");
 
@@ -316,14 +322,14 @@ addToCartBtn.addEventListener("click", function(e) {
 
   divFooter.appendChild(rewardContainer);
 
-  // create hideelement
+//   // create hideelement
   const smallElem = document.createElement("small");
   smallElem.classList.add("h-details", "d-block", "text-left", "px-2");
   smallElem.textContent = "Hide Details";
   divFooter.appendChild(smallElem);
   orderCartContainer.appendChild(divFooter);
 
-  //add place Order button
+//   //add place Order button
   const a = document.createElement("a");
   const linkText = document.createTextNode("place order");
   a.appendChild(linkText);
@@ -333,11 +339,11 @@ addToCartBtn.addEventListener("click", function(e) {
   a.style.textTransform = "capitalize";
   divFooter.appendChild(a);
 
-  // add item to parent
-  orderCartContainer.appendChild(divFooter);
+//   // add item to parent
+   orderCartContainer.appendChild(divFooter);
 
-  console.log(`${restName.textContent} 
-               ${restAddress.textContent} `);
+   console.log(`${restName.textContent}
+                ${restAddress.textContent} `);
 
   console.log(`Size: ${checkedSizeVal}`);
   console.log(`Milk: ${checkedMilkVal}`);
@@ -346,7 +352,7 @@ addToCartBtn.addEventListener("click", function(e) {
   console.log(`qty : ${qtyDiv.textContent}`);
 });
 
-// create tags input
+// // create tags input
 const tagContainer = document.querySelector(".tag-container");
 const input = document.querySelector(".tag-container input");
 
@@ -369,23 +375,23 @@ function createTag(label) {
   return div;
 }
 
-// reset function
+// // reset function
 function reset() {
   document.querySelectorAll(".tag").forEach(function(tag) {
     tag.parentElement.removeChild(tag);
   });
 }
 
-function removeTag() {
-  // const items = document.querySelectorAll(".tag span");
-  // items.forEach(function(item) {
-  //   console.log(item.textContent);
-  //   // const index = tags.indexOf();
-  //   // let newArr = tags.splice(index, 1);
-  //   // console.log(index);
-}
+// function removeTag() {
+//   // const items = document.querySelectorAll(".tag span");
+//   // items.forEach(function(item) {
+//   //   console.log(item.textContent);
+//   //   // const index = tags.indexOf();
+//   //   // let newArr = tags.splice(index, 1);
+//   //   // console.log(index);
+// }
 
-// add values to tags array
+// // add values to tags array
 function addTags() {
   reset();
   tags
@@ -412,7 +418,7 @@ input.addEventListener("keyup", function(e) {
   }
 });
 
-// delete item when click on x close
+// // delete item when click on x close
 document.addEventListener("click", function(e) {
   if (e.target.nodeName === "I") {
     const value = e.target.getAttribute("data-item");
@@ -421,4 +427,5 @@ document.addEventListener("click", function(e) {
     console.log(tags);
     addTags();
   }
-});
+ });
+}
