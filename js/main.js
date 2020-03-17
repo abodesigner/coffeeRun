@@ -96,6 +96,81 @@ $(document).ready(function() {
     $(".rotate").toggleClass("down");
   });
 
+  // Validate form in partners page
+  $("#merchant-form").on("submit", function(e){
+
+    let messages = [];
+    
+    let mobileNumber = $("#mobile").val();
+
+    if ( mobileNumber.length < 10 ) {
+      messages.push("too short");
+    }  
+    
+    if( !(mobileNumber.match(/^[0-9]{10}$/)) ){
+      messages.push("Please enter a valid phone number without special characters ex: 5555555555");
+    }
+
+    
+
+    // display errors
+    if( messages.length > 0){
+      e.preventDefault();
+      let result = messages.join(', ');
+      $("#error").text(result);
+      
+    }
+    
+  });
+
+
+
+  // remove placeholder when focus
+  $("#openingHours").on("focus", function(){
+
+    $(this).val("")
+
+  });
+
+  $("#openingHours").on("blur", function(){
+
+    $(this).val(`Monday - Friday:10am - 8pm
+Saturday - Sunday:10am - 10pm`);
+
+  });
+
+  // Validate promote Form
+   $("#submitBtn").on("click", function(e){
+    
+    let msgArr = [];
+
+    let openHours = $("#openingHours").val();
+
+    if( openHours === ""){
+      msgArr.push("Enter your menu hours");
+    } 
+
+    // display errors
+    if( msgArr.length > 0){
+      e.preventDefault();
+      let res = msgArr.join(', ');
+      $("#err").text(res);
+      $("#err").css("color", "red");
+      
+    }
+    
+      
+  });
+
+
+
+
+
+
+
+
+  
+
 
 });
 

@@ -957,10 +957,6 @@ ul.menu-items li.menu-item a.menu-item-inner span.menu-item-price {
   cursor: pointer;
 }
 
-/* .order-card {
-  border-left: 1px solid #d0d0d0;
-} */
-
 .order-card h6,
 .order-card p {
   color: #999;
@@ -984,5 +980,61 @@ ul.menu-items li.menu-item a.menu-item-inner span.menu-item-price {
 /* SIDEBAR CUSTOMIZE */
 #wrapper .bg-gradient-primary {
   background: #392413;
-  /* background: #eddfbc; */
+}
+
+
+/* ======================================
+    Business-Form Page
+====================================== */
+.business-form-section{
+  min-height: 500px;
+}
+
+.advantages-section .fa-ul li{
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* ======================================
+    Promote-menu Page
+====================================== */
+
+.promote-menu ul.activation{
+  padding-left: 0;
+}
+
+.promote-menu ul li span.prices:before{
+  font-family: "Font Awesome 5 Free"; 
+	font-weight: 900;
+  content: "\f154";
+  font-size: 1.5rem;
+  color: #d9751e
+}
+
+.promote-menu ul li span.modifiers:before{
+  font-family: "Font Awesome 5 Free"; 
+	font-weight: 900;
+  content: "\f2e7";
+  font-size: 1.5rem;
+  color: #d9751e
+}
+
+.promote-menu ul li span.link:before{
+  font-family: "Font Awesome 5 Free"; 
+	font-weight: 900;
+  content: "\f0c5";
+  font-size: 1.5rem;
+  color: #d9751e
+}
+
+.promote-menu ul li span.alcohol:before{
+  font-family: "Font Awesome 5 Free"; 
+	font-weight: 900;
+  content: "\f057";
+  font-size: 1.5rem;
+  color: #d9751e
+}
+
+.promote-menu ul.activation li{
+  list-style-type: none;
 }
