@@ -982,6 +982,9 @@ ul.menu-items li.menu-item a.menu-item-inner span.menu-item-price {
   background: #392413;
 }
 
+#time-from,#time-to{
+  width: 200px;
+}
 
 /* ======================================
     Business-Form Page
