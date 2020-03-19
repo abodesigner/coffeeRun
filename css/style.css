@@ -94,6 +94,10 @@ h2 {
   color: #2b3b55;
 }
 
+.text-orange{
+  color: #d9751e;
+}
+
 .btn-blue {
   background-color: #f2c24f;
   border-color: #f2c24f;
@@ -984,6 +988,10 @@ ul.menu-items li.menu-item a.menu-item-inner span.menu-item-price {
 
 #time-from,#time-to{
   width: 200px;
+}
+
+.sidebar-heading{
+  color: #f6c23e !important;
 }
 
 /* ======================================
