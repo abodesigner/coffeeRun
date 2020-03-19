@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>CoffeeRun - Dashboard</title>
+  <title>CoffeeRun - Menu</title>
 
   <!-- Fontawesome CSS -->
   <link rel="stylesheet" href="css/all.css">
@@ -456,159 +456,144 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Overview</h1>
-            <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-brown shadow-sm"><i
-                class="fas fa-download fa-sm"></i> Generate Report</a> -->
+            <h1 class="h3 mb-0 text-gray-800">Edit Menu</h1>
+            <a href="#" class="btn btn-danger"><i class="fas fa-plus-circle"></i> Add New Item</a>
 
           </div>
           <hr>
 
-          <div class="time-frame">
-            <label for="">Time Frame</label>
-            <div class="row">
-              <div class="col-md-3">
-                <input type="date" class="form-control mb-5">
-              </div>
-              <div class="col-md-3">
-                <input type="date" class="form-control mb-5">
-              </div>
-              <div class="col-md-3">
-                <button class="btn btn-secondary mb-5">apply</button>
-              </div>
-
-            </div>
-          </div>
 
           <!-- Content Row -->
           <div class="row">
-
-            <!-- Total Orders (Weekly) -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2 text-center">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Orders (Weekly)</div>
-                      <div class="h3 mb-0 font-weight-bold text-gray-800">45</div>
+            <div class="col-md-4">
+                <div class="menu-item">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-between">
+                            <div class="card-heading d-flex flex-column">
+                                <h4 class="mb-0">Cheese Burger</h4>
+                                <p>any description</p>
+                                <span class="mb-4">$2.6</span>
+                                <a href="#" class="btn btn-info btn-sm w-50">Edit</a>
+                            </div>
+                            
+                            <div class="item-photo">
+                                <img src="https://source.unsplash.com/200x100/?coffee,foods" alt="">
+                            </div>
+                            
+                        </div>
+                        
                     </div>
-                    <div class="col-auto">
-                      <i class="fas fa-clipboard-list fa-4x text-primary"></i>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
-
-            <!-- Average Order Amount -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2 text-center">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Avg Order Amount</div>
-                      <div class="h3 mb-0 font-weight-bold text-gray-800">215</div>
+            <div class="col-md-4">
+                <div class="menu-item">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-between">
+                            <div class="card-heading d-flex flex-column">
+                                <h4 class="mb-0">Cheese Burger</h4>
+                                <p>any description</p>
+                                <span class="mb-4">$2.6</span>
+                                <a href="#" class="btn btn-info btn-sm w-50">Edit</a>
+                            </div>
+                            
+                            <div class="item-photo">
+                                <img src="https://source.unsplash.com/200x102/?coffee,foods" alt="">
+                            </div>
+                            
+                        </div>
+                        
                     </div>
-                    <div class="col-auto">
-                      <i class="fas fa-chart-bar fa-4x text-success"></i>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
-
-            <!-- Number Of Unique Customers -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2 text-center">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Unique Customers
-                      </div>
-                      <div class="h3 mb-0 font-weight-bold text-gray-800">215</div>
+            <div class="col-md-4">
+                <div class="menu-item">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-between">
+                            <div class="card-heading d-flex flex-column">
+                                <h4 class="mb-0">Cheese Burger</h4>
+                                <p>any description</p>
+                                <span class="mb-4">$2.6</span>
+                                <a href="#" class="btn btn-info btn-sm w-50">Edit</a>
+                            </div>
+                            
+                            <div class="item-photo">
+                                <img src="https://source.unsplash.com/200x103/?coffee,foods" alt="">
+                            </div>
+                            
+                        </div>
+                        
                     </div>
-                    <div class="col-auto">
-                      <i class="fas fa-user-tie fa-4x text-info"></i>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
-
-            <!-- Net Sales -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2 text-center">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Net Sales</div>
-                      <div class="h3 mb-0 font-weight-bold text-gray-800"><i class="fas fa-pound-sign"></i>180</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-chart-line text-warning fa-4x"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+           
           </div>
 
           <!-- Content Row -->
-
-          <div class="row">
-
-            <div class="col-md-12">
-
-              <!-- accordion -->
-              <div class="accordion" id="accordionExample">
-                <div class="card">
-                  <div class="card-header bg-gradient-warning" id="headingOne">
-                    <h2 class="mb-0">
-                      <button class="btn btn-link text-white" type="button" data-toggle="collapse"
-                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Top Five Popula Items
-                      </button>
-                    </h2>
-                  </div>
-
-                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-between">
-                        <p>Mocha Coffee</p>
-                        <p>$322.86 earned</p>
-                      </div>
-                      <p class="text-right text-danger">35 orders</p>
-                      <hr>
-                      <div class="d-flex justify-content-between">
-                        <p>Falafel Side</p>
-                        <p>$322.86 earned</p>
-                      </div>
-                      <p class="text-right text-danger">35 orders</p>
-                      <hr>
-                      <div class="d-flex justify-content-between">
-                        <p>Falafel Side</p>
-                        <p>$322.86 earned</p>
-                      </div>
-                      <p class="text-right text-danger">35 orders</p>
-                      <hr>
-
-                      <div class="d-flex justify-content-between">
-                        <p>Falafel Side</p>
-                        <p>$322.86 earned</p>
-                      </div>
-                      <p class="text-right text-danger">35 orders</p>
-                      <hr>
-                      <div class="d-flex justify-content-between">
-                        <p>Falafel Side</p>
-                        <p>$322.86 earned</p>
-                      </div>
-                      <p class="text-right text-danger">35 orders</p>
+          <div class="row my-4">
+            <div class="col-md-4">
+                <div class="menu-item">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-between">
+                            <div class="card-heading d-flex flex-column">
+                                <h4 class="mb-0">Cheese Burger</h4>
+                                <p>any description</p>
+                                <span class="mb-4">$2.6</span>
+                                <a href="#" class="btn btn-info btn-sm w-50">Edit</a>
+                            </div>
+                            
+                            <div class="item-photo">
+                                <img src="https://source.unsplash.com/200x104/?coffee,foods" alt="">
+                            </div>
+                            
+                        </div>
+                        
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
+            <div class="col-md-4">
+                <div class="menu-item">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-between">
+                            <div class="card-heading d-flex flex-column">
+                                <h4 class="mb-0">Cheese Burger</h4>
+                                <p>any description</p>
+                                <span class="mb-4">$2.6</span>
+                                <a href="#" class="btn btn-info btn-sm w-50">Edit</a>
+                            </div>
+                            
+                            <div class="item-photo">
+                                <img src="https://source.unsplash.com/200x105/?coffee,foods" alt="">
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="menu-item">
+                    <div class="card">
+                        <div class="card-body d-flex justify-content-between">
+                            <div class="card-heading d-flex flex-column">
+                                <h4 class="mb-0">Cheese Burger</h4>
+                                <p>any description</p>
+                                <span class="mb-4">$2.6</span>
+                                <a href="#" class="btn btn-info btn-sm w-50">Edit</a>
+                            </div>
+                            
+                            <div class="item-photo">
+                                <img src="https://source.unsplash.com/200x106/?coffee,foods" alt="">
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+           
           </div>
+
+         
         </div>
         <!-- /.container-fluid -->
 
