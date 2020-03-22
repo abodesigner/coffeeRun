@@ -177,16 +177,16 @@ Saturday - Sunday:10am - 10pm`);
 // add items to cart dynamically
 
 //  grab elements
- const addToCartBtn = document.getElementById("#addToCart");
+ const addToCartBtn       = document.getElementById("addToCart");
  const orderCartContainer = document.querySelector(".order-cart-container");
- const restName    = document.querySelector("h2.r-name");
- const restAddress = document.querySelector("p.r-address");
- const itemQty     = document.querySelector(".menu-item-quantity");
- const orderName   = document.querySelector(".cart-header-content h2");
+ const restName           = document.querySelector("h2.r-name");
+ const restAddress        = document.querySelector("p.r-address");
+ const itemQty            = document.querySelector(".menu-item-quantity");
+ const orderName          = document.querySelector(".cart-header-content h2");
 
- const orderSize  = document.querySelector(".size");
- const orderMilk  = document.querySelector(".milk");
- const orderPrice = document.querySelector(".order-price");
+ const orderSize          = document.querySelector(".size");
+ const orderMilk          = document.querySelector(".milk");
+ const orderPrice         = document.querySelector(".menu-item-price");
 
 // add eventListener
 
@@ -233,9 +233,9 @@ if(addToCartBtn){
   });
 
   // Remove cart-empty div
-  const childDiv = document.querySelector(".cart-empty");
-  const parent = childDiv.parentNode;
-  parent.removeChild(childDiv);
+  // const childDiv = document.querySelector(".cart-empty");
+  // const parent = childDiv.parentNode;
+  // parent.removeChild(childDiv);
 
 //   /*========================
 //      Create Order-Cart-Hader
@@ -264,7 +264,8 @@ if(addToCartBtn){
 //   /*========================
 //      Create Order-Cart-Body
 //     ========================
-//   */
+//   **/
+
 
 //   Create Order-Cart-Body
     const divBody = document.createElement("div");
@@ -281,8 +282,8 @@ if(addToCartBtn){
     qtyDiv.setAttribute("class", "order-description p-2");
 
     const priceDiv = document.createElement("div");
-   priceDiv.setAttribute("class", "order-price p-2 flex-grow-1 text-right");
-   priceDiv.textContent = orderPrice.textContent;
+    priceDiv.setAttribute("class", "order-price p-2 flex-grow-1 text-right");
+    priceDiv.textContent = "3.5";
 
   const orderNameElm = document.createElement("span");
   orderNameElm.setAttribute("class", "name");
@@ -450,21 +451,12 @@ function createTag(label) {
   return div;
 }
 
-// // reset function
+// reset function
 function reset() {
   document.querySelectorAll(".tag").forEach(function(tag) {
     tag.parentElement.removeChild(tag);
   });
 }
-
-// function removeTag() {
-//   // const items = document.querySelectorAll(".tag span");
-//   // items.forEach(function(item) {
-//   //   console.log(item.textContent);
-//   //   // const index = tags.indexOf();
-//   //   // let newArr = tags.splice(index, 1);
-//   //   // console.log(index);
-// }
 
 // // add values to tags array
 function addTags() {
@@ -483,15 +475,20 @@ function addTags() {
   return tags;
 }
 
-input.addEventListener("keyup", function(e) {
-  e.stopPropagation();
-  if (e.key === "Enter") {
-    tags.push(input.value); // add values to array
-    const result = addTags(); // show values on input
-    console.log(result.join());
-    input.value = ""; // reset input
-  }
-});
+if(input){
+  input.addEventListener("keyup", function(e) {
+    e.preventDefault();
+    
+    e.stopPropagation();
+    if (e.key === "Enter") {
+      tags.push(input.value); // add values to array
+      const result = addTags(); // show values on input
+      console.log(result.join());
+      input.value = ""; // reset input
+    }
+  });
+}
+
 
 // // delete item when click on x close
 document.addEventListener("click", function(e) {

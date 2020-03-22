@@ -850,8 +850,8 @@ h2 {
 }
 
 .order-header {
-  min-height: 300px;
-  background: url(../img/CR14.jpg) no-repeat;
+  min-height: 400px;
+  background: url(../img/CR13.jpg) no-repeat;
   background-size: cover;
   background-position: center center;
   position: relative;
@@ -861,7 +861,7 @@ h2 {
 
 .order-content {
   position: absolute;
-  top: 35%;
+  top: 52%;
   left: 0;
 }
 
@@ -882,7 +882,7 @@ h2 {
 }
 
 .order-body {
-  min-height: 600px;
+  min-height: 500px;
 }
 
 .order-body ul.order-categories li {
