@@ -123,8 +123,6 @@ $(document).ready(function() {
     
   });
 
-
-
   // remove placeholder when focus
   $("#openingHours").on("focus", function(){
 
@@ -162,6 +160,138 @@ Saturday - Sunday:10am - 10pm`);
       
   });
 
+   // Start Login Using JQuery/AJAX
+   $("#signin-form").on("submit", function(event){
+
+    
+    event.preventDefault();
+    
+
+
+    //get values
+    let userEmail = $("#email").val();
+    let userPass  = $("#password").val();
+
+
+    if( (userEmail !== "") && (userPass !== "") ){
+
+      data = {
+        "email" : userEmail,
+        "password" : userPass
+      }
+
+      
+    url = "http://178.63.132.246:8080/api/account";
+
+      $.ajax({
+        type:"GET",
+        url:url,
+        data: data,
+         beforeSend: function(xhr){
+            let user = JSON.parse(localStorage.getItem('UserData'));
+            xhr.setRequestHeader('Authorization', "Bearer" + " " + user.jwtToken);
+         },
+        success: function(response, status){
+
+          if (response.hasError) {
+            alert("bad request error, see console")			
+            for	(let i =0; i < response.errors.length; i++) {
+              console.log(response.errors[i].description)
+            }
+          }
+
+          localStorage.setItem('UserData', JSON.stringify(response.data)); 
+          if( status === 'success') {
+              // redirect user to product search
+          }
+        
+        }
+
+    
+      });
+    }
+
+  });
+
+  // Start Register Using JQuery/AJAX
+  $("#signup-form").on("submit", function(e){
+
+    e.preventDefault();
+
+      // get values from register form
+      const firstName   = $("#fname").val();
+      const lastName    = $("#lname").val();
+      const email       = $("#email").val();
+      const phoneNumber = $("#mobile").val(); 
+      const password    = $("#password").val();
+
+  if( (firstName !== "") && (lastName !== "") && (email !== "") && (password !== "") ){
+    
+    data = {
+      "firstName"   : firstName,
+      "lastName"    : lastName,
+      "email"       : email,
+      "phoneNumber" : phoneNumber,
+      "password"    : password
+   }
+   
+   url = "http://178.63.132.246:8080/api/account"
+
+   //console.log(data);
+   
+   $.ajax({
+   type: "POST",
+   url: url,
+   data: data,   
+   success: function(response) {
+    $("#fname").val("");
+    $("#lname").val("");
+    $("#email").val("");
+    $("#mobile").val("");
+    $("#password").val("");
+
+    //console.log(response);
+    $('.alert').removeClass('alert-danger').addClass('alert-success').text("Congratulation, registration done successfully");
+    
+    setInterval(function(){
+      $('.alert').hide();
+      window.location.replace("signin.html");
+    }, 5000);
+
+    
+
+    if (response.hasError) {
+      alert("badrequest error, see console")			
+      for	(var i =0; i < response.errors.length; i++) {
+        console.log(response.errors[i].description)
+      }
+    }
+   },
+
+   error: function(xhr, status, error){
+    //console.log(xhr, status, error);
+   }
+   });
+    
+    
+  } else {
+
+    $('.alert').removeClass('alert-success').addClass('alert-danger').text("Empty Fields");
+
+    setInterval(function(){
+      $('.alert').hide();
+    }, 5000);
+
+  }
+
+ 
+
+
+
+  });
+  
+
+
 
 
 
@@ -170,6 +300,7 @@ Saturday - Sunday:10am - 10pm`);
 
 
   
+
 
 
 });
