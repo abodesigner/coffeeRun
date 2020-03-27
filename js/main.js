@@ -187,27 +187,31 @@ Saturday - Sunday:10am - 10pm`);
         type:"GET",
         url:url,
         data: data,
-         beforeSend: function(xhr){
-            let user = JSON.parse(localStorage.getItem('UserData'));
-            xhr.setRequestHeader('Authorization', "Bearer" + " " + user.jwtToken);
-         },
+        //  beforeSend: function(xhr){
+        //     let user = JSON.parse(localStorage.getItem('UserData'));
+        //     xhr.setRequestHeader('Authorization', "Bearer" + " " + user.jwtToken);
+        //  },
         success: function(response, status){
 
           if (response.hasError) {
-            alert("bad request error, see console")			
+             alert("bad request error, see console");
+            			
             for	(let i =0; i < response.errors.length; i++) {
               console.log(response.errors[i].description)
+              
             }
+
+            return;
+            
           }
 
-          localStorage.setItem('UserData', JSON.stringify(response.data)); 
+          
+          localStorage.setItem('UserData', JSON.stringify(response.data));
+          console.log("SUCCESS"); 
           if( status === 'success') {
               // redirect user to product search
           }
-        
         }
-
-    
       });
     }
 
