@@ -222,6 +222,9 @@ Saturday - Sunday:10am - 10pm`);
 
     e.preventDefault();
 
+    
+    
+
       // get values from register form
       const firstName   = $("#fname").val();
       const lastName    = $("#lname").val();
@@ -241,7 +244,6 @@ Saturday - Sunday:10am - 10pm`);
    
    url = "http://178.63.132.246:8080/api/account"
 
-   //console.log(data);
    
    $.ajax({
    type: "POST",
@@ -289,7 +291,6 @@ Saturday - Sunday:10am - 10pm`);
   }
 
  
-
 
 
   });
