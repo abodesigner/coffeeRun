@@ -162,7 +162,9 @@
                 </div>
 
                 <div class="col-lg-6 px-0">
-                    <img src="img/map.jpg" alt="test" class="img-fluid">
+                    <div class="map-section" id="map">
+                        <!-- <img src="img/map.jpg" alt="test" class="img-fluid"> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -266,6 +268,26 @@
         // show countries with flags
         var input = document.querySelector("#telephone");
         window.intlTelInput(input);
+    </script>
+
+    <script>
+        // init google map
+  function initMap(){
+    // The location of Uluru
+    var uluru = {lat: -25.344, lng: 131.036};
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4, center: uluru});
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+    });
+  }
+    </script>
+    <!-- Add google maps API key -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnlwozEPLpM58UqIkb2OKfhVEkTP3aGUQ&callback=initMap">
     </script>
     <script src="js/main.js"></script>
 </body>

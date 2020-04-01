@@ -506,6 +506,12 @@ h2 {
   padding: 50px 0;
 }
 
+#map {
+    position: fixed !important; 
+    height: 100% !important;
+    width: 100% !important;
+}
+
 /* ======================================
     Get Parteners Page
 ====================================== */
