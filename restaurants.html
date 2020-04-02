@@ -52,8 +52,8 @@
             </ul>
             <form class="form-inline ml-auto my-lg-0">
 
-                <input class="form-control flex-grow-1" type="text" placeholder="Search for a Restaurant near you"
-                    aria-label="search">
+                <input id="searchBox" class="controls form-control flex-grow-1" type="text" 
+                        placeholder="Search for a Restaurant near you">
 
             </form>
         </div>
@@ -275,19 +275,53 @@
   function initMap(){
     // The location of Uluru
     var uluru = {lat: -25.344, lng: 131.036};
+    let latLng = {lat:52.3555177, lng:-1.1743197};
+
+    let mapOptions = {
+        zoom: 8,
+        center: latLng,
+        
+    };
+
     // The map, centered at Uluru
-    var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
-    // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({
-        position: uluru,
-        map: map
-    });
+    const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+   
   }
     </script>
+    
     <!-- Add google maps API key -->
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnlwozEPLpM58UqIkb2OKfhVEkTP3aGUQ&callback=initMap">
+    </script>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+
+        $("#searchBox").on("keyup", function(e){
+            
+            geocoding(); //Invoke function
+        });
+        
+        
+        // geocoding function 
+        function geocoding(){
+
+            let location = $("#searchBox").val();
+            axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+                params:{
+                    address: location,
+                    key:'AIzaSyCnlwozEPLpM58UqIkb2OKfhVEkTP3aGUQ'
+                }
+            }).then(function(response){
+                // console all data
+                console.log(response);
+
+                console.log(response.data.results[0].geometry.location.lat);
+                console.log(response.data.results[0].geometry.location.lng);
+            }).catch(function(err){
+                console.log(err);
+            })
+        }
     </script>
     <script src="js/main.js"></script>
 </body>
