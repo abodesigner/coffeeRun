@@ -160,27 +160,18 @@ Saturday - Sunday:10am - 10pm`);
       
   });
 
-   // Start Login Using JQuery/AJAX
-   $("#signin-form").on("submit", function(event){
 
-    
-    event.preventDefault();
-    
-
-
+  // login function
+  function login(){
     //get values
     let userEmail = $("#email").val();
     let userPass  = $("#password").val();
 
-
     if( (userEmail !== "") && (userPass !== "") ){
-
       data = {
         "email" : userEmail,
         "password" : userPass
       }
-
-      
     url = "http://178.63.132.246:8080/api/account";
 
       $.ajax({
@@ -207,23 +198,23 @@ Saturday - Sunday:10am - 10pm`);
 
           
           localStorage.setItem('UserData', JSON.stringify(response.data));
-          console.log("SUCCESS"); 
+
+          // console.log("SUCCESS");
+
           if( status === 'success') {
               // redirect user to product search
+              setInterval(function(){
+                window.location.replace("restaurants.html");
+              }, 2000);
           }
         }
       });
     }
+  }
 
-  });
-
-  // Start Register Using JQuery/AJAX
-  $("#signup-form").on("submit", function(e){
-
-    e.preventDefault();
-
-  
-      // get values from register form
+  // register function
+  function register(){
+          // get values from register form
       const firstName   = $("#fname").val();
       const lastName    = $("#lname").val();
       const email       = $("#email").val();
@@ -277,38 +268,44 @@ Saturday - Sunday:10am - 10pm`);
    }
    });
     
-    
-  } else {
-
-    $('.alert').removeClass('alert-success').addClass('alert-danger').text("Empty Fields");
-
-    setInterval(function(){
+    } else {
+         
+     $('.alert').removeClass('alert-success').addClass('alert-danger').text("Empty Fields");
+     
+     setInterval(function(){
       $('.alert').hide();
     }, 5000);
 
   }
-
-  // init google map
-  function initMap(){
-    // The location of Uluru
-    var uluru = {lat: -25.344, lng: 131.036};
-    // The map, centered at Uluru
-    var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
-    // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({
-        position: uluru,
-        map: map
-    });
   }
 
- 
-
-
+   // When signin button, login() function invoked
+   $("#signin-form").on("submit", function(event){
+          event.preventDefault();
+          login();
   });
   
 
+  //  When signup button, register() function invoked
+  $("#signup-form").on("submit", function(e){
+    e.preventDefault();
+     register();
+  });
+  
 
+  // init google map
+  function initMap(){
+     // The location of Uluru
+     var uluru = {lat: -25.344, lng: 131.036};
+     // The map, centered at Uluru
+     var map = new google.maps.Map(
+       document.getElementById('map'), {zoom: 4, center: uluru});
+     // The marker, positioned at Uluru
+     var marker = new google.maps.Marker({
+         position: uluru,
+         map: map
+     });
+   }
 
 
 
