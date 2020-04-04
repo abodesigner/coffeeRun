@@ -160,6 +160,12 @@ Saturday - Sunday:10am - 10pm`);
       
   });
 
+  // getUserData()
+  function getUserData(){
+    let user = JSON.parse(localStorage.getItem('UserData'));
+    return user;
+  }
+
 
   // login function
   function login(){
@@ -185,10 +191,12 @@ Saturday - Sunday:10am - 10pm`);
         success: function(response, status){
 
           if (response.hasError) {
-             alert("bad request error, see console");
+             //alert("bad request error, see console");
+             $('.alert').removeClass('alert-success').addClass('alert-danger').text("Email or Password is wrong!");
+
             			
             for	(let i =0; i < response.errors.length; i++) {
-              console.log(response.errors[i].description)
+              //console.log(response.errors[i].description)
               
             }
 
@@ -196,20 +204,44 @@ Saturday - Sunday:10am - 10pm`);
             
           }
 
-          
+          // store userData to localStorage
           localStorage.setItem('UserData', JSON.stringify(response.data));
 
           // console.log("SUCCESS");
 
           if( status === 'success') {
+              $('.alert').removeClass('alert-danger').addClass('alert-success').text("login done successfully");
+
               // redirect user to product search
               setInterval(function(){
                 window.location.replace("restaurants.html");
               }, 2000);
-          }
+              
+              
+          
+            }
+
+            
+
+           
+
+          
         }
       });
     }
+  }
+
+  isLogged();
+  function isLogged(){
+    let user = JSON.parse(localStorage.getItem('UserData'));
+    if(user){
+      $("#login").hide();
+      //console.log("USER STATUS : LOGGED");
+    } else {
+      $("#login").show();
+      //console.log("USER STATUS: NOT LOGGED");
+    }
+
   }
 
   // register function
@@ -278,6 +310,11 @@ Saturday - Sunday:10am - 10pm`);
 
   }
   }
+
+  
+
+  
+  
 
    // When signin button, login() function invoked
    $("#signin-form").on("submit", function(event){
