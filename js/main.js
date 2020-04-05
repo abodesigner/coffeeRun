@@ -218,13 +218,7 @@ Saturday - Sunday:10am - 10pm`);
               }, 2000);
               
               
-          
             }
-
-            
-
-           
-
           
         }
       });
@@ -232,6 +226,7 @@ Saturday - Sunday:10am - 10pm`);
   }
 
   isLogged();
+  // check if user login or not
   function isLogged(){
     let user = JSON.parse(localStorage.getItem('UserData'));
     if(user){
@@ -311,11 +306,6 @@ Saturday - Sunday:10am - 10pm`);
   }
   }
 
-  
-
-  
-  
-
    // When signin button, login() function invoked
    $("#signin-form").on("submit", function(event){
           event.preventDefault();
@@ -330,22 +320,65 @@ Saturday - Sunday:10am - 10pm`);
   });
   
 
-  // init google map
-  function initMap(){
-     // The location of Uluru
-     var uluru = {lat: -25.344, lng: 131.036};
-     // The map, centered at Uluru
-     var map = new google.maps.Map(
-       document.getElementById('map'), {zoom: 4, center: uluru});
-     // The marker, positioned at Uluru
-     var marker = new google.maps.Marker({
-         position: uluru,
-         map: map
-     });
-   }
+    // google maps search product
+   $("#searchBox").on("change", function(){  
+        geocoding(); 
+    });
 
 
+  // geocoding function 
+  function geocoding(){
 
+    let location = $("#searchBox").val();
+    axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+        params:{
+            address: location,
+            key:'AIzaSyCnlwozEPLpM58UqIkb2OKfhVEkTP3aGUQ'
+        }
+    }).then(function(response){
+        // console all data
+        //console.log(response);
+
+        //console.log(response.data.results[0].geometry.location.lat);
+        //console.log(response.data.results[0].geometry.location.lng);
+
+        let lat = response.data.results[0].geometry.location.lat;
+        let lng = response.data.results[0].geometry.location.lng;
+
+        //return {lat, lng};
+
+        getProducts(lat,lng);
+
+    }).catch(function(err){
+        console.log(err);
+    })
+}
+
+// get Produtcs
+
+function getProducts(at,ng){
+  
+  // get lat/lng values
+  let data = {
+    'keyword': 'sushi',
+    'lat' : at,
+    'lng:': ng
+  };
+
+  //console.log("Data:" , data);
+
+  url = "http://178.63.132.246:8080/api/Product/search-product";
+
+  $.ajax({
+    type: 'GET',
+    url:url,
+    data:data,
+    success: function(response){
+      console.log(response);
+    }
+  })
+
+}
 
 
 

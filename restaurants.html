@@ -295,34 +295,7 @@
     </script>
     
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script>
-
-        $("#searchBox").on("keyup", function(e){
-            
-            geocoding(); //Invoke function
-        });
-        
-        
-        // geocoding function 
-        function geocoding(){
-
-            let location = $("#searchBox").val();
-            axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
-                params:{
-                    address: location,
-                    key:'AIzaSyCnlwozEPLpM58UqIkb2OKfhVEkTP3aGUQ'
-                }
-            }).then(function(response){
-                // console all data
-                console.log(response);
-
-                console.log(response.data.results[0].geometry.location.lat);
-                console.log(response.data.results[0].geometry.location.lng);
-            }).catch(function(err){
-                console.log(err);
-            })
-        }
-    </script>
+    
     <script src="js/main.js"></script>
 </body>
 
