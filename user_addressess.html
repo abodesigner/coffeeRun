@@ -10,7 +10,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>CoffeeRun - Dashboard</title>
+    <title>CoffeeRun - User Addressess</title>
 
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="css/all.css" />
@@ -35,7 +35,7 @@
     <div id="wrapper">
       <!-- Start Sidebar -->
       <ul
-        class="navbar-nav bg-info sidebar sidebar-dark accordion"
+        class="navbar-nav custom-bg sidebar sidebar-dark accordion"
         id="accordionSidebar custom-bg"
       >
         <!-- Divider -->
@@ -43,13 +43,15 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-          <a class="nav-link" href="dashboard.html"> <h2>User Profile</h2></a>
+          <a class="nav-link" href="account_details.html">
+            <h5>Account Details</h5></a
+          >
         </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider" />
 
-        <!-- Nav Item - Activation -->
+        <!-- Nav Item - User Info -->
         <li class="nav-item">
           <a
             class="nav-link"
@@ -59,6 +61,19 @@
           >
             <i class="far fa-user"></i>
             <span>User Info</span>
+          </a>
+        </li>
+
+        <!-- Nav Item - User Info -->
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="user_addressess.html"
+            aria-expanded="true"
+            aria-controls="collapseMenus"
+          >
+            <i class="fas fa-map-marker-alt"></i>
+            <span>User Addressess</span>
           </a>
         </li>
 
@@ -191,7 +206,55 @@
           <!-- End of Topbar -->
 
           <!-- Begin Page Content -->
-          <div class="container-fluid"></div>
+          <div class="container-fluid">
+            <form action="#" method="POST" class="py-5">
+              <div class="user-form">
+                <div class="form-row">
+                  <div class="col-md-6 offset-md-3">
+                    <div class="form-group">
+                      <label for="address">Address 1</label>
+                      <input
+                        type="text"
+                        id="address"
+                        name="address"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-6 offset-md-3">
+                    <div class="form-group">
+                      <label for="address">Address 2</label>
+                      <input
+                        type="text"
+                        id="address"
+                        name="address"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-6 offset-md-3">
+                    <div class="form-group">
+                      <label for="address">Address 3</label>
+                      <input
+                        type="text"
+                        id="address"
+                        name="address"
+                        class="form-control"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="btn-save text-center mt-5">
+                  <a href="#" class="btn btn-success">Save Changes</a>
+                </div>
+              </div>
+            </form>
+          </div>
           <!-- /.container-fluid -->
         </div>
         <!-- End of Main Content -->

@@ -513,9 +513,9 @@ h2 {
 }
 
 /* ======================================
-    Get Parteners Page
+    Get Partner Page
 ====================================== */
-.partener-page-header {
+.partner-page-header {
   position: relative;
   overflow: hidden;
   min-height: 600px;
@@ -538,24 +538,24 @@ h2 {
   bottom: 0;
 }
 
-.partener-page-header .left-content {
+.partner-page-content .left-content {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
-.partener-page-header .left-content h2 {
+.partner-page-content .left-content h2 {
   color: #fff;
   margin-bottom: 0;
   font-size: 4rem;
   text-shadow: 2px 2px 5px rgb(53, 53, 53, 1);
 }
-.partener-page-header .left-content h3 {
+.partner-page-content .left-content h3 {
   color: #fff;
   text-align: center;
   text-shadow: 2px 2px 5px rgb(53, 53, 53, 1);
 }
 
-.partener-page-content {
+.partner-page-content {
   position: absolute;
   width: 90%;
   top: 20%;
@@ -575,7 +575,7 @@ h2 {
   color: #a1d8d9;
 }
 
-.partener-steps h2.main-heading {
+.partner-steps h2.main-heading {
   color: #00838a;
 }
 
@@ -1055,4 +1055,21 @@ ul.menu-items li.menu-item a.menu-item-inner span.menu-item-price {
 
 .promote-menu ul.activation li {
   list-style-type: none;
+}
+
+/* Message success for bank account */
+.message-wrapper {
+  height: 100vh;
+}
+
+.msg-content {
+  position: relative;
+  overflow: hidden;
+  height: calc(100vh - 300px);
+}
+.success-msg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

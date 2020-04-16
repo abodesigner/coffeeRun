@@ -337,10 +337,12 @@ Saturday - Sunday:10am - 10pm`);
             lng: lng
           };
 
+          url = "https://178.63.132.246:44300/api/Product/search-product";
+
           //make ajax GET request
           $.ajax({
             type: "GET",
-            url: "http://178.63.132.246:8080/api/Product/search-product",
+            url: url,
             data: data,
             success: function(response) {
               console.log(response);
