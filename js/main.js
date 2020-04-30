@@ -1,4 +1,16 @@
 $(document).ready(function() {
+  // cookies notification
+  setTimeout(function() {
+    $(".cookies-alert").addClass("d-flex justify-content-around");
+    $("#cookieConsent").fadeIn(3000);
+  }, 4000);
+
+  // click on Ok button
+  $("#okBtn").on("click", function() {
+    $(".cookies-alert").removeClass("d-flex justify-content-around");
+    $(".cookies-alert").fadeOut(200);
+  });
+
   // initialize all tooltips on a page
   $('[data-toggle="tooltip"]').tooltip();
 
