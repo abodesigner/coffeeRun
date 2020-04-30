@@ -1,14 +1,26 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // cookies notification
-  setTimeout(function() {
+  setTimeout(function () {
     $(".cookies-alert").addClass("d-flex justify-content-around");
     $("#cookieConsent").fadeIn(3000);
-  }, 4000);
+  }, 2000);
 
   // click on Ok button
-  $("#okBtn").on("click", function() {
+  $("#okBtn").on("click", function () {
     $(".cookies-alert").removeClass("d-flex justify-content-around");
     $(".cookies-alert").fadeOut(200);
+
+
+
+    setTimeout(function () {
+      $(".covid-alert").fadeIn(1000);
+    }, 2000)
+
+    setTimeout(function () {
+      $(".covid-alert").fadeOut(1000);
+    }, 15000)
+
+
   });
 
   // initialize all tooltips on a page
@@ -18,7 +30,7 @@ $(document).ready(function() {
   $("#year").text(new Date().getFullYear());
   3;
   // smooth scroll
-  $("#main-navbar a[href*='#']:not([href='#'])").on("click", function(event) {
+  $("#main-navbar a[href*='#']:not([href='#'])").on("click", function (event) {
     // prevent normal link behaviour
     event.preventDefault();
 
@@ -34,7 +46,7 @@ $(document).ready(function() {
     );
   });
 
-  $("#home a[href*='#']:not([href='#'])").on("click", function(event) {
+  $("#home a[href*='#']:not([href='#'])").on("click", function (event) {
     // prevent normal link behaviour
     event.preventDefault();
 
@@ -66,12 +78,12 @@ $(document).ready(function() {
   });*/
 
   // Menu Cart Counter
-  $("#add").on("click", function() {
+  $("#add").on("click", function () {
     var currentVal = parseInt($(".menu-item-quantity").html(), 10);
     $(".menu-item-quantity").html(currentVal + 1);
   });
 
-  $("#minus").on("click", function() {
+  $("#minus").on("click", function () {
     var currentVal = parseInt($(".menu-item-quantity").html(), 10);
 
     if (currentVal === 0) {
@@ -82,32 +94,32 @@ $(document).ready(function() {
   });
 
   // Remove placeholder when focus
-  $("#group_name").on("focus", function() {
+  $("#group_name").on("focus", function () {
     $("#group_name").attr("placeholder", "");
   });
 
-  $("#group_name").on("blur", function() {
+  $("#group_name").on("blur", function () {
     $("#group_name").attr("placeholder", "Name of Group");
   });
 
-  $("#friends").on("focus", function() {
+  $("#friends").on("focus", function () {
     $("#friends").attr("placeholder", "");
   });
 
   $("#friends").attr("placeholder", "Invite your friends");
 
-  $("#friends").on("blur", function() {
+  $("#friends").on("blur", function () {
     $("#friends").attr("placeholder", "Invite your friends");
   });
 
   // show/hide download app form
-  $(".app a").on("click", function() {
+  $(".app a").on("click", function () {
     $(".app-download-form").slideToggle();
     $(".rotate").toggleClass("down");
   });
 
   // Validate form in partners page
-  $("#merchant-form").on("submit", function(e) {
+  $("#merchant-form").on("submit", function (e) {
     let messages = [];
 
     let mobileNumber = $("#mobile").val();
@@ -131,17 +143,17 @@ $(document).ready(function() {
   });
 
   // remove placeholder when focus
-  $("#openingHours").on("focus", function() {
+  $("#openingHours").on("focus", function () {
     $(this).val("");
   });
 
-  $("#openingHours").on("blur", function() {
+  $("#openingHours").on("blur", function () {
     $(this).val(`Monday - Friday:10am - 8pm
 Saturday - Sunday:10am - 10pm`);
   });
 
   // Validate promote Form
-  $("#submitBtn").on("click", function(e) {
+  $("#submitBtn").on("click", function (e) {
     let msgArr = [];
 
     let openHours = $("#openingHours").val();
@@ -186,7 +198,7 @@ Saturday - Sunday:10am - 10pm`);
         //     let user = JSON.parse(localStorage.getItem('UserData'));
         //     xhr.setRequestHeader('Authorization', "Bearer" + " " + user.jwtToken);
         //  },
-        success: function(response, status) {
+        success: function (response, status) {
           if (response.hasError) {
             //alert("bad request error, see console");
             $(".alert")
@@ -213,7 +225,7 @@ Saturday - Sunday:10am - 10pm`);
               .text("login done successfully");
 
             // redirect user to product search
-            setInterval(function() {
+            setInterval(function () {
               window.location.replace("restaurants.html");
             }, 500);
           }
@@ -229,7 +241,7 @@ Saturday - Sunday:10am - 10pm`);
       $("#login").hide();
 
       // do stuff if user login
-      $("#searchBox").on("change", function(e) {
+      $("#searchBox").on("change", function (e) {
         console.log("This is from User login");
         e.preventDefault();
       });
@@ -272,7 +284,7 @@ Saturday - Sunday:10am - 10pm`);
         type: "POST",
         url: url,
         data: data,
-        success: function(response) {
+        success: function (response) {
           if (response.hasError) {
             alert("badrequest error, see console");
             for (var i = 0; i < response.errors.length; i++) {
@@ -295,13 +307,13 @@ Saturday - Sunday:10am - 10pm`);
             .addClass("alert-success")
             .text("Congratulation, registration done successfully");
 
-          setInterval(function() {
+          setInterval(function () {
             $(".alert").hide();
             window.location.replace("signin.html");
           }, 5000);
         },
 
-        error: function(xhr, status, error) {
+        error: function (xhr, status, error) {
           //console.log(xhr, status, error);
         }
       });
@@ -311,27 +323,27 @@ Saturday - Sunday:10am - 10pm`);
         .addClass("alert-danger")
         .text("Empty Fields");
 
-      setInterval(function() {
+      setInterval(function () {
         $(".alert").hide();
       }, 5000);
     }
   }
 
   // When signin button, login() function invoked
-  $("#signin-form").on("submit", function(event) {
+  $("#signin-form").on("submit", function (event) {
     event.preventDefault();
     login();
   });
 
   //  When signup button, register() function invoked
-  $("#signup-form").on("submit", function(e) {
+  $("#signup-form").on("submit", function (e) {
     e.preventDefault();
     register();
   });
 
   //Input Search For Product
   function searchForProduct() {
-    $("#searchBox").on("change", function(event) {
+    $("#searchBox").on("change", function (event) {
       event.preventDefault();
 
       // get keyword value
@@ -339,7 +351,7 @@ Saturday - Sunday:10am - 10pm`);
 
       // get user location
       if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
+        navigator.geolocation.getCurrentPosition(function (position) {
           let lat = position.coords.latitude;
           let lng = position.coords.longitude;
 
@@ -356,10 +368,10 @@ Saturday - Sunday:10am - 10pm`);
             type: "GET",
             url: url,
             data: data,
-            success: function(response) {
+            success: function (response) {
               console.log(response);
             },
-            error: function(err) {
+            error: function (err) {
               console.log(err);
             }
           });
@@ -380,13 +392,13 @@ Saturday - Sunday:10am - 10pm`);
           key: "AIzaSyCnlwozEPLpM58UqIkb2OKfhVEkTP3aGUQ"
         }
       })
-      .then(function(response) {
+      .then(function (response) {
         let lat = response.data.results[0].geometry.location.lat;
         let lng = response.data.results[0].geometry.location.lng;
 
         getProducts(lat, lng);
       })
-      .catch(function(err) {
+      .catch(function (err) {
         console.log(err);
       });
   }
@@ -410,7 +422,7 @@ const orderPrice = document.querySelector(".menu-item-price");
 
 // check if element exist
 if (addToCartBtn) {
-  addToCartBtn.addEventListener("click", function(e) {
+  addToCartBtn.addEventListener("click", function (e) {
     // prevent efault pehaviour of form
     e.preventDefault();
 
@@ -673,7 +685,7 @@ if (addToCartBtn) {
 
   // reset function
   function reset() {
-    document.querySelectorAll(".tag").forEach(function(tag) {
+    document.querySelectorAll(".tag").forEach(function (tag) {
       tag.parentElement.removeChild(tag);
     });
   }
@@ -684,7 +696,7 @@ if (addToCartBtn) {
     tags
       .slice()
       .reverse()
-      .forEach(function(tag) {
+      .forEach(function (tag) {
         if (tag == "") {
           alert("please ennter value");
         } else {
@@ -696,7 +708,7 @@ if (addToCartBtn) {
   }
 
   if (input) {
-    input.addEventListener("keyup", function(e) {
+    input.addEventListener("keyup", function (e) {
       e.preventDefault();
 
       e.stopPropagation();
@@ -710,7 +722,7 @@ if (addToCartBtn) {
   }
 
   // // delete item when click on x close
-  document.addEventListener("click", function(e) {
+  document.addEventListener("click", function (e) {
     if (e.target.nodeName === "I") {
       const value = e.target.getAttribute("data-item");
       const index = tags.indexOf(value);

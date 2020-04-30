@@ -393,6 +393,21 @@ h2 {
   background: rgba(20, 20, 20, 0.8);
 }
 
+.covid-alert{
+  min-height: 50px;
+  font-size: 1rem;
+  /* color: #ff0; */
+  line-height: 30px;
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(20, 20, 20, 0.8);
+}
+
 /* ======================================
     Business Page
 ====================================== */
