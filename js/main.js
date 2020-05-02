@@ -10,17 +10,13 @@ $(document).ready(function () {
     $(".cookies-alert").removeClass("d-flex justify-content-around");
     $(".cookies-alert").fadeOut(200);
 
-
-
     setTimeout(function () {
       $(".covid-alert").fadeIn(1000);
-    }, 2000)
+    }, 2000);
 
     setTimeout(function () {
       $(".covid-alert").fadeOut(1000);
-    }, 15000)
-
-
+    }, 15000);
   });
 
   // initialize all tooltips on a page
@@ -39,7 +35,7 @@ $(document).ready(function () {
     // scroll with animate
     $("html, body").animate(
       {
-        scrollTop: $(target).offset().top
+        scrollTop: $(target).offset().top,
       },
       800,
       "linear"
@@ -55,7 +51,7 @@ $(document).ready(function () {
     // scroll with animate
     $("html, body").animate(
       {
-        scrollTop: $(target).offset().top
+        scrollTop: $(target).offset().top,
       },
       500,
       "linear"
@@ -186,7 +182,7 @@ Saturday - Sunday:10am - 10pm`);
     if (userEmail !== "" && userPass !== "") {
       data = {
         email: userEmail,
-        password: userPass
+        password: userPass,
       };
       url = "http://178.63.132.246:8080/api/account";
 
@@ -229,7 +225,7 @@ Saturday - Sunday:10am - 10pm`);
               window.location.replace("restaurants.html");
             }, 500);
           }
-        }
+        },
       });
     }
   }
@@ -275,7 +271,7 @@ Saturday - Sunday:10am - 10pm`);
         lastName: lastName,
         email: email,
         phoneNumber: phoneNumber,
-        password: password
+        password: password,
       };
 
       url = "http://178.63.132.246:8080/api/account";
@@ -315,7 +311,7 @@ Saturday - Sunday:10am - 10pm`);
 
         error: function (xhr, status, error) {
           //console.log(xhr, status, error);
-        }
+        },
       });
     } else {
       $(".alert")
@@ -358,7 +354,7 @@ Saturday - Sunday:10am - 10pm`);
           let data = {
             keyword: keyword,
             lat: lat,
-            lng: lng
+            lng: lng,
           };
 
           url = "https://178.63.132.246:44300/api/Product/search-product";
@@ -373,7 +369,7 @@ Saturday - Sunday:10am - 10pm`);
             },
             error: function (err) {
               console.log(err);
-            }
+            },
           });
         });
       } else {
@@ -389,8 +385,8 @@ Saturday - Sunday:10am - 10pm`);
       .get("https://maps.googleapis.com/maps/api/geocode/json", {
         params: {
           address: location,
-          key: "AIzaSyCnlwozEPLpM58UqIkb2OKfhVEkTP3aGUQ"
-        }
+          key: "AIzaSyCnlwozEPLpM58UqIkb2OKfhVEkTP3aGUQ",
+        },
       })
       .then(function (response) {
         let lat = response.data.results[0].geometry.location.lat;
@@ -429,7 +425,7 @@ if (addToCartBtn) {
     // get checked value from Size radio buttons
     const radioSizeBtns = document.getElementsByName("size");
     let checkedSizeVal;
-    radioSizeBtns.forEach(radioSize => {
+    radioSizeBtns.forEach((radioSize) => {
       if (radioSize.checked) {
         checkedSizeVal = radioSize.value;
       }
@@ -438,7 +434,7 @@ if (addToCartBtn) {
     // get checked value from Milk radio buttons
     const radioMilkBtns = document.getElementsByName("milk");
     let checkedMilkVal;
-    radioMilkBtns.forEach(radioMilk => {
+    radioMilkBtns.forEach((radioMilk) => {
       if (radioMilk.checked) {
         checkedMilkVal = radioMilk.value;
       }
@@ -447,7 +443,7 @@ if (addToCartBtn) {
     // get checked value from Modification checkbox
     const feauresBtns = document.getElementsByName("options[]");
     let checkedFeatureVal;
-    feauresBtns.forEach(feature => {
+    feauresBtns.forEach((feature) => {
       if (feature.checked) {
         checkedFeatureVal = feature.value;
       }
@@ -456,16 +452,15 @@ if (addToCartBtn) {
     // get checked value from Sugar radio buttons
     const radioSugarBtns = document.getElementsByName("sugar");
     let checkedSugarVal;
-    radioSugarBtns.forEach(radioSugar => {
+    radioSugarBtns.forEach((radioSugar) => {
       if (radioSugar.checked) {
         checkedSugarVal = radioSugar.value;
       }
     });
 
     // Remove cart-empty div
-    // const childDiv = document.querySelector(".cart-empty");
-    // const parent = childDiv.parentNode;
-    // parent.removeChild(childDiv);
+    const childDiv = document.querySelector(".cart-empty");
+    childDiv.parentNode.removeChild(childDiv);
 
     //   /*========================
     //      Create Order-Cart-Hader
