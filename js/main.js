@@ -1,30 +1,56 @@
 $(document).ready(function () {
-  // cookies notification
-  setTimeout(function () {
-    $(".cookies-alert").addClass("d-flex justify-content-around");
-    $("#cookieConsent").fadeIn(3000);
-  }, 2000);
 
-  // click on Ok button
-  $("#okBtn").on("click", function () {
-    $(".cookies-alert").removeClass("d-flex justify-content-around");
-    $(".cookies-alert").fadeOut(200);
+  function checkLoginUser() {
+    let user = JSON.parse(localStorage.getItem("UserData"));
+    return user;
+  }
 
+  checkLoginUser();
+
+
+
+  function showCookiesAlert() {
+    setTimeout(function () {
+      $(".cookies-alert").addClass("d-flex justify-content-around");
+      $(".cookies-alert").fadeIn(2000);
+    }, 2000);
+  }
+
+  showCookiesAlert();
+
+  function showCovidAlert() {
     setTimeout(function () {
       $(".covid-alert").fadeIn(1000);
     }, 2000);
 
     setTimeout(function () {
       $(".covid-alert").fadeOut(1000);
-    }, 15000);
-  });
+    }, 10000);
+  }
+
+  function closeButton() {
+    $("#okBtn").on("click", function () {
+      $(".cookies-alert").removeClass("d-flex justify-content-around");
+      $(".cookies-alert").fadeOut(200);
+
+      showCovidAlert();
+
+    });
+
+  }
+
+  closeButton();
+
 
   // initialize all tooltips on a page
-  $('[data-toggle="tooltip"]').tooltip();
+  $("[data-toggle='tooltip']").tooltip();
 
-  // get current year @ footer
-  $("#year").text(new Date().getFullYear());
-  3;
+  function getCurrentYear() {
+    document.getElementById("year").textContent = new Date().getFullYear();
+  }
+
+  getCurrentYear();
+
   // smooth scroll
   $("#main-navbar a[href*='#']:not([href='#'])").on("click", function (event) {
     // prevent normal link behaviour
@@ -175,6 +201,7 @@ Saturday - Sunday:10am - 10pm`);
 
   // login function
   function login() {
+
     //get values
     let userEmail = $("#email").val();
     let userPass = $("#password").val();
@@ -184,7 +211,8 @@ Saturday - Sunday:10am - 10pm`);
         email: userEmail,
         password: userPass,
       };
-      url = "http://178.63.132.246:8080/api/account";
+
+      url = "https://api.coffeerunstore.com/api/account";
 
       $.ajax({
         type: "GET",
@@ -197,10 +225,7 @@ Saturday - Sunday:10am - 10pm`);
         success: function (response, status) {
           if (response.hasError) {
             //alert("bad request error, see console");
-            $(".alert")
-              .removeClass("alert-success")
-              .addClass("alert-danger")
-              .text("Email or Password is wrong!");
+            $(".alert").removeClass("alert-success").addClass("alert-danger").text("Email or Password is wrong!");
 
             for (let i = 0; i < response.errors.length; i++) {
               //console.log(response.errors[i].description)
@@ -215,10 +240,7 @@ Saturday - Sunday:10am - 10pm`);
           // console.log("SUCCESS");
 
           if (status === "success") {
-            $(".alert")
-              .removeClass("alert-danger")
-              .addClass("alert-success")
-              .text("login done successfully");
+            $(".alert").removeClass("alert-danger").addClass("alert-success").text("login done successfully");
 
             // redirect user to product search
             setInterval(function () {
@@ -233,39 +255,45 @@ Saturday - Sunday:10am - 10pm`);
   // check if user login or not
   function isLogged() {
     let user = JSON.parse(localStorage.getItem("UserData"));
+
     if (user) {
-      $("#login").hide();
+      console.log("This is login User");
+
+      //$("#login").hide();
 
       // do stuff if user login
-      $("#searchBox").on("change", function (e) {
-        console.log("This is from User login");
-        e.preventDefault();
-      });
+      // $("#searchBox").on("change", function (e) {
+      //   console.log("This is login User");
+      //   e.preventDefault();
+      // });
+
     } else {
-      $("#login").show();
+      return;
+
+      //$("#login").show();
 
       // do stuff if user not login
-      searchForProduct();
+      //searchForProduct();
     }
   }
 
   isLogged();
 
-  // register function
+  /**
+   * register function
+  */
+
   function register() {
-    // get values from register form
+
+    // Get values from register form
     const firstName = $("#fname").val();
     const lastName = $("#lname").val();
     const email = $("#email").val();
     const phoneNumber = $("#mobile").val();
     const password = $("#password").val();
 
-    if (
-      firstName !== "" &&
-      lastName !== "" &&
-      email !== "" &&
-      password !== ""
-    ) {
+    if (firstName !== "" && lastName !== "" && email !== "" && password !== "") {
+
       data = {
         firstName: firstName,
         lastName: lastName,
@@ -274,7 +302,7 @@ Saturday - Sunday:10am - 10pm`);
         password: password,
       };
 
-      url = "http://178.63.132.246:8080/api/account";
+      url = "https://api.coffeerunstore.com/api/account";
 
       $.ajax({
         type: "POST",
@@ -298,10 +326,7 @@ Saturday - Sunday:10am - 10pm`);
           $("#password").val("");
 
           //console.log(response);
-          $(".alert")
-            .removeClass("alert-danger")
-            .addClass("alert-success")
-            .text("Congratulation, registration done successfully");
+          $(".alert").removeClass("alert-danger").addClass("alert-success").text("Congratulation, registration done successfully");
 
           setInterval(function () {
             $(".alert").hide();
@@ -313,15 +338,14 @@ Saturday - Sunday:10am - 10pm`);
           //console.log(xhr, status, error);
         },
       });
-    } else {
-      $(".alert")
-        .removeClass("alert-success")
-        .addClass("alert-danger")
-        .text("Empty Fields");
+
+    } else { // Empty Fields
+
+      $(".alert").removeClass("alert-success").addClass("alert-danger").text("Empty Fields");
 
       setInterval(function () {
         $(".alert").hide();
-      }, 5000);
+      }, 3000);
     }
   }
 
@@ -366,6 +390,11 @@ Saturday - Sunday:10am - 10pm`);
             data: data,
             success: function (response) {
               console.log(response);
+
+              let result = JSON.parse(response);
+
+              //loop through th response, but loop through the value not all object
+
             },
             error: function (err) {
               console.log(err);
@@ -400,24 +429,28 @@ Saturday - Sunday:10am - 10pm`);
   }
 });
 
-// add items to cart dynamically
+/**=================
+ * add items to cart
+==================== */
+
 
 //  grab elements
-const addToCartBtn = document.getElementById("addToCart");
-const orderCartContainer = document.querySelector(".order-cart-container");
-const restName = document.querySelector("h2.r-name");
-const restAddress = document.querySelector("p.r-address");
-const itemQty = document.querySelector(".menu-item-quantity");
-const orderName = document.querySelector(".cart-header-content h2");
+const addToCartBtn = document.getElementById("addToCart"),
+  orderCartContainer = document.querySelector(".order-cart-container"),
+  restName = document.querySelector("h2.r-name"),
+  restAddress = document.querySelector("p.r-address"),
+  itemQty = document.querySelector(".menu-item-quantity"),
+  orderName = document.querySelector(".cart-header-content h2"),
 
-const orderSize = document.querySelector(".size");
-const orderMilk = document.querySelector(".milk");
-const orderPrice = document.querySelector(".menu-item-price");
+  orderSize = document.querySelector(".size"),
+  orderMilk = document.querySelector(".milk"),
+  orderPrice = document.querySelector(".menu-item-price");
 
 // add eventListener
 
-// check if element exist
+// check if element exist in DOM
 if (addToCartBtn) {
+
   addToCartBtn.addEventListener("click", function (e) {
     // prevent efault pehaviour of form
     e.preventDefault();
@@ -459,15 +492,19 @@ if (addToCartBtn) {
     });
 
     // Remove cart-empty div
-    const childDiv = document.querySelector(".cart-empty");
-    childDiv.parentNode.removeChild(childDiv);
+    function hideEmptyCart() {
+      const childDiv = document.getElementById("empty");
+      childDiv.style.display = "none";
+    }
 
-    //   /*========================
-    //      Create Order-Cart-Hader
-    //     ========================
-    //   */
+    hideEmptyCart();
+
+    /*===========================
+    Create Order-Cart Header
+    =============================
+     */
     const divHeader = document.createElement("div");
-    divHeader.setAttribute("class", "order-card-header p-2");
+    divHeader.setAttribute("class", "order-card-header mt-5 p-2");
 
     // Create Restaurant Name & add value from user selection
     const restNameElm = document.createElement("h5");
@@ -486,12 +523,10 @@ if (addToCartBtn) {
     // append divHeader to orderCartContainer
     orderCartContainer.prepend(divHeader);
 
-    //   /*========================
-    //      Create Order-Cart-Body
-    //     ========================
-    //   **/
-
-    //   Create Order-Cart-Body
+    /*========================
+    Create Order-Cart Body
+    ========================
+   **/
     const divBody = document.createElement("div");
     divBody.setAttribute("class", "order-card-body py-2");
 
@@ -546,21 +581,18 @@ if (addToCartBtn) {
     //  add divBody to orderCartContainer
     orderCartContainer.appendChild(divBody);
 
-    //   /*===========================
-    //      Create Order-Cart-Footer
-    //     =========================
-    //   */
+    /*===========================
+    Create Order-Cart-Footer
+    =========================
+     */
 
-    //   // create
+    // create
     const divFooter = document.createElement("div");
     divFooter.setAttribute("class", "order-card-footer");
 
     //   // create subtotal item
     const subTotalContainer = document.createElement("div");
-    subTotalContainer.setAttribute(
-      "class",
-      "d-flex px-2 justify-content-between"
-    );
+    subTotalContainer.setAttribute("class", "d-flex px-2 justify-content-between");
 
     const subtTotal = document.createElement("span");
     subtTotal.setAttribute("class", "subtotal");
@@ -575,7 +607,7 @@ if (addToCartBtn) {
 
     divFooter.appendChild(subTotalContainer);
 
-    //   // create subtotal item
+    // create subtotal item
     const taxContainer = document.createElement("div");
     taxContainer.setAttribute("class", "d-flex px-2 justify-content-between");
 
@@ -606,12 +638,9 @@ if (addToCartBtn) {
 
     divFooter.appendChild(totalContainer);
 
-    //   // create Rewards item
+    // create Rewards item
     const rewardContainer = document.createElement("div");
-    rewardContainer.setAttribute(
-      "class",
-      "d-flex px-2 justify-content-between"
-    );
+    rewardContainer.setAttribute("class", "d-flex px-2 justify-content-between");
 
     const reward = document.createElement("span");
     reward.textContent = "REWARD";
@@ -625,42 +654,80 @@ if (addToCartBtn) {
 
     divFooter.appendChild(rewardContainer);
 
-    //   // create hideelement
+    // create hideelement
     const smallElem = document.createElement("small");
     smallElem.classList.add("h-details", "d-block", "text-left", "px-2");
     smallElem.textContent = "Hide Details";
     divFooter.appendChild(smallElem);
     orderCartContainer.appendChild(divFooter);
 
-    //   //add place Order button
-    const a = document.createElement("a");
+    //add place Order button
+    const placeBtn = document.createElement("button");
     const linkText = document.createTextNode("place order");
-    a.appendChild(linkText);
-    a.setAttribute("href", "user_profile.html");
-    a.setAttribute("role", "button");
-    a.classList.add("btn", "btn-blue", "mt-3");
-    a.style.textTransform = "capitalize";
-    divFooter.appendChild(a);
+    placeBtn.appendChild(linkText);
 
-    //   // add item to parent
+    // a.setAttribute("href", "account_details.html");
+    // placeBtn.setAttribute("role", "button");
+    placeBtn.classList.add("btn", "btn-blue", "mt-3");
+    placeBtn.id = "placeBtn";
+    placeBtn.style.textTransform = "capitalize";
+    divFooter.appendChild(placeBtn);
+
+    placeBtn.addEventListener("click", e => {
+      isLogged();
+      e.preventDefault();
+    });
+
+
+    // add item to parent
     orderCartContainer.appendChild(divFooter);
 
-    console.log(`${restName.textContent}
-                ${restAddress.textContent} `);
-
+    console.log(`${restName.textContent} ${restAddress.textContent} `);
     console.log(`Size: ${checkedSizeVal}`);
     console.log(`Milk: ${checkedMilkVal}`);
     console.log(`Sugar: ${checkedSugarVal} sugar`);
     console.log(`Extra Options: ${checkedFeatureVal}`);
     console.log(`qty : ${qtyDiv.textContent}`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   });
 
-  // // create tags input
+
+
+
+
+  /**==================
+   * create tags input
+  ===================*/
+
   const tagContainer = document.querySelector(".tag-container");
   const input = document.querySelector(".tag-container input");
 
   let tags = [];
 
+  // create new Tag
   function createTag(label) {
     const div = document.createElement("div");
     const span = document.createElement("span");
@@ -678,14 +745,14 @@ if (addToCartBtn) {
     return div;
   }
 
-  // reset function
+  // reset Tag
   function reset() {
     document.querySelectorAll(".tag").forEach(function (tag) {
-      tag.parentElement.removeChild(tag);
+      tag.parentNode.removeChild(tag);
     });
   }
 
-  // // add values to tags array
+  // add values to tags array
   function addTags() {
     reset();
     tags
@@ -702,21 +769,31 @@ if (addToCartBtn) {
     return tags;
   }
 
+  // add input event
   if (input) {
     input.addEventListener("keyup", function (e) {
       e.preventDefault();
-
       e.stopPropagation();
+
       if (e.key === "Enter") {
+
+
+
+
+
         tags.push(input.value); // add values to array
         const result = addTags(); // show values on input
+        console.log(result);
         console.log(result.join());
         input.value = ""; // reset input
       }
+
+
     });
+
   }
 
-  // // delete item when click on x close
+  // delete tag when click on X close
   document.addEventListener("click", function (e) {
     if (e.target.nodeName === "I") {
       const value = e.target.getAttribute("data-item");
@@ -726,4 +803,6 @@ if (addToCartBtn) {
       addTags();
     }
   });
+
+
 }

@@ -1,32 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
 
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/all.css" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- Custom Media Query CSS -->
-    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/media.css" />
 
     <title>Add Order To Cart</title>
 </head>
 
 <body>
-
     <!-- Start Navbar -->
     <nav class="navbar custom-navbar navbar-expand-lg">
         <a class="navbar-brand w-100 d-flex justify-content-center" href="index.html">
-            <img src="img/logo.png" alt="coffeeRun_logo" class="img-fluid">
+            <img src="img/logo.png" alt="coffeeRun_logo" class="img-fluid" />
         </a>
 
         <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
@@ -35,8 +34,6 @@
         </button>
     </nav>
     <!-- End Navbar -->
-
-
 
     <!-- Start Order-Head Section -->
     <div class="order-head-section">
@@ -54,15 +51,12 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="order-card text-center">
-                        <div class="cart-empty">
-                            <img src="img/cart.jpg" alt="cart" class="img-fluid py-4" width="250px">
+                        <div class="cart-empty" id="empty">
+                            <img src="img/cart.jpg" alt="cart" class="img-fluid py-4" width="250px" />
                             <h6 class="mt-5">Your cart is empty</h6>
                             <p>Add items to get started</p>
-
                         </div>
                         <div class="order-cart-container">
-
-
 
                         </div>
                     </div>
@@ -84,26 +78,25 @@
                                 <p class="time mb-0">READY IN ABOUT 2 MINS</p>
                                 <p class="open">AVAILABLE 9:00 AM TO 7:45 PM</p>
                             </div>
-                            <hr>
+                            <hr />
                         </div>
 
                         <div class="cart-description">
                             <div class="cart-description-content">
-                                <p>Espresso with fresh, steamed milk poured over it. Perfect for those who like a
-                                    latte
-                                    with
-                                    a little less foam.</p>
+                                <p>
+                                    Espresso with fresh, steamed milk poured over it. Perfect
+                                    for those who like a latte with a little less foam.
+                                </p>
                             </div>
                         </div>
 
                         <div class="form-order">
                             <form action="#" method="POST" id="menu-order">
-
                                 <!-- Select Size -->
                                 <label for="" class="mb-0"><strong> choose size</strong></label>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="size" id="regular"
-                                        value="regular">
+                                        value="regular" />
                                     <label class="form-check-label" for="radio1">
                                         Regular
                                     </label>
@@ -111,7 +104,7 @@
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="size" id="large" value="large">
+                                    <input class="form-check-input" type="radio" name="size" id="large" value="large" />
                                     <div class="d-flex justify-content-between">
                                         <label class="form-check-label" for="radio2">Large</label>
                                         <div class="price-container">€2.50</div>
@@ -120,10 +113,10 @@
 
                                 <!-- Select Milk -->
                                 <label for="" class="mb-0 mt-4">
-                                    <strong>
-                                        choose milk</strong></label>
+                                    <strong> choose milk</strong></label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="milk" id="radio1" value="whole">
+                                    <input class="form-check-input" type="radio" name="milk" id="radio1"
+                                        value="whole" />
                                     <div class="d-flex justify-content-between">
                                         <label class="form-check-label" for="radio1">
                                             Whole
@@ -134,7 +127,7 @@
 
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="milk" id="radio2"
-                                        value="Semi-Skimmed">
+                                        value="Semi-Skimmed" />
                                     <div class="d-flex justify-content-between">
                                         <label class="form-check-label" for="radio2">Semi-Skimmed</label>
                                         <div class="price-container">€0.50</div>
@@ -142,7 +135,8 @@
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="milk" id="radio3" value="almond">
+                                    <input class="form-check-input" type="radio" name="milk" id="radio3"
+                                        value="almond" />
 
                                     <div class="d-flex justify-content-between">
                                         <label class="form-check-label" for="radio3">Almond</label>
@@ -155,43 +149,41 @@
                                     <strong>extra options</strong></label>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="check1" value="Make it Decaf - Currently not
-                                    available" name="options[]" disabled>
+                                    available" name="options[]" disabled />
                                     <label class="form-check-label" for="check1">Make it Decaf - Currently not
                                         available</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="check2"
-                                        value="Extra Espresso Shot" name="options[]">
+                                        value="Extra Espresso Shot" name="options[]" />
                                     <label class="form-check-label" for="check2">Extra Espresso Shot</label>
                                 </div>
 
                                 <!-- Sugar -->
                                 <label for="" class="mb-0 mt-4">
-                                    <strong>add sugar</strong> </label>
+                                    <strong>add sugar</strong>
+                                </label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="sugar" id="sugar1" value="1">
+                                    <input class="form-check-input" type="radio" name="sugar" id="sugar1" value="1" />
                                     <label class="form-check-label" for="sugar1">1 sugar</label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="sugar" id="sugar2" value="2">
+                                    <input class="form-check-input" type="radio" name="sugar" id="sugar2" value="2" />
                                     <label class="form-check-label" for="sugar2">2 sugar</label>
                                 </div>
 
                                 <div class="form-check mb-4">
-                                    <input class="form-check-input" type="radio" name="sugar" id="sugar3" value="no">
+                                    <input class="form-check-input" type="radio" name="sugar" id="sugar3" value="no" />
                                     <label class="form-check-label" for="sugar3">no sugar</label>
                                 </div>
 
-
-                                <small class="text-danger">LIST ANY SPECIAL REQUESTS YOU MAY HAVE (IE.
-                                    ALLERGIES,
-                                    EXTRA SPICY,
-                                    ETC.)</small>
+                                <!-- <small class="text-danger">LIST ANY SPECIAL REQUESTS YOU MAY HAVE (IE. ALLERGIES,
+                                    EXTRA SPICY, ETC.)</small> -->
                                 <!-- TAGS Input -->
-                                <div class="tag-container">
-                                    <input type="text">
-                                </div>
+                                <!-- <div class="tag-container">
+                                     <input type="text" />
+                        </div> -->
 
                                 <div class="menu-item-container mb-4 d-flex justify-content-center">
                                     <div class="menu-item-control" id="minus">
@@ -212,7 +204,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -249,7 +240,7 @@
                     </div>
                 </div>
 
-                <div class=" col-md-6">
+                <div class="col-md-6">
                     <div class="list-content d-flex justify-content-center">
                         <ul>
                             <li>
@@ -297,13 +288,13 @@
             </div>
             <div class="row">
                 <div class="copyright text-white text-center w-100">
-                    All &copy; copyright are reserved to CoffeeRun <span id="year"></span>.
+                    All &copy; copyright are reserved to CoffeeRun
+                    <span id="year"></span>.
                 </div>
             </div>
         </div>
     </section>
     <!-- End Footer Section -->
-
 
     <!-- JavaScript liberaries -->
     <script src="js/jquery-3.4.1.min.js"></script>

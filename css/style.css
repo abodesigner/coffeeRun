@@ -1,10 +1,10 @@
 /*
   Theme Name   : CoffeeRun
   UI Developer : Mohammed Abo Salem
-  Website URL  : "www.thecoffeerunapp.com"
+  Website URL  : "www.coffeerunstore.com"
   Version      : 0.0.1
 
-  1- Global
+  1- Global Styles
   2- Home Page
       1- Home Section
       2- Features Section
@@ -49,23 +49,33 @@ h2 {
 }
 
 /* CUSTOM BUTTONS */
+.btn-orange {
+  background-color: #d9751e;
+  border-color: #d9751e;
+  border-radius: 20px;
+  color: #fff;
+}
+
+.btn-white {
+  border-color: #fff;
+  color: #333;
+  background-color: #fff;
+}
+
+.bg-yellow {
+  background-color: #eddfbc;
+}
+
 .btn-outline-brown {
-  color: #3b2414;
-  border-color: #3b2414;
+  color: #48321d;
+  border-color: #48321d;
   border-radius: 20px;
   transition: all 0.5s ease-in-out;
 }
 
 .btn-outline-brown:hover {
   color: #fff;
-  background-color: #3b2414;
-}
-
-.btn-orange {
-  background-color: #d9751e;
-  border-color: #d9751e;
-  border-radius: 20px;
-  color: #fff;
+  background-color: #48321d;
 }
 
 .btn-orange-br-5 {
@@ -78,16 +88,6 @@ h2 {
 .btn-orange:hover,
 .btn-orange:focus {
   color: #fff;
-}
-
-.btn-white {
-  border-color: #fff;
-  color: #333;
-  background-color: #fff;
-}
-
-.bg-yellow {
-  background-color: #eddfbc;
 }
 
 .text-blue {
@@ -112,6 +112,30 @@ h2 {
   color: #fff;
 }
 
+.btn-brown {
+  color: #fff;
+  background-color: #48321d;
+  border-color: #48321d;
+}
+
+.btn-brown:hover {
+  color: #fff;
+  background-color: #48321d;
+  border-color: #48321d;
+}
+
+.btn-blue {
+  color: #fff;
+  background-color: #335d7f;
+  border-color: #335d7f;
+}
+
+.btn-blue:hover {
+  color: #fff;
+  background-color: #335d7f;
+  border-color: #335d7f;
+}
+
 .btn-outline-blue {
   background-color: transparent;
   border-color: transparent;
@@ -131,32 +155,8 @@ h2 {
   background-color: #ecfbfb;
 }
 
-.btn-brown {
-  color: #fff;
-  background-color: #3b2414;
-  border-color: #3b2414;
-}
-
-.btn-brown:hover {
-  color: #fff;
-  background-color: #3b2414;
-  border-color: #3b2414;
-}
-
-.btn-blue {
-  color: #fff;
-  background-color: #335d7f;
-  border-color: #335d7f;
-}
-
-.btn-blue:hover {
-  color: #fff;
-  background-color: #335d7f;
-  border-color: #335d7f;
-}
-
 .text-brown {
-  color: #392413;
+  color: #48321d;
 }
 
 /* Fonts */
@@ -179,7 +179,8 @@ h2 {
 
 .custom-navbar {
   padding: 0 1rem;
-  background: rgba(237, 223, 188, 0.8);
+  background: transparent;
+  border:0;
   z-index: 999;
 }
 
@@ -222,7 +223,7 @@ h2 {
 .home-section-content h1 {
   font-size: 65px;
   font-weight: bold;
-  color: #3b2414;
+  color: #48321d;
   text-shadow: 2px 2px 5px rgb(53, 53, 53, 1);
 }
 
@@ -277,19 +278,54 @@ h2 {
 /* ======================================
     Services Section
 ====================================== */
-.services-section {
-  padding: 50px 0;
-  background-color: #eddfbc;
+.dark{
+/* min-height: 500px; */
+padding: 50px 0;
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+/* background: rgba(69, 39, 10, 0.92); */
+background: rgba(38, 15, 7, 0.9);
+
 }
+.services-section {
+  min-height: 400px;
+  padding: 50px 0;
+  background: url(../img/services-bg.png) no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  overflow: hidden;
+
+}
+
+.service-block-content{
+  transition: all 0.6s ease-in-out;
+  padding: 20px 5px;
+  border-radius: 5px;
+}
+
+.service-block-content:hover{
+  background-color: #fff;
+}
+
+.service-block-content:hover .service-title,
+.service-block-content:hover .service-description{
+  color: #48321d;
+}
+
 
 .service-block-content .service-title {
   font-weight: bold;
-  color: #392413;
+  color: #fffbf4;
 }
 
 .service-block-content .service-description {
-  color: #392413;
-  min-height: 72px;
+  color: #dddad5;
+  height: 90px;
+  text-align: center;
 }
 
 .service-block-content .fas:before {
@@ -299,7 +335,6 @@ h2 {
 .service-block-content a.btn-link {
   font-size: 18px;
   color: #d9751e;
-  font-weight: 700;
 }
 
 .service-block-content a.btn-link:hover {
@@ -320,7 +355,7 @@ h2 {
 }
 
 .info-box h2 {
-  color: #2b3b55;
+  color: #48321d;
   font-size: 2rem;
   margin-bottom: 20px;
   font-weight: 700;
@@ -329,6 +364,7 @@ h2 {
 .info-box p {
   font-size: 1.2rem;
   margin-bottom: 20px;
+  color: #48321d;
 }
 
 .image-box {
@@ -349,9 +385,16 @@ h2 {
     Footer Section
 ====================================== */
 .footer {
-  min-height: 200px;
-  padding: 20px 0;
-  background: #2b3b55;
+  min-height: 300px;
+  /* background: #2b3b55; */
+  /* background: #4971A6; */
+  /* background: #311a00; */
+  background: #48321d;
+  background: url(../img/footer-bg.jpg) no-repeat;
+  background-position: top center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
 }
 
 .list-content ul li {
@@ -375,14 +418,15 @@ h2 {
 }
 
 .icons i.fab:hover {
-  color: #d9751e;
+  /* color: #d9751e; */
+  color:#FFD800
 }
 
 .cookies-alert {
-  min-height: 30px;
+  height: 100px;
   font-size: 1rem;
   color: #fff;
-  line-height: 30px;
+  line-height: 50px;
   display: none;
   position: fixed;
   left: 0;
@@ -390,14 +434,14 @@ h2 {
   bottom: 0;
   width: 100%;
   z-index: 9999;
-  background: rgba(20, 20, 20, 0.8);
+  background: #3B2414;
 }
 
 .covid-alert{
-  min-height: 50px;
+  height: 50px;
   font-size: 1rem;
-  /* color: #ff0; */
-  line-height: 30px;
+  color: #fff;
+  line-height: 25px;
   display: none;
   position: fixed;
   left: 0;
@@ -405,7 +449,8 @@ h2 {
   bottom: 0;
   width: 100%;
   z-index: 9999;
-  background: rgba(20, 20, 20, 0.8);
+  /* background: rgba(160, 0, 0, 1); */
+  background: #BD0000;
 }
 
 /* ======================================
