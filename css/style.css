@@ -48,12 +48,51 @@ h2 {
   margin-right: 5px;
 }
 
+
+/*
+  Main Colors
+  ===========
+
+  Coffee : #48321d
+  Orange : #d9751e
+
+
+
+*/
+
+
 /* CUSTOM BUTTONS */
+.btn-yellow {
+  background-color: #cdcd13;
+  border-color: #cdcd13;
+  color: #48321d;
+  min-width: 60px;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.text-yellow{
+  color: #cdcd13
+}
 .btn-orange {
   background-color: #d9751e;
   border-color: #d9751e;
   border-radius: 20px;
   color: #fff;
+}
+
+.btn-brown {
+  color: #fff;
+  background-color: #48321d;
+  border-color: #48321d;
+  border-radius: 20px;
+  min-width: 70px;
+}
+
+.btn-brown:hover {
+  color: #fff;
+  background-color: #48321d;
+  border-color: #48321d;
 }
 
 .btn-white {
@@ -62,9 +101,7 @@ h2 {
   background-color: #fff;
 }
 
-.bg-yellow {
-  background-color: #eddfbc;
-}
+
 
 .btn-outline-brown {
   color: #48321d;
@@ -112,17 +149,7 @@ h2 {
   color: #fff;
 }
 
-.btn-brown {
-  color: #fff;
-  background-color: #48321d;
-  border-color: #48321d;
-}
 
-.btn-brown:hover {
-  color: #fff;
-  background-color: #48321d;
-  border-color: #48321d;
-}
 
 .btn-blue {
   color: #fff;
@@ -231,7 +258,8 @@ h2 {
   font-size: 40px;
   font-weight: bold;
   font-style: italic;
-  color: #d9751e;
+  /* color: #d9751e; */
+  color: #cdcd13;
   text-shadow: 2px 2px 5px rgb(53, 53, 53, 1);
 }
 
@@ -329,17 +357,20 @@ background: rgba(38, 15, 7, 0.9);
 }
 
 .service-block-content .fas:before {
-  color: #d9751e;
+  /* color: #d9751e;  */
+  color:#cdcd13;
 }
 
 .service-block-content a.btn-link {
-  font-size: 18px;
-  color: #d9751e;
+  font-size: 20px;
+  /* color: #d9751e; */
+  color:#cdcd13;
 }
 
 .service-block-content a.btn-link:hover {
   text-decoration: none;
-  color: #d9751e;
+  /* color: #d9751e; */
+  color:#cdcd13;
 }
 
 /* ======================================
@@ -423,10 +454,10 @@ background: rgba(38, 15, 7, 0.9);
 }
 
 .cookies-alert {
-  height: 100px;
+  height: 80px;
   font-size: 1rem;
   color: #fff;
-  line-height: 50px;
+  line-height: 80px;
   display: none;
   position: fixed;
   left: 0;
@@ -434,7 +465,7 @@ background: rgba(38, 15, 7, 0.9);
   bottom: 0;
   width: 100%;
   z-index: 9999;
-  background: #3B2414;
+  background: #cdcd13;
 }
 
 .covid-alert{
