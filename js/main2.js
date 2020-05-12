@@ -144,7 +144,8 @@ function login() {
             password: userPass,
         };
 
-        url = "https://app.coffeerunstore.com/api/Login";
+        //url = "https://app.coffeerunstore.com/api/Login";
+        url = `https://app.coffeerunstore.com/api/Login?email=${data.email}&password=${data.password}`;
 
         $.ajax({
             type: "POST",
