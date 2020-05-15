@@ -1,215 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="css/all.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
 
-    <link rel="stylesheet" href="css/intlTelInput.min.css" />
+  <!-- Fontawesome CSS -->
+  <link rel="stylesheet" href="css/all.css" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/intlTelInput.min.css" />
 
-    <!-- Custom Media Query CSS -->
-    <link rel="stylesheet" href="css/media.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
 
-    <title>Restaurants</title>
-  </head>
+  <!-- Custom Media Query CSS -->
+  <link rel="stylesheet" href="css/media.css" />
 
-  <body class="overflow-hidden">
-    <!-- Start Navbar -->
-    <nav
-      class="navbar navbar-expand-lg py-0"
-      style="background-color: #eddfbc;"
-    >
-      <a class="navbar-brand" href="index.html">
-        <img src="img/logo.png" alt="coffeeRun_logo" class="img-fluid" />
-      </a>
-      <button
-        class="navbar-toggler custom-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#main-navbar"
-        aria-controls="main-navbar"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <title>Restaurants</title>
+</head>
 
-      <div
-        class="collapse navbar-collapse d-flex resto-navbar"
-        id="main-navbar"
-      >
-        <ul class="navbar-nav mr-auto d-flex">
-          <li class="nav-item flex-grow-1">
-            <a href="#" class="nav-link">Closest to you</a>
-          </li>
-          <li class="nav-item flex-grow-1">
-            <a href="#" class="nav-link">Re-Order</a>
-          </li>
-          <li class="nav-item flex-grow-1">
-            <a href="#" class="nav-link">Rewards</a>
-          </li>
+<body>
+  <!-- Start Navbar -->
+  <nav class="navbar navbar-expand-lg py-0" style="background-color: #eddfbc;">
+    <a class="navbar-brand" href="index.html">
+      <img src="img/logo.png" alt="coffeeRun_logo" class="img-fluid" />
+    </a>
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
+      aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-          <a
-            href="signin.html"
-            id="login"
-            class="btn btn-outline-brown my-2 my-sm-0 flex-grow-1"
-            role="button"
-            >Sign in</a
-          >
-        </ul>
-        <form action="#" class="form-inline ml-auto my-lg-0">
-          <input
-            id="searchBox"
-            class="controls form-control flex-grow-1"
-            type="text"
-            placeholder="Search for a Product"
-          />
-        </form>
-      </div>
-    </nav>
-    <!-- End Navbar -->
+    <div class="collapse navbar-collapse d-flex resto-navbar" id="main-navbar">
+      <ul class="navbar-nav mr-auto d-flex">
+        <li class="nav-item flex-grow-1">
+          <a href="#" class="nav-link">Closest to you</a>
+        </li>
+        <li class="nav-item flex-grow-1">
+          <a href="#" class="nav-link">Re-Order</a>
+        </li>
+        <li class="nav-item flex-grow-1">
+          <a href="#" class="nav-link">Rewards</a>
+        </li>
 
-    <!-- Start Order Section -->
-    <div class="orders-section">
-      <div class="container-fluid px-0">
-        <div class="row mx-0">
-          <div class="col-lg-6 px-0">
-            <div class="app">
-              <a
-                href="#"
-                class="d-flex justify-content-around align-items-center py-2"
-                id="app-form"
-              >
-                <i class="fas fa-mobile-alt fa-3x"></i>
+        <a href="signin.html" id="signin-btn" class="btn btn-outline-brown my-2 my-sm-0 flex-grow-1" role="button">Sign
+          in</a>
+      </ul>
+      <form action="#" class="form-inline ml-auto my-lg-0">
+        <input id="searchBox" class="controls form-control flex-grow-1" type="text"
+          placeholder="Search for a Product" />
+      </form>
+    </div>
+  </nav>
+  <!-- End Navbar -->
 
-                <p class="my-0">
-                  Download our app & take CoffeeRun with you wherever you go!
-                </p>
+  <!-- Start Order Section -->
+  <div class="orders-section">
+    <div class="container-fluid px-0">
+      <div class="row mx-0">
+        <div class="col-lg-6 px-0">
+          <div class="app">
+            <a href="#" class="d-flex justify-content-around align-items-center py-2" id="app-form">
+              <i class="fas fa-mobile-alt fa-3x"></i>
 
-                <span class="fas fa-caret-right rotate"></span>
-              </a>
+              <p class="my-0">
+                Download our app & take CoffeeRun with you wherever you go!
+              </p>
+
+              <span class="fas fa-caret-right rotate"></span>
+            </a>
+          </div>
+          <div class="app-download-form">
+            <div class="download-form bg-white d-flex justify-content-center">
+              <form class="inline-form p-2" action="">
+                <label for="mobileNumber" class="m-Number">Enter your mobile # to receive download link</label>
+
+                <input type="tel" placeholder="" id="telephone" class="form-control" />
+
+                <button type="submit" class="btn btn-orange-br-5">
+                  send
+                </button>
+              </form>
             </div>
-            <div class="app-download-form">
-              <div class="download-form bg-white d-flex justify-content-center">
-                <form class="inline-form p-2" action="">
-                  <label for="mobileNumber" class="m-Number"
-                    >Enter your mobile # to receive download link</label
-                  >
+          </div>
 
-                  <input
-                    type="tel"
-                    placeholder=""
-                    id="telephone"
-                    class="form-control"
-                  />
+          <div id="product-list">
 
-                  <button type="submit" class="btn btn-orange-br-5">
-                    send
-                  </button>
-                </form>
-              </div>
-            </div>
-
-            <div class="media-list">
-              <a href="order-details.html" class="media">
-                <img src="img/CR13.jpg" width="190px" class="mr-3" alt="..." />
-                <div class="media-body">
-                  <h3 class="my-0">Yuna (Oranienburger Str.)</h3>
-                  <p class="media-description">Coffee, Breakfast & Lunch</p>
-                  <ul class="media-tags d-flex">
-                    <li class="media-tag media-tag-yellow mr-sm-2">
-                      fisrt-taste
-                    </li>
-                    <li class="media-tag">closed</li>
-                  </ul>
-                  <div class="media-hourse">
-                    <span> Open 9:40 AM - 6:00 PM </span>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <div class="media-list">
-              <div class="media">
-                <img src="img/CR13.jpg" width="190px" class="mr-3" alt="..." />
-                <div class="media-body">
-                  <h3 class="my-0">Yuna (Oranienburger Str.)</h3>
-                  <p class="media-description">Coffee, Breakfast & Lunch</p>
-                  <ul class="media-tags d-flex">
-                    <li class="media-tag media-tag-yellow mr-sm-2">
-                      fisrt-taste
-                    </li>
-                    <li class="media-tag">closed</li>
-                  </ul>
-                  <div class="media-hourse">
-                    <span> Open 9:40 AM - 6:00 PM </span>
-                  </div>
+          </div>
+          <!-- <div class="media-list">
+            <a href="order-details.html" class="media">
+              <img src="img/CR13.jpg" width="190px" class="mr-3" alt="..." />
+              <div class="media-body">
+                <h3 class="my-0">Yuna (Oranienburger Str.)</h3>
+                <p class="media-description">Coffee, Breakfast & Lunch</p>
+                <ul class="media-tags d-flex">
+                  <li class="media-tag media-tag-yellow mr-sm-2">
+                    fisrt-taste
+                  </li>
+                  <li class="media-tag">closed</li>
+                </ul>
+                <div class="media-hourse">
+                  <span> Open 9:40 AM - 6:00 PM </span>
                 </div>
               </div>
-            </div>
+            </a>
+          </div>
 
-            <div class="media-list">
-              <div class="media">
-                <img src="img/CR13.jpg" width="190px" class="mr-3" alt="..." />
-                <div class="media-body">
-                  <h3 class="my-0">Yuna (Oranienburger Str.)</h3>
-                  <p class="media-description">Coffee, Breakfast & Lunch</p>
-                  <ul class="media-tags d-flex">
-                    <li class="media-tag media-tag-yellow mr-sm-2">
-                      fisrt-taste
-                    </li>
-                    <li class="media-tag">closed</li>
-                  </ul>
-                  <div class="media-hourse">
-                    <span> Open 9:40 AM - 6:00 PM </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="media-list">
-              <div class="media">
-                <img src="img/CR13.jpg" width="190px" class="mr-3" alt="..." />
-                <div class="media-body">
-                  <h3 class="my-0">Yuna (Oranienburger Str.)</h3>
-                  <p class="media-description">Coffee, Breakfast & Lunch</p>
-                  <ul class="media-tags d-flex">
-                    <li class="media-tag media-tag-yellow mr-sm-2">
-                      fisrt-taste
-                    </li>
-                    <li class="media-tag">closed</li>
-                  </ul>
-                  <div class="media-hourse">
-                    <span> Open 9:40 AM - 6:00 PM </span>
-                  </div>
+          <div class="media-list">
+            <div class="media">
+              <img src="img/CR13.jpg" width="190px" class="mr-3" alt="..." />
+              <div class="media-body">
+                <h3 class="my-0">Yuna (Oranienburger Str.)</h3>
+                <p class="media-description">Coffee, Breakfast & Lunch</p>
+                <ul class="media-tags d-flex">
+                  <li class="media-tag media-tag-yellow mr-sm-2">
+                    fisrt-taste
+                  </li>
+                  <li class="media-tag">closed</li>
+                </ul>
+                <div class="media-hourse">
+                  <span> Open 9:40 AM - 6:00 PM </span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-6 px-0">
-            <div class="map-section" id="map">
-              <!-- <img src="img/map.jpg" alt="test" class="img-fluid"> -->
+          <div class="media-list">
+            <div class="media">
+              <img src="img/CR13.jpg" width="190px" class="mr-3" alt="..." />
+              <div class="media-body">
+                <h3 class="my-0">Yuna (Oranienburger Str.)</h3>
+                <p class="media-description">Coffee, Breakfast & Lunch</p>
+                <ul class="media-tags d-flex">
+                  <li class="media-tag media-tag-yellow mr-sm-2">
+                    fisrt-taste
+                  </li>
+                  <li class="media-tag">closed</li>
+                </ul>
+                <div class="media-hourse">
+                  <span> Open 9:40 AM - 6:00 PM </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="media-list">
+            <div class="media">
+              <img src="img/CR13.jpg" width="190px" class="mr-3" alt="..." />
+              <div class="media-body">
+                <h3 class="my-0">Yuna (Oranienburger Str.)</h3>
+                <p class="media-description">Coffee, Breakfast & Lunch</p>
+                <ul class="media-tags d-flex">
+                  <li class="media-tag media-tag-yellow mr-sm-2">
+                    fisrt-taste
+                  </li>
+                  <li class="media-tag">closed</li>
+                </ul>
+                <div class="media-hourse">
+                  <span> Open 9:40 AM - 6:00 PM </span>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+        </div>
+
+        <div class="col-lg-6 px-0">
+          <div class="map-section">
+            <div id="map">
+
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Start Footer Section -->
-    <section class="footer">
+  <!-- Start Footer Section -->
+  <section class="footer">
+    <div class="dark">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
@@ -292,51 +264,51 @@
           </div>
         </div>
       </div>
-    </section>
-    <!-- End Footer Section -->
+    </div>
+  </section>
+  <!-- End Footer Section -->
 
-    <!-- JavaScript liberaries -->
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/intlTelInput-jquery.min.js"></script>
-    <script src="js/intlTelInput.min.js"></script>
+  <!-- JavaScript liberaries -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/intlTelInput-jquery.min.js"></script>
+  <script src="js/intlTelInput.min.js"></script>
 
-    <script>
-      // show countries with flags
-      var input = document.querySelector("#telephone");
-      window.intlTelInput(input);
-    </script>
+  <script>
+    // show countries with flags
+    var input = document.querySelector("#telephone");
+    window.intlTelInput(input);
+  </script>
 
-    <script>
-      // init google map
-      function initMap() {
-        // The location of Uluru
-        var uluru = { lat: -25.344, lng: 131.036 };
-        let latLng = { lat: 52.3555177, lng: -1.1743197 };
+  <script>
+    // init google map
+    function initMap() {
+      // The location of Uluru
+      var uluru = { lat: -25.344, lng: 131.036 };
+      let latLng = { lat: 52.3555177, lng: -1.1743197 };
 
-        let mapOptions = {
-          zoom: 8,
-          center: latLng
-        };
+      let mapOptions = {
+        zoom: 13,
+        center: latLng,
+        gestureHandling: 'none',
+      };
 
-        // The map, centered at Uluru
-        const map = new google.maps.Map(
-          document.getElementById("map"),
-          mapOptions
-        );
-      }
-    </script>
+      // The map, centered at Uluru
+      const map = new google.maps.Map(
+        document.getElementById("map"),
+        mapOptions
+      );
+    }
+  </script>
 
-    <!-- Add google maps API key -->
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnlwozEPLpM58UqIkb2OKfhVEkTP3aGUQ&callback=initMap"
-    ></script>
+  <!-- Add google maps API key -->
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnlwozEPLpM58UqIkb2OKfhVEkTP3aGUQ&callback=initMap"></script>
 
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <script src="js/main.js"></script>
-  </body>
+  <script src="js/main2.js"></script>
+</body>
+
 </html>

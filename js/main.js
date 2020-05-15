@@ -255,7 +255,6 @@ Saturday - Sunday:10am - 10pm`);
   // check if user login or not
   function isLogged() {
     let user = JSON.parse(localStorage.getItem("UserData"));
-
     if (user) {
       console.log("This is login User");
 
@@ -381,7 +380,7 @@ Saturday - Sunday:10am - 10pm`);
             lng: lng,
           };
 
-          url = "https://178.63.132.246:44300/api/Product/search-product";
+          url = "https://app.coffeerunstore.com/api/Product/search-product";
 
           //make ajax GET request
           $.ajax({
@@ -392,6 +391,7 @@ Saturday - Sunday:10am - 10pm`);
               console.log(response);
 
               let result = JSON.parse(response);
+              console.log(result);
 
               //loop through th response, but loop through the value not all object
 
@@ -407,26 +407,7 @@ Saturday - Sunday:10am - 10pm`);
     });
   }
 
-  // geocoding function
-  function geocoding() {
-    let location = $("#searchBox").val();
-    axios
-      .get("https://maps.googleapis.com/maps/api/geocode/json", {
-        params: {
-          address: location,
-          key: "AIzaSyCnlwozEPLpM58UqIkb2OKfhVEkTP3aGUQ",
-        },
-      })
-      .then(function (response) {
-        let lat = response.data.results[0].geometry.location.lat;
-        let lng = response.data.results[0].geometry.location.lng;
 
-        getProducts(lat, lng);
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
-  }
 });
 
 /**=================

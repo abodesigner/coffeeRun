@@ -6,7 +6,6 @@ function handleEvents(e) {
 
     //  When signup button, register() function invoked
     $("#signup-form").on("submit", function (e) {
-
         register();
         e.preventDefault();
     });
@@ -14,9 +13,15 @@ function handleEvents(e) {
     // When signin button, login() function invoked
     $("#signin-form").on("submit", function (event) {
         login();
-
         event.preventDefault();
-    })
+    });
+
+    // Search For Product
+    $("#searchBox").on("change", function (e) {
+
+        searchForProduct();
+        e.preventDefault();
+    });
 }
 
 
@@ -26,7 +31,7 @@ function loadFunctions() {
     getCurrentYear();
     showCookiesAlert();
     closeButton();
-    searchForProduct();
+    isLogged();
 }
 
 
@@ -130,7 +135,6 @@ function register() {
     }
 }
 
-
 // login function
 function login() {
 
@@ -183,48 +187,94 @@ function login() {
     }
 }
 
+// check if user login or not
+function isLogged() {
+    let user = JSON.parse(localStorage.getItem("UserData"));
+    if (user) {
+
+        $("#signin-btn").hide();
+
+        // do stuff if user login
+        // $("#searchBox").on("change", function (e) {
+        //   console.log("This is login User");
+        //   e.preventDefault();
+        // });
+
+    } else {
+
+        $("#signin-btn").show();
+
+        // do stuff if user not login
+        //searchForProduct();
+    }
+}
+
 //Input Search For Product
 function searchForProduct() {
-    $("#searchBox").on("change", function (event) {
-        event.preventDefault();
 
-        // get keyword value
-        let keyword = $(this).val();
+    // get keyword value
+    let keyword = $("#searchBox").val();
 
-        // get user location
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                let lat = position.coords.latitude;
-                let lng = position.coords.longitude;
+    // get user location
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            let lat = position.coords.latitude;
+            let lng = position.coords.longitude;
 
-                let data = {
-                    keyword: keyword,
-                    lat: lat,
-                    lng: lng,
-                };
+            let data = {
+                keyword: keyword,
+                lat: lat,
+                lng: lng,
+            };
 
-                url = "https://178.63.132.246:44300/api/Product/search-product";
+            url = `https://app.coffeerunstore.com/api/Product/search-product?Keyword=${data.keyword}`;
 
-                //make ajax GET request
-                $.ajax({
-                    type: "GET",
-                    url: url,
-                    data: data,
-                    success: function (response) {
-                        console.log(response);
+            //make ajax GET request
+            $.ajax({
+                type: "GET",
+                url: url,
+                data: data,
+                success: function (response) {
 
-                        let result = JSON.parse(response);
+                    console.log(response);
 
-                        //loop through th response, but loop through the value not all object
+                    let output = "";
+                    response.data.forEach(function (product) {
+                        console.log(`${product.name} - ${product.shopName})`);
 
-                    },
-                    error: function (err) {
-                        console.log(err);
-                    },
-                });
+                        output += `<div class="media-list">
+                        <a href="order-details.html" class="media">
+                          <img src="img/CR13.jpg" width="190px" class="mr-3" alt="..." />
+                          <div class="media-body">
+                            <h3 class="my-0">${product.shopName}</h3>
+                            <p class="media-description">${product.shopTypeName}</p>
+                            <ul class="media-tags d-flex">
+                              <li class="media-tag media-tag-yellow mr-sm-2">
+                                fisrt-taste
+                              </li>
+                              <li class="media-tag">closed</li>
+                              <li class="media-price text-right flex-grow-1">Price: $${product.price}</li>
+                            </ul>
+                            <div class="media-hourse">
+                              <span> Open 9:40 AM - 6:00 PM </span>
+                            </div>
+                          </div>
+                        </a>
+                      </div>`;
+
+                        document.getElementById("product-list").innerHTML = output;
+                    });
+
+                    //loop through th response, but loop through the value not all object
+
+                },
+                error: function (err) {
+                    console.log(err);
+                },
             });
-        } else {
-            alert("Geolocation is not supported by this browser");
-        }
-    });
+        });
+    } else {
+        alert("Geolocation is not supported by this browser");
+    }
+
 }

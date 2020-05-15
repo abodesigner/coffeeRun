@@ -308,7 +308,7 @@ h2 {
 ====================================== */
 .dark{
 /* min-height: 500px; */
-padding: 50px 0;
+padding: 20px 0;
 position: absolute;
 top: 0;
 left: 0;
@@ -614,6 +614,7 @@ background: rgba(38, 15, 7, 0.9);
 
 #map {
   position: fixed !important;
+  top: 88px;
   height: 100% !important;
   width: 100% !important;
 }
@@ -735,11 +736,7 @@ background: rgba(38, 15, 7, 0.9);
 ====================================== */
 
 .orders-section {
-  min-height: 400px;
-}
-.orders-section img.fixed-img {
-  position: fixed;
-  z-index: -1;
+  min-height: 600px;
 }
 
 .media-list .media {
@@ -789,6 +786,10 @@ background: rgba(38, 15, 7, 0.9);
   font-weight: 300;
   letter-spacing: 0.05em;
   color: #7c7b88;
+}
+
+.media-price{
+  list-style-type: none;
 }
 
 .orders-section .app {
