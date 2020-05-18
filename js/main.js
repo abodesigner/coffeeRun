@@ -418,6 +418,7 @@ Saturday - Sunday:10am - 10pm`);
 //  grab elements
 const addToCartBtn = document.getElementById("addToCart"),
   orderCartContainer = document.querySelector(".order-cart-container"),
+
   restName = document.querySelector("h2.r-name"),
   restAddress = document.querySelector("p.r-address"),
   itemQty = document.querySelector(".menu-item-quantity"),
@@ -463,14 +464,7 @@ if (addToCartBtn) {
       }
     });
 
-    // get checked value from Sugar radio buttons
-    const radioSugarBtns = document.getElementsByName("sugar");
-    let checkedSugarVal;
-    radioSugarBtns.forEach((radioSugar) => {
-      if (radioSugar.checked) {
-        checkedSugarVal = radioSugar.value;
-      }
-    });
+    0000
 
     // Remove cart-empty div
     function hideEmptyCart() {
@@ -655,7 +649,9 @@ if (addToCartBtn) {
     divFooter.appendChild(placeBtn);
 
     placeBtn.addEventListener("click", e => {
-      isLogged();
+      //isLogged();
+
+      console.log("GO TO PAYMENT");
       e.preventDefault();
     });
 

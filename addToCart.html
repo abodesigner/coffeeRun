@@ -22,6 +22,7 @@
 </head>
 
 <body>
+
     <!-- Start Navbar -->
     <nav class="navbar custom-navbar navbar-expand-lg">
         <a class="navbar-brand w-100 d-flex justify-content-center" href="index.html">
@@ -39,34 +40,110 @@
     <div class="order-head-section">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-9">
+                <div class="col-lg-8 px-0">
                     <div class="order-header">
                         <div class="dark-overlay">
-                            <div class="order-content bg-warning p-2">
+                            <div class="order-content text-white p-2">
                                 <h2 class="r-name mb-0">V69 COFFEE (GRESHAM ST)</h2>
-                                <p class="r-address">30 Gresham Street</p>
+                                <p class="r-address text-white">30 Gresham Street</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="order-card text-center">
-                        <div class="cart-empty" id="empty">
+                <div class="col-lg-4 px-0">
+                    <div class="shopping-cart text-center">
+
+
+                        <div class="card border-0 mb-3 rounded-0">
+                            <div class="card-header bg-info border-transparent">
+                                <div class="order-contentp-2">
+                                    <h2 class="r-name mb-0">V69 COFFEE (GRESHAM ST)</h2>
+                                    <p class="r-address text-white">30 Gresham Street</p>
+                                </div>
+                            </div>
+                            <div class="card-body text-secondary">
+                                <!-- Product #1 -->
+                                <div class="item">
+                                    <div class="d-flex">
+                                        <div class="quantity mr-2">
+                                            <span>1</span>
+                                        </div>
+                                        <div class="description">
+                                            <span><strong> Flat White</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="addons">
+                                            <span>Regular, Whole</span>
+                                        </div>
+                                        <div class="total-price">$549</div>
+                                        <div class="buttons">
+                                            <span><i class="fas fa-times"></i></span>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Product #2 -->
+                                <div class="item">
+                                    <div class="d-flex">
+                                        <div class="quantity mr-2">
+                                            <span>3</span>
+                                        </div>
+                                        <div class="description">
+                                            <span><strong>Flat White</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="addons">
+                                            <span>Large, Almond
+                                            </span>
+                                        </div>
+                                        <div class="total-price">$549</div>
+                                        <div class="buttons">
+                                            <span><i class="fas fa-times"></i></span>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="card-footer bg-transparent border-transparent">
+                                <a id="placeBtn" href="#" class="btn btn-info">Place Order</a>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+                    </div>
+
+
+
+
+
+
+                    <!-- <div class="cart-empty" id="empty">
                             <img src="img/cart.jpg" alt="cart" class="img-fluid py-4" width="250px" />
                             <h6 class="mt-5">Your cart is empty</h6>
                             <p>Add items to get started</p>
                         </div>
                         <div class="order-cart-container">
 
-                        </div>
-                    </div>
+                        </div> -->
                 </div>
             </div>
         </div>
     </div>
+    </div>
     <!-- End Order-Head Section -->
 
-    <!-- Start Cart Section -->
+    <!-- Start Order Section -->
     <div class="cart-section">
         <div class="container-fluid">
             <div class="row">
@@ -97,10 +174,13 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="size" id="regular"
                                         value="regular" />
-                                    <label class="form-check-label" for="radio1">
-                                        Regular
-                                    </label>
-                                    <div class="price-container">€0.50</div>
+
+                                    <div class="d-flex justify-content-between">
+                                        <label class="form-check-label" for="radio1">
+                                            Regular
+                                        </label>
+                                        <div class="price-container">€0.50</div>
+                                    </div>
                                 </div>
 
                                 <div class="form-check">
@@ -155,8 +235,19 @@
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="check2"
-                                        value="Extra Espresso Shot" name="options[]" />
-                                    <label class="form-check-label" for="check2">Extra Espresso Shot</label>
+                                        value="Extra Espresso Shot 2" name="options[]" />
+                                    <div class="d-flex justify-content-between">
+                                        <label class="form-check-label" for="check2">Extra Espresso Shot 2</label>
+                                        <div class="price-container">€3.50</div>
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="check3"
+                                        value="Extra Espresso Shot 3" name="options[]" />
+                                    <div class="d-flex justify-content-between">
+                                        <label class="form-check-label" for="check3">Extra Espresso Shot 3</label>
+                                        <div class="price-container">€2.50</div>
+                                    </div>
                                 </div>
 
                                 <!-- Sugar -->
@@ -164,41 +255,47 @@
                                     <strong>add sugar</strong>
                                 </label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="sugar" id="sugar1" value="1" />
+                                    <input class="form-check-input" type="radio" name="sugar" id="sugar1"
+                                        value="1 Sugar" />
                                     <label class="form-check-label" for="sugar1">1 sugar</label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="sugar" id="sugar2" value="2" />
+                                    <input class="form-check-input" type="radio" name="sugar" id="sugar2"
+                                        value="2 Sugar" />
                                     <label class="form-check-label" for="sugar2">2 sugar</label>
                                 </div>
 
                                 <div class="form-check mb-4">
-                                    <input class="form-check-input" type="radio" name="sugar" id="sugar3" value="no" />
+                                    <input class="form-check-input" type="radio" name="sugar" id="sugar3"
+                                        value="No Sugar" />
                                     <label class="form-check-label" for="sugar3">no sugar</label>
                                 </div>
 
                                 <!-- <small class="text-danger">LIST ANY SPECIAL REQUESTS YOU MAY HAVE (IE. ALLERGIES,
-                                    EXTRA SPICY, ETC.)</small> -->
-                                <!-- TAGS Input -->
-                                <!-- <div class="tag-container">
+                                    EXTRA SPICY, ETC.)</small>
+
+                                    <!-- TAGS Input
+                                <div class="tag-container">
                                      <input type="text" />
-                        </div> -->
+                                </div> -->
 
                                 <div class="menu-item-container mb-4 d-flex justify-content-center">
-                                    <div class="menu-item-control" id="minus">
-                                        -
+                                    <div class="menu-item-control p-3" id="minus">
+                                        <i class="fas fa-minus-circle"></i>
                                     </div>
-                                    <div class="menu-item-quantity p-2">1</div>
-                                    <div class="menu-item-control" id="add">+</div>
+                                    <div class="menu-item-quantity">1</div>
+                                    <div class="menu-item-control p-3" id="add">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div>
                                 </div>
 
                                 <div class="form-actions d-flex flex-column justify-content-center align-items-center">
-                                    <button id="addToCart" class="btn btn-orange-br-5 mb-sm-2 w-25 text-uppercase">
+                                    <button id="cartBtn" class="btn btn-orange-br-5 mb-sm-2 w-25 text-uppercase">
                                         Add to Cart
                                     </button>
 
-                                    <a href="#" role="button" class="btn btn-outline-danger text-danger w-25">Cancel</a>
+                                    <a href="#" role="button" class="btn btn-outline-secondary w-25">Cancel</a>
                                 </div>
                             </form>
                         </div>
@@ -211,85 +308,87 @@
 
     <!-- Start Footer Section -->
     <section class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="list-content d-flex justify-content-center">
-                        <ul>
-                            <li>
-                                <a href="endUserLicense.html" target="_blank">
-                                    coffeerun application end user license agreement
-                                </a>
-                            </li>
-                            <li>
-                                <a href="consumer_faq.html" target="_blank">
-                                    CoffeeRun Consumer FAQs
-                                </a>
-                            </li>
-                            <li>
-                                <a href="referral.html" target="_blank">
-                                    Referral Program Terms and Conditions
-                                </a>
-                            </li>
-                            <li>
-                                <a href="health_safety.html" target="_blank">
-                                    CoffeeRun Health And Safety
-                                </a>
-                            </li>
-                        </ul>
+        <div class="dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="list-content d-flex justify-content-center">
+                            <ul>
+                                <li>
+                                    <a href="endUserLicense.html" target="_blank">
+                                        coffeerun application end user license agreement
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="consumer_faq.html" target="_blank">
+                                        CoffeeRun Consumer FAQs
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="referral.html" target="_blank">
+                                        Referral Program Terms and Conditions
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="health_safety.html" target="_blank">
+                                        CoffeeRun Health And Safety
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="list-content d-flex justify-content-center">
+                            <ul>
+                                <li>
+                                    <a href="privacy.html" target="_blank">
+                                        CoffeeRun Privacy Policy
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="">
+                                        coffeerun support help form
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="terms&conditions.html" target="_blank">
+                                        coffeerun terms and conditions
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="aboutus.html" target="_blank">
+                                        about us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="contactus.html" target="_blank">
+                                        contactus
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-
-                <div class="col-md-6">
-                    <div class="list-content d-flex justify-content-center">
-                        <ul>
-                            <li>
-                                <a href="privacy.html" target="_blank">
-                                    CoffeeRun Privacy Policy
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="">
-                                    coffeerun support help form
-                                </a>
-                            </li>
-                            <li>
-                                <a href="terms&conditions.html" target="_blank">
-                                    coffeerun terms and conditions
-                                </a>
-                            </li>
-                            <li>
-                                <a href="aboutus.html" target="_blank">
-                                    about us
-                                </a>
-                            </li>
-                            <li>
-                                <a href="contactus.html" target="_blank">
-                                    contactus
-                                </a>
-                            </li>
-                        </ul>
+                <div class="row">
+                    <div class="icons text-center w-100 mb-3">
+                        <a href="https://twitter.com/CoffeeRunApp1">
+                            <i class="fab fa-twitter-square fa-2x mr-sm-2"></i>
+                        </a>
+                        <a href="https://www.instagram.com/thecoffeerunapp/">
+                            <i class="fab fa-instagram fa-2x mr-sm-2"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/coffeerunapp">
+                            <i class="fab fa-linkedin fa-2x"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="icons text-center w-100 mb-3">
-                    <a href="https://twitter.com/CoffeeRunApp1">
-                        <i class="fab fa-twitter-square fa-2x mr-sm-2"></i>
-                    </a>
-                    <a href="https://www.instagram.com/thecoffeerunapp/">
-                        <i class="fab fa-instagram fa-2x mr-sm-2"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/company/coffeerunapp">
-                        <i class="fab fa-linkedin fa-2x"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="copyright text-white text-center w-100">
-                    All &copy; copyright are reserved to CoffeeRun
-                    <span id="year"></span>.
+                <div class="row">
+                    <div class="copyright text-white text-center w-100">
+                        All &copy; copyright are reserved to CoffeeRun
+                        <span id="year"></span>.
+                    </div>
                 </div>
             </div>
         </div>
@@ -301,7 +400,7 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <!-- Custom JS -->
-    <script src="js/main.js"></script>
+    <script src="js/main2.js"></script>
 </body>
 
 </html>

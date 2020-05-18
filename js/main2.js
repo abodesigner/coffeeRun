@@ -1,7 +1,4 @@
 document.addEventListener("DOMContentLoaded", handleEvents);
-
-
-
 function handleEvents(e) {
 
     //  When signup button, register() function invoked
@@ -18,10 +15,110 @@ function handleEvents(e) {
 
     // Search For Product
     $("#searchBox").on("change", function (e) {
-
         searchForProduct();
         e.preventDefault();
     });
+
+    // cartBtn eventListener
+    let cart = document.getElementById("cartBtn");
+    if (cart) {
+        cart.addEventListener("click", handleCart);
+    }
+
+    // placeBtn eventListener
+    $("#placeBtn").on("click", handleOrder);
+
+}
+
+function handleOrder() {
+    // if not login, redirect to login
+    if (!isLogged()) { // not login
+        alert("You should login first, you will redirecetd to login page after 5 seconds")
+        setTimeout(function () {
+            window.location.replace("signin.html");
+        }, 5000);
+    } else {
+        window.location.replace("payment.html");
+    }
+
+    // els, go to stripe payment
+}
+
+
+// get checked value from Sugar radio buttons
+function getSugar() {
+    const sugarBtns = document.getElementsByName("sugar");
+    let checkedVal;
+    sugarBtns.forEach((suger) => {
+        if (suger.checked) {
+            checkedVal = suger.value;
+        }
+    });
+
+    return checkedVal;
+}
+
+// get checked value from Extra Options
+function getExtraOptions() {
+    const options = document.getElementsByName("options[]");
+    let checkedVal;
+    options.forEach((option) => {
+        if (option.checked) {
+            checkedVal = option.value;
+        }
+    });
+
+    return checkedVal;
+}
+
+
+// get checked value from Milk radio buttons
+function getMilkType() {
+    const milkBtns = document.getElementsByName("milk");
+    let checkedVal;
+    milkBtns.forEach(milk => {
+        if (milk.checked) {
+            checkedVal = milk.value;
+        }
+    });
+
+    return checkedVal;
+}
+
+// get checked value from Size RadioButtons
+function getOrderSize() {
+    let sizeBtns = document.getElementsByName("size");
+    let checkedVal;
+    sizeBtns.forEach(orderSize => {
+        if (orderSize.checked) {
+            checkedVal = orderSize.value;
+        }
+    });
+    return checkedVal;
+}
+
+function getItemsValues() {
+
+    console.log(getOrderSize());
+    console.log(getMilkType());
+    console.log(getExtraOptions());
+    console.log(getSugar());
+
+
+}
+
+function handleCart(e) {
+
+    // 1) get items's values
+    getItemsValues();
+
+
+    // 2) create new cart
+
+    // 3) add items to cart
+
+
+    e.preventDefault();
 }
 
 
@@ -187,10 +284,24 @@ function login() {
     }
 }
 
+// getUserData()
+function getUserData() {
+    let user = JSON.parse(localStorage.getItem("UserData"));
+    return user;
+}
+
 // check if user login or not
 function isLogged() {
-    let user = JSON.parse(localStorage.getItem("UserData"));
-    if (user) {
+
+    let userData = getUserData();
+
+    // userData.roles.forEach(role => {
+
+    //     console.log(`SUCCESS: THIS IS : ${role}`);
+    // });
+
+
+    if (userData) {
 
         $("#signin-btn").hide();
 
@@ -199,15 +310,19 @@ function isLogged() {
         //   console.log("This is login User");
         //   e.preventDefault();
         // });
-
+        return true;
     } else {
 
         $("#signin-btn").show();
+
+        return false;
 
         // do stuff if user not login
         //searchForProduct();
     }
 }
+
+
 
 //Input Search For Product
 function searchForProduct() {
