@@ -34,16 +34,20 @@
   </nav>
   <!-- End Navbar -->
 
+
+
+
+
   <!-- Start Payment Form -->
   <div class="payment-form">
-    <form action="#" id="signup-form" method="POST" class="py-4">
+    <form action="#" id="payment-form" method="POST" class="py-4">
 
       <div class="container">
 
         <div class="row">
           <div class="col-md-6 mx-auto">
 
-            <div class="card bg-light">
+            <div class="card shadow bg-light">
 
               <div class="card-header px-5">
                 <div class="row">
@@ -61,63 +65,71 @@
                 <div class="tab-content">
                   <div class="tab-pane fade show active" id="nav-tab-card">
                     <p class="d-none alert alert-success">Some text success or error</p>
-                    <form action="" method="POST">
+
+                    <form action="#" method="POST">
+
                       <div class="form-group">
                         <label for="username">Full name (on the card)</label>
                         <input type="text" class="form-control" name="username" placeholder="" required>
                       </div>
 
+                      <!-- Card Number -->
                       <div class="form-group">
-                        <label for="cardNumber">Card number</label>
-                        <div class="input-group">
-                          <input type="text" class="form-control" name="cardNumber" placeholder="">
-                          <div class="input-group-append">
-                            <span class="input-group-text text-muted">
-                              <i class="fab fa-cc-visa"></i>   <i class="fab fa-cc-amex"></i>  
-                              <i class="fab fa-cc-mastercard"></i>
-                            </span>
-                          </div>
+                        <label for="card-number">Card number</label>
+                        <div id="card-number">
+                          <!-- A Stripe Element will be inserted here. -->
                         </div>
-                      </div> <!-- form-group.// -->
+                      </div>
+
 
                       <div class="row">
                         <div class="col-sm-8">
                           <div class="form-group">
-                            <label><span class="hidden-xs">Expiration</span> </label>
-                            <div class="input-group">
-                              <input type="number" class="form-control" placeholder="MM" name="">
-                              <input type="number" class="form-control" placeholder="YY" name="">
+
+                            <!-- Card Expiration -->
+                            <label for="card-exp">
+                              Expiration
+                            </label>
+                            <div id="card-exp">
+                              <!-- A Stripe Element will be inserted here. -->
                             </div>
                           </div>
                         </div>
                         <div class="col-sm-4">
                           <div class="form-group">
-                            <label data-toggle="tooltip" title="3 digits code on back side of the card">CVV <i
-                                class="fa fa-question-circle"></i></label>
-                            <input type="number" class="form-control" required>
-                          </div> <!-- form-group.// -->
+                            <!-- Card CVC -->
+                            <label for="card-cvc" data-toggle="tooltip" title="3 digits code on back side of the card">
+                              CVC <i class="fa fa-question-circle"></i>
+                            </label>
+                            <div id="card-cvc">
+                              <!-- A Stripe Element will be inserted here. -->
+                            </div>
+                          </div>
+
                         </div>
-                      </div> <!-- row.// -->
-                      <h6 class="p-2 text-center stripe-alert text-blue font-weight-bold">Your payment info is
-                        encrypted & protected
-                        by stripe
-                      </h6>
-                      <button class="subscribe btn btn-orange btn-block" type="button"> SUBMIT </button>
+                      </div>
+
+                      <!-- Used to display Element errors. -->
+                      <div id="card-errors" role="alert"></div>
+
+                      <div class="form-group">
+                        <button class="subscribe btn btn-orange btn-block">Submit Payment</button>
+                      </div>
+                      <div class="form-group">
+                        <h6 class="p-2 text-center stripe-alert text-muted">Your payment info is
+                          encrypted & protected
+                          by stripe
+                        </h6>
+                      </div>
+
                     </form>
                   </div>
 
-
-
-                </div> <!-- tab-content .// -->
-
-              </div> <!-- card-body.// -->
-              </article> <!-- card.// -->
-
-
-            </div> <!-- col.// -->
-          </div> <!-- row.// -->
-
-
+                </div>
+              </div>
+              </article>
+            </div>
+          </div>
         </div>
     </form>
   </div>
@@ -125,84 +137,86 @@
 
   <!-- Start Footer Section -->
   <section class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="list-content d-flex justify-content-center">
-            <ul>
-              <li>
-                <a href="endUserLicense.html" target="_blank">
-                  coffeerun application end user license agreement
-                </a>
-              </li>
-              <li>
-                <a href="consumer_faq.html" target="_blank">
-                  CoffeeRun Consumer FAQs
-                </a>
-              </li>
-              <li>
-                <a href="terms&conditions.html" target="_blank">
-                  Referral Program Terms and Conditions
-                </a>
-              </li>
-              <li>
-                <a href="health_safety.html" target="_self">
-                  CoffeeRun Health And Safety
-                </a>
-              </li>
-            </ul>
+    <div class="dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="list-content d-flex justify-content-center">
+              <ul>
+                <li>
+                  <a href="endUserLicense.html" target="_blank">
+                    coffeerun application end user license agreement
+                  </a>
+                </li>
+                <li>
+                  <a href="consumer_faq.html" target="_blank">
+                    CoffeeRun Consumer FAQs
+                  </a>
+                </li>
+                <li>
+                  <a href="terms&conditions.html" target="_blank">
+                    Referral Program Terms and Conditions
+                  </a>
+                </li>
+                <li>
+                  <a href="health_safety.html" target="_self">
+                    CoffeeRun Health And Safety
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class=" col-md-6">
+            <div class="list-content d-flex justify-content-center">
+              <ul>
+                <li>
+                  <a href="privacy.html" target="_blank">
+                    CoffeeRun Privacy Policy
+                  </a>
+                </li>
+
+                <li>
+                  <a href="contactus.html" target="_blank">
+                    coffeerun support help form
+                  </a>
+                </li>
+                <li>
+                  <a href="terms&conditions.html" target="_blank">
+                    coffeerun terms and conditions
+                  </a>
+                </li>
+                <li>
+                  <a href="aboutus.html" target="_blank">
+                    about us
+                  </a>
+                </li>
+                <li>
+                  <a href="contactus.html">
+                    contact us
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-
-        <div class=" col-md-6">
-          <div class="list-content d-flex justify-content-center">
-            <ul>
-              <li>
-                <a href="privacy.html" target="_blank">
-                  CoffeeRun Privacy Policy
-                </a>
-              </li>
-
-              <li>
-                <a href="contactus.html" target="_blank">
-                  coffeerun support help form
-                </a>
-              </li>
-              <li>
-                <a href="terms&conditions.html" target="_blank">
-                  coffeerun terms and conditions
-                </a>
-              </li>
-              <li>
-                <a href="aboutus.html" target="_blank">
-                  about us
-                </a>
-              </li>
-              <li>
-                <a href="contactus.html">
-                  contact us
-                </a>
-              </li>
-            </ul>
+        <div class="row">
+          <div class="icons text-center w-100 mb-3">
+            <a href="https://twitter.com/CoffeeRunApp1">
+              <i class="fab fa-twitter-square fa-2x mr-sm-2"></i>
+            </a>
+            <a href="https://www.instagram.com/thecoffeerunapp/">
+              <i class="fab fa-instagram fa-2x mr-sm-2"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/coffeerunapp">
+              <i class="fab fa-linkedin fa-2x"></i>
+            </a>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="icons text-center w-100 mb-3">
-          <a href="https://twitter.com/CoffeeRunApp1">
-            <i class="fab fa-twitter-square fa-2x mr-sm-2"></i>
-          </a>
-          <a href="https://www.instagram.com/thecoffeerunapp/">
-            <i class="fab fa-instagram fa-2x mr-sm-2"></i>
-          </a>
-          <a href="https://www.linkedin.com/company/coffeerunapp">
-            <i class="fab fa-linkedin fa-2x"></i>
-          </a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="copyright text-white text-center w-100">
-          All &copy; copyright are reserved to CoffeeRun <span id="year"></span>.
+        <div class="row">
+          <div class="copyright text-white text-center w-100">
+            All &copy; copyright are reserved to CoffeeRun <span id="year"></span>.
+          </div>
         </div>
       </div>
     </div>
@@ -217,8 +231,14 @@
 
   <!-- Add Stripe -->
   <script src="https://js.stripe.com/v3/"></script>
+
+
+
+  <!-- client.js -->
+  <script src="js/client.js"></script>
+
   <!-- Custom JS -->
-  <script src="js/main.js"></script>
+  <script src="js/main2.js"></script>
 </body>
 
 </html>

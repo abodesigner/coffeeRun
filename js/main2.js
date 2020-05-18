@@ -19,6 +19,23 @@ function handleEvents(e) {
         e.preventDefault();
     });
 
+    // menu qty counter by +
+    $("#add").on("click", function () {
+        let currentVal = parseInt($(".menu-item-quantity").html(), 10);
+        $(".menu-item-quantity").html(currentVal + 1);
+    });
+
+    // menu qty counter by -
+    $("#minus").on("click", function () {
+        let currentVal = parseInt($(".menu-item-quantity").html(), 10);
+
+        if (currentVal === 0) {
+            $(".menu-item-quantity").html(currentVal);
+        } else {
+            $(".menu-item-quantity").html(currentVal - 1);
+        }
+    });
+
     // cartBtn eventListener
     let cart = document.getElementById("cartBtn");
     if (cart) {
@@ -39,9 +56,14 @@ function handleOrder() {
         }, 5000);
     } else {
         window.location.replace("payment.html");
+        handlePayment();
     }
 
     // els, go to stripe payment
+}
+
+function handlePayment(e) {
+
 }
 
 
@@ -60,58 +82,97 @@ function getSugar() {
 
 // get checked value from Extra Options
 function getExtraOptions() {
-    const options = document.getElementsByName("options[]");
-    let checkedVal;
-    options.forEach((option) => {
-        if (option.checked) {
-            checkedVal = option.value;
-        }
+    let options = document.getElementsByName("options[]");
+    let extraOptions = {
+        checkedVal: '',
+        price: ''
+    }
+    let selected = [];
+    let price, finalPrice;
+    // loop through nodeList using ES6
+    options.forEach(option => {
+        if (option.checked)
+            // selected.push(option.value);
+            extraOptions.checkedVal = option.value;
+        price = option.nextElementSibling.children[1].textContent;
+        finalPrice = price.slice(1);
+        extraOptions.price = finalPrice;
+
+        selected.push(extraOptions);
     });
 
-    return checkedVal;
+    return selected;
 }
 
 
 // get checked value from Milk radio buttons
 function getMilkType() {
-    const milkBtns = document.getElementsByName("milk");
-    let checkedVal;
+    let milkBtns = document.getElementsByName("milk");
+
+    let milkType = {
+        checkedVal: "",
+        price: ""
+    }
+
+    let price, finalPrice;
     milkBtns.forEach(milk => {
         if (milk.checked) {
-            checkedVal = milk.value;
+            milkType.checkedVal = milk.value;
+            price = milk.nextElementSibling.children[1].textContent;
+            finalPrice = price.slice(1);
+            milkType.price = finalPrice;
         }
     });
 
-    return checkedVal;
+    return milkType;
 }
 
 // get checked value from Size RadioButtons
-function getOrderSize() {
+function getOrderSize(e) {
+    let size = {
+        checkedVal: "",
+        price: ""
+    };
+    1
     let sizeBtns = document.getElementsByName("size");
-    let checkedVal;
+    let price, finalPrice;
     sizeBtns.forEach(orderSize => {
         if (orderSize.checked) {
-            checkedVal = orderSize.value;
+            size.checkedVal = `${orderSize.value}`;
+            price = orderSize.nextElementSibling.children[1].textContent;
+            finalPrice = price.slice(1);
+            size.price = finalPrice;
         }
+
     });
-    return checkedVal;
+
+    return size;
 }
 
-function getItemsValues() {
+function getOrder(e) {
 
-    console.log(getOrderSize());
-    console.log(getMilkType());
-    console.log(getExtraOptions());
-    console.log(getSugar());
+    let order = {
+        size: "",
+        milkType: "",
+        options: [],
+        sugar: ""
+    };
 
+    order.size = getOrderSize(e);
+    order.milkType = getMilkType();
+    order.options.push(getExtraOptions());
+    order.sugar = getSugar();
 
+    return order;
 }
 
 function handleCart(e) {
 
-    // 1) get items's values
-    getItemsValues();
 
+
+    // 1) get items's values
+    const order = getOrder(e);
+    console.log(order);
 
     // 2) create new cart
 
@@ -129,8 +190,13 @@ function loadFunctions() {
     showCookiesAlert();
     closeButton();
     isLogged();
+    initToolTip();
 }
 
+function initToolTip() {
+    // initialize all tooltips on a page
+    $("[data-toggle='tooltip']").tooltip();
+}
 
 function getCurrentYear() {
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -295,10 +361,17 @@ function isLogged() {
 
     let userData = getUserData();
 
-    // userData.roles.forEach(role => {
+    if (userData === null) {
+        console.log("NOT logged User");
 
-    //     console.log(`SUCCESS: THIS IS : ${role}`);
-    // });
+    } else {
+
+        userData.roles.forEach(role => {
+            console.log(`SUCCESS: THIS IS : ${role}`);
+        });
+
+    }
+
 
 
     if (userData) {
