@@ -54,10 +54,12 @@ function handleEvents(e) {
 function togglePassword() {
     if (document.getElementById("password").type === 'password') {
         document.getElementById("password").type = 'text';
-        this.classList.remove('fa-eye-slash').classList.add('fa-eye');
+        this.classList.remove('fa-eye-slash')
+        this.classList.add('fa-eye');
     } else {
         document.getElementById("password").type = 'password';
-        this.classList.remove('fa-eye').classList.add('fa-eye-slash');
+        this.classList.remove('fa-eye');
+        this.classList.add('fa-eye-slash');
     }
 }
 
