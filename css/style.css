@@ -299,7 +299,8 @@ h2 {
   position: absolute;
   top:13px;
   right:25px;
-  color: #888
+  color: #888;
+  cursor: pointer;
 }
 
 
