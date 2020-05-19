@@ -47,7 +47,8 @@ function handleEvents(e) {
 
     // toggle password [show/hide] in login form
     let eyeIcon = document.getElementById("eye-icon");
-    eyeIcon.addEventListener("click", togglePassword);
+    if (eyeIcon)
+        eyeIcon.addEventListener("click", togglePassword);
 
 }
 // toggle Passoword
@@ -185,14 +186,46 @@ function getOrder(e) {
 function handleCart(e) {
 
 
-
-    // 1) get items's values
-    const order = getOrder(e);
+    // get order
+    let order = getOrder(e);
     console.log(order);
 
-    // 2) create new cart
+
+    // 2) create Cart Elements
+    let cartItems = document.getElementById("cart-items");
+    let cartFooter = document.querySelector(".card-footer");
+    let cartItem = document.createElement("div");
+    cartItem.classList.add("item");
+    cartItem.innerHTML = `<div class="d-flex">
+                                <div class="quantity mr-2">
+                                    <span>1</span>
+                                </div>
+                                <div class="description">
+                                    <span><strong> Flat White</strong></span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="addons">
+                                    <span>Regular, Whole</span>
+                                </div>
+                                <div class="total-price">$549</div>
+                                <div class="buttons">
+                                    <i class="fas fa-minus-circle"></i>
+
+                                </div>
+                            </div>`;
+    let placeBtn = document.createElement("a");
+    let linkText = document.createTextNode("place order");
+    placeBtn.appendChild(linkText);
+    placeBtn.href = "#";
+    placeBtn.id = "placeBtn";
+    placeBtn.classList.add("btn", "btn-orange");
+    placeBtn.textContent = "Place Order";
 
     // 3) add items to cart
+    cartItems.appendChild(cartItem);
+    cartFooter.appendChild(placeBtn);
+
 
 
     e.preventDefault();
