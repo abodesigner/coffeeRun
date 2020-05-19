@@ -45,6 +45,20 @@ function handleEvents(e) {
     // placeBtn eventListener
     $("#placeBtn").on("click", handleOrder);
 
+    // toggle password [show/hide] in login form
+    let eyeIcon = document.getElementById("eye-icon");
+    eyeIcon.addEventListener("click", togglePassword);
+
+}
+// toggle Passoword
+function togglePassword() {
+    if (document.getElementById("password").type === 'password') {
+        document.getElementById("password").type = 'text';
+        this.classList.remove('fa-eye-slash').classList.add('fa-eye');
+    } else {
+        document.getElementById("password").type = 'password';
+        this.classList.add('fa-eye-slash').remove('fa-eye');
+    }
 }
 
 function handleOrder() {

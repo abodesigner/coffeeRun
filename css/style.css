@@ -290,6 +290,18 @@ h2 {
   min-height: 500px;
 }
 
+.signin-form #password{
+  position: relative;
+  overflow: hidden;
+}
+
+#eye-icon{
+  position: absolute;
+  top:13px;
+  right:25px;
+}
+
+
 .modal-span h6 {
   color: #767676;
 }
