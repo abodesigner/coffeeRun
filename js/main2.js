@@ -369,15 +369,15 @@ function login() {
             data: data,
             success: function (response, status) {
                 if (response.hasError) {
-                    console.log(status);
-                    for (var i = 0; i < response.errors.length; i++) {
-                        console.log(response.errors[i].description);
-                    }
+                    // console.log(status);
+                    // for (var i = 0; i < response.errors.length; i++) {
+                    //     console.log(response.errors[i].description);
+                    // }
 
-                    // $(".alert").removeClass("alert-success").addClass("alert-danger").text("Email or Password is wrong!");
-                    // setTimeout(function () {
-                    //     $(".alert").fadeOut()
-                    // }, 2000)
+                    $(".alert").removeClass("alert-success").addClass("alert-danger").text("Email or Password is wrong!");
+                    setTimeout(function () {
+                        $(".alert").fadeOut()
+                    }, 5000)
                     return;
                 }
 
