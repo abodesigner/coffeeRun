@@ -253,7 +253,6 @@ function loadFunctions() {
     getCurrentYear();
     showCookiesAlert();
     closeButton();
-    isLogged();
     initToolTip();
 }
 
