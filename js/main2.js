@@ -64,19 +64,23 @@ function togglePassword() {
     }
 }
 
-function handleOrder() {
+function handleOrder(e) {
+    console.log("SUCCESS");
     // if not login, redirect to login
     if (!isLogged()) { // not login
         alert("You should login first, you will redirecetd to login page after 5 seconds")
         setTimeout(function () {
             window.location.replace("signin.html");
         }, 5000);
-    } else {
+
+    } else { // else, go to stripe payment
         window.location.replace("payment.html");
         handlePayment();
     }
 
-    // els, go to stripe payment
+    e.preventDefault();
+
+
 }
 
 function handlePayment(e) {
@@ -217,7 +221,7 @@ function handleCart(e) {
     let placeBtn = document.createElement("a");
     let linkText = document.createTextNode("place order");
     placeBtn.appendChild(linkText);
-    placeBtn.href = "#";
+    placeBtn.href = "payment.html";
     placeBtn.id = "placeBtn";
     placeBtn.classList.add("btn", "btn-orange");
     placeBtn.textContent = "Place Order";
