@@ -314,7 +314,7 @@ function register() {
             password: password,
         };
 
-        url = "http://cors.io/?https://app.coffeerunstore.com/api/Register";
+        url = "https://app.coffeerunstore.com/api/Register";
 
         $.ajax({
             type: "POST",
@@ -376,7 +376,7 @@ function login() {
         };
 
         //url = "https://app.coffeerunstore.com/api/Login";
-        url = `http://cors.io/?https://app.coffeerunstore.com/api/Login?email=${data.email}&password=${data.password}`;
+        url = `https://app.coffeerunstore.com/api/Login?email=${data.email}&password=${data.password}`;
 
         $.ajax({
             type: "POST",
@@ -476,7 +476,7 @@ function searchForProduct() {
                 lng: lng,
             };
 
-            url = `http://cors.io/?https://app.coffeerunstore.com/api/Product/search-product?Keyword=${data.keyword}`;
+            url = `https://app.coffeerunstore.com/api/Product/search-product?Keyword=${data.keyword}`;
 
             //make ajax GET request
             $.ajax({
