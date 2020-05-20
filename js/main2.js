@@ -381,10 +381,6 @@ function login() {
             data: data,
             success: function (response, status) {
                 if (response.hasError) {
-                    // console.log(status);
-                    // for (var i = 0; i < response.errors.length; i++) {
-                    //     console.log(response.errors[i].description);
-                    // }
 
                     $(".alert").removeClass("alert-success").addClass("alert-danger").text("Email or Password is wrong!");
                     setTimeout(function () {
@@ -396,14 +392,12 @@ function login() {
                 // store userData to localStorage
                 localStorage.setItem("UserData", JSON.stringify(response.data));
 
-                // console.log("SUCCESS");
-
                 if (status === "success") {
                     $(".alert").removeClass("alert-danger").addClass("alert-success").text("login done successfully");
 
                     // redirect user to product search
                     setTimeout(function () {
-                        window.location.replace("restaurants.html");
+                        window.location.replace("addToCart.html");
                     }, 500);
                 }
             },
@@ -421,37 +415,22 @@ function getUserData() {
 function isLogged() {
 
     let userData = getUserData();
-
     if (userData === null) {
-
         return;
-
     } else {
-
         userData.roles.forEach(role => {
-
             if (role === 'Admin') {
-
                 console.log(`Welcome ${userData.name}`);
-
             } else if (role === 'User') {
                 console.log(`Hello ${userData.name}`);
-
-
             } else if (role === 'Provider') {
-
                 console.log(`HI ${userData.name}`);
             }
             else {
                 console.log(`Guest`);
-
             }
-
         });
-
     }
-
-
 
     if (userData) {
 
