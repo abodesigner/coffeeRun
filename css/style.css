@@ -482,6 +482,10 @@ background: rgba(38, 15, 7, 0.9);
   background: #48321d;
 }
 
+#closeCookieConsent button.btn-orange{
+  padding: 6px 25px;
+}
+
 .covid-alert{
   height: 50px;
   font-size: 1rem;

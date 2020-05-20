@@ -6,6 +6,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
   <!-- Description Meta Attribute -->
   <meta name="description" content="CoffeeRun provides to Customers
     With your favourite coffee shops, cafes and restaurants at your fingertips, CoffeeRun satisfies your cravings and connects you with possibilities — more time and energy for yourself and those you love.
@@ -289,20 +291,24 @@
   <!-- Start Cookies Alert -->
   <div class="cookies-alert">
     <div class="container-fluid">
-
-      <p class="mb-0">
-        <img src="img/white-logo.png" alt="logo" width="32px" class="img-fluid"> CoffeeRun uses cookies to deliver our
-        services and
-        personalise your
-        experience. By using our service you agree to the use of cookies, learn
-        more about our
-        <a href="privacy.html" target="_blank" class="text-orange font-weight-bold">cookie policy</a>.
-      </p>
-      <div id="closeCookieConsent">
-        <button id="okBtn" class="btn btn-orange">Ok</button>
-
+      <div class="row">
+        <div class="col-md-10">
+          <p class="mb-0">
+            <img src="img/white-logo.png" alt="logo" width="32px" class="img-fluid"> CoffeeRun uses cookies to deliver
+            our
+            services and
+            personalise your
+            experience. By using our service you agree to the use of cookies, learn
+            more about our
+            <a href="privacy.html" target="_blank" class="text-orange font-weight-bold">cookie policy</a>.
+          </p>
+        </div>
+        <div class="col-md-2">
+          <div id="closeCookieConsent">
+            <button id="okBtn" class="btn btn-orange">Ok</button>
+          </div>
+        </div>
       </div>
-      <i class="fas fa-virus"></i>
     </div>
 
   </div>
@@ -310,31 +316,28 @@
 
   <!-- Start Covid Alert -->
   <div class="covid-alert text-center py-3">
+    <div class="container-fluid">
+      <p>
 
-    <p>
-
-      <i class="fas fa-exclamation-triangle"></i> <strong>Please stay safe</strong> and keep other customers and
-      hospitality staff safe
-      by following the government
-      advice for
-      social distancing wherever possible. Thank you <i class="far fa-smile"></i></p>
-
-
-  </div>
+        <i class="fas fa-exclamation-triangle"></i> <strong>Please stay safe</strong> and keep other customers and
+        hospitality staff safe
+        by following the government
+        advice for
+        social distancing wherever possible. Thank you <i class="far fa-smile"></i></p>
+    </div>
 
 
+    <script src=" js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
-  <script src=" js/jquery-3.4.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-
-  <!-- WOW animation -->
-  <script src="js/wow.min.js"></script>
-  <script>
-    new WOW().init();
-  </script>
-  <!-- Custom JS -->
-  <script src="js/main2.js"></script>
+    <!-- WOW animation -->
+    <script src="js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <!-- Custom JS -->
+    <script src="js/main2.js"></script>
 </body>
 
 </html>
