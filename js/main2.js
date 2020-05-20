@@ -400,7 +400,7 @@ function login() {
 
                     // redirect user to product search
                     setTimeout(function () {
-                        window.location.replace("addToCart.html");
+                        window.location.replace("restaurants.html");
                     }, 500);
                 }
             },
