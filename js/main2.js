@@ -1,6 +1,9 @@
+
 document.addEventListener("DOMContentLoaded", handleEvents);
 
 function handleEvents(e) {
+
+
 
     //  When signup button, register() function invoked
     $("#signup-form").on("submit", function (e) {
@@ -311,7 +314,7 @@ function register() {
             password: password,
         };
 
-        url = "https://app.coffeerunstore.com/api/Register";
+        url = "http://cors.io/?https://app.coffeerunstore.com/api/Register";
 
         $.ajax({
             type: "POST",
@@ -373,7 +376,7 @@ function login() {
         };
 
         //url = "https://app.coffeerunstore.com/api/Login";
-        url = `https://app.coffeerunstore.com/api/Login?email=${data.email}&password=${data.password}`;
+        url = `http://cors.io/?https://app.coffeerunstore.com/api/Login?email=${data.email}&password=${data.password}`;
 
         $.ajax({
             type: "POST",
@@ -473,7 +476,7 @@ function searchForProduct() {
                 lng: lng,
             };
 
-            url = `https://app.coffeerunstore.com/api/Product/search-product?Keyword=${data.keyword}`;
+            url = `http://cors.io/?https://app.coffeerunstore.com/api/Product/search-product?Keyword=${data.keyword}`;
 
             //make ajax GET request
             $.ajax({
