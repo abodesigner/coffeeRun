@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", handleEvents);
+
 function handleEvents(e) {
 
     //  When signup button, register() function invoked
@@ -39,11 +40,20 @@ function handleEvents(e) {
     // cartBtn eventListener
     let cart = document.getElementById("cartBtn");
     if (cart) {
-        cart.addEventListener("click", handleCart);
+        cart.addEventListener("click", handleAddToCart)
     }
 
-    // placeBtn eventListener
-    $("#placeBtn").on("click", handleOrder);
+    // placeBtn eventListener using Event Delegation
+    if (document.querySelector(".card-footer")) {
+
+        document.querySelector(".card-footer").addEventListener("click", function (e) {
+            if (e.target.id === 'placeBtn') {
+                handlePlaceOrder();
+            }
+        });
+    }
+
+
 
     // toggle password [show/hide] in login form
     let eyeIcon = document.getElementById("eye-icon");
@@ -51,6 +61,7 @@ function handleEvents(e) {
         eyeIcon.addEventListener("click", togglePassword);
 
 }
+
 // toggle Passoword
 function togglePassword() {
     if (document.getElementById("password").type === 'password') {
@@ -64,10 +75,11 @@ function togglePassword() {
     }
 }
 
-function handleOrder(e) {
-    console.log("SUCCESS");
-    // if not login, redirect to login
-    if (!isLogged()) { // not login
+function handlePlaceOrder() {
+
+    // // if not login, redirect to login
+    if (!isLogged()) {
+
         alert("You should login first, you will redirecetd to login page after 5 seconds")
         setTimeout(function () {
             window.location.replace("signin.html");
@@ -76,16 +88,13 @@ function handleOrder(e) {
     } else { // else, go to stripe payment
         window.location.replace("payment.html");
         handlePayment();
+
     }
 
-    e.preventDefault();
-
-
 }
 
-function handlePayment(e) {
+function handlePayment() { }
 
-}
 
 
 // get checked value from Sugar radio buttons
@@ -187,7 +196,7 @@ function getOrder(e) {
     return order;
 }
 
-function handleCart(e) {
+function handleAddToCart(e) {
 
 
     // get order
@@ -218,18 +227,17 @@ function handleCart(e) {
 
                                 </div>
                             </div>`;
-    let placeBtn = document.createElement("a");
-    let linkText = document.createTextNode("place order");
-    placeBtn.appendChild(linkText);
-    placeBtn.href = "payment.html";
+    // Create place order button
+    let placeBtn = document.createElement("button");
+    let btnText = document.createTextNode("place order");
+    placeBtn.appendChild(btnText);
     placeBtn.id = "placeBtn";
     placeBtn.classList.add("btn", "btn-orange");
-    placeBtn.textContent = "Place Order";
+
 
     // 3) add items to cart
     cartItems.appendChild(cartItem);
     cartFooter.appendChild(placeBtn);
-
 
 
     e.preventDefault();
@@ -415,12 +423,30 @@ function isLogged() {
     let userData = getUserData();
 
     if (userData === null) {
-        console.log("NOT logged User");
+
+        return;
 
     } else {
 
         userData.roles.forEach(role => {
-            console.log(`SUCCESS: THIS IS : ${role}`);
+
+            if (role === 'Admin') {
+
+                console.log(`Welcome ${userData.name}`);
+
+            } else if (role === 'User') {
+                console.log(`Hello ${userData.name}`);
+
+
+            } else if (role === 'Provider') {
+
+                console.log(`HI ${userData.name}`);
+            }
+            else {
+                console.log(`Guest`);
+
+            }
+
         });
 
     }
@@ -519,3 +545,4 @@ function searchForProduct() {
     }
 
 }
+
