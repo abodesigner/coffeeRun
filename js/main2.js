@@ -417,9 +417,17 @@ function getUserData() {
 function isLogged() {
 
     let userData = getUserData();
+
     if (userData === null) {
+        // $("#signin-btn").show();
+        // $("#user-account").hide();
+
         return;
     } else {
+
+        // $("#signin-btn").hide();
+        // $("#user-account").show();
+
         userData.roles.forEach(role => {
             if (role === 'Admin') {
                 console.log(`Welcome ${userData.name}`);
