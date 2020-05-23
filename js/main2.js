@@ -201,46 +201,57 @@ function getOrder(e) {
 
 function handleAddToCart(e) {
 
-
     // get order
     let order = getOrder(e);
     console.log(order);
 
-
     // 2) create Cart Elements
-    let cartItems = document.getElementById("cart-items");
-    let cartFooter = document.querySelector(".card-footer");
-    let cartItem = document.createElement("div");
-    cartItem.classList.add("item");
-    cartItem.innerHTML = `<div class="d-flex">
-                                <div class="quantity mr-2">
-                                    <span>1</span>
-                                </div>
-                                <div class="description">
-                                    <span><strong> Flat White</strong></span>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <div class="addons">
-                                    <span>Regular, Whole</span>
-                                </div>
-                                <div class="total-price">$549</div>
-                                <div class="buttons">
-                                    <i class="fas fa-minus-circle"></i>
+    let shoppingCart = document.querySelector(".shopping-cart");
 
-                                </div>
-                            </div>`;
-    // Create place order button
-    let placeBtn = document.createElement("button");
-    let btnText = document.createTextNode("place order");
-    placeBtn.appendChild(btnText);
-    placeBtn.id = "placeBtn";
-    placeBtn.classList.add("btn", "btn-orange");
+    shoppingCart.innerHTML += `<div class="card border-0 mb-3 rounded-0">
+    <div class="card-header bg-warning border-transparent">
+        <div class="order-contentp-2">
+            <h2 class="r-name mb-0">V69 COFFEE (GRESHAM ST)</h2>
+            <p class="r-address text-white">30 Gresham Street</p>
+        </div>
+    </div>
+    <div class="card-body text-secondary" id="cart-items">
+
+        <!-- cart items wil be added here by javascript -->
+        <div class="d-flex">
+            <div class="quantity mr-2">
+                <span>1</span>
+            </div>
+            <div class="description">
+                <span><strong> Flat White</strong></span>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div class="addons">
+                <span>Regular, Whole</span>
+            </div>
+            <div class="total-price">$549</div>
+            <div class="buttons">
+                <i class="fas fa-minus-circle"></i>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="card-footer bg-transparent border-transparent">
+         <button id="placeBtn" class="btn btn-orange">Place Order</button>
+    </div>
+</div>`
+
+
+
+
 
 
     // 3) add items to cart
-    cartItems.appendChild(cartItem);
-    cartFooter.appendChild(placeBtn);
+
+
+
 
 
     e.preventDefault();
