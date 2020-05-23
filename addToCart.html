@@ -57,180 +57,188 @@
                         <div class="card border-0 mb-3 rounded-0">
                             <div class="card-header bg-warning border-transparent">
                                 <div class="order-contentp-2">
-                                    <h2 class="r-name mb-0">V69 COFFEE (GRESHAM ST)</h2>
-                                    <p class="r-address text-white">30 Gresham Street</p>
+                                    <h2>Your Cart</h2>
+                                    <!-- <h4 class="r-name mb-0">V69 COFFEE (GRESHAM ST)</h4>
+                                    <p class="r-address text-white">30 Gresham Street</p> -->
                                 </div>
                             </div>
-                            <div class="card-body text-secondary" id="cart-items">
+                            <!-- <div class="card-body text-secondary" id="cart-items">
 
-                                <!-- cart items wil be added here by javascript -->
 
-                            </div>
-                            <div class="card-footer bg-transparent border-transparent">
-                                <!-- <button id="placeBtn" class="btn btn-orange">Place Order</button> -->
-                            </div>
+                                <div class="d-flex">
+                                    <div class="quantity mr-2">
+                                        <span>1</span>
+                                    </div>
+                                    <div class="description">
+                                        <span><strong> Flat White</strong></span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <div class="addons">
+                                        <span>Regular, Whole</span>
+                                    </div>
+                                    <div class="total-price">$549</div>
+                                    <div class="buttons">
+                                        <i class="fas fa-minus-circle"></i>
+
+                                    </div>
+                                </div>
+
+                            </div> -->
+                            <!-- <div class="card-footer bg-transparent border-transparent">
+                                <button id="placeBtn" class="btn btn-orange">Place Order</button </div>
+                            </div> -->
+
                         </div>
 
-
-
-
-
-
-
-                    </div>
-
-
-
-
-
-
-                    <!-- <div class="cart-empty" id="empty">
+                        <div class="cart-empty text-dark" id="empty">
                             <img src="img/cart.jpg" alt="cart" class="img-fluid py-4" width="250px" />
                             <h6 class="mt-5">Your cart is empty</h6>
                             <p>Add items to get started</p>
                         </div>
                         <div class="order-cart-container">
 
-                        </div> -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Order-Head Section -->
+        <!-- End Order-Head Section -->
 
-    <!-- Start Order Section -->
-    <div class="cart-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="cart bg-white p-4">
-                        <div class="cart-header">
-                            <div class="cart-header-content">
-                                <h2 class="mb-0">Flat White</h2>
-                                <p class="time mb-0">READY IN ABOUT 2 MINS</p>
-                                <p class="open">AVAILABLE 9:00 AM TO 7:45 PM</p>
+        <!-- Start Order Section -->
+        <div class="cart-section">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="cart bg-white p-4">
+                            <div class="cart-header">
+                                <div class="cart-header-content">
+                                    <h2 class="mb-0">Flat White</h2>
+                                    <p class="time mb-0">READY IN ABOUT 2 MINS</p>
+                                    <p class="open">AVAILABLE 9:00 AM TO 7:45 PM</p>
+                                </div>
+                                <hr />
                             </div>
-                            <hr />
-                        </div>
 
-                        <div class="cart-description">
-                            <div class="cart-description-content">
-                                <p>
-                                    Espresso with fresh, steamed milk poured over it. Perfect
-                                    for those who like a latte with a little less foam.
-                                </p>
+                            <div class="cart-description">
+                                <div class="cart-description-content">
+                                    <p>
+                                        Espresso with fresh, steamed milk poured over it. Perfect
+                                        for those who like a latte with a little less foam.
+                                    </p>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-order">
-                            <form action="#" method="POST" id="menu-order">
-                                <!-- Select Size -->
-                                <label for="" class="mb-0"><strong> choose size</strong></label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="size" id="regular"
-                                        value="regular" />
+                            <div class="form-order">
+                                <form action="#" method="POST" id="menu-order">
+                                    <!-- Select Size -->
+                                    <label for="" class="mb-0"><strong> choose size</strong></label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="size" id="regular"
+                                            value="regular" />
 
-                                    <div class="d-flex justify-content-between">
-                                        <label class="form-check-label" for="radio1">
-                                            Regular
-                                        </label>
-                                        <div class="price-containe r">€3.50</div>
+                                        <div class="d-flex justify-content-between">
+                                            <label class="form-check-label" for="radio1">
+                                                Regular
+                                            </label>
+                                            <div class="price-containe r">€3.50</div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="size" id="large" value="large" />
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="size" id="large"
+                                            value="large" />
 
-                                    <div class="d-flex justify-content-between">
-                                        <label class="form-check-label" for="radio2">Large</label>
-                                        <div class="price-container l">€2.50</div>
+                                        <div class="d-flex justify-content-between">
+                                            <label class="form-check-label" for="radio2">Large</label>
+                                            <div class="price-container l">€2.50</div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <!-- Select Milk -->
-                                <label for="" class="mb-0 mt-4">
-                                    <strong> choose milk</strong></label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="milk" id="radio1"
-                                        value="whole" />
-                                    <div class="d-flex justify-content-between">
-                                        <label class="form-check-label" for="radio1">
-                                            Whole
-                                        </label>
-                                        <div class="price-container">€1.50</div>
+                                    <!-- Select Milk -->
+                                    <label for="" class="mb-0 mt-4">
+                                        <strong> choose milk</strong></label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="milk" id="radio1"
+                                            value="whole" />
+                                        <div class="d-flex justify-content-between">
+                                            <label class="form-check-label" for="radio1">
+                                                Whole
+                                            </label>
+                                            <div class="price-container">€1.50</div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="milk" id="radio2"
-                                        value="Semi-Skimmed" />
-                                    <div class="d-flex justify-content-between">
-                                        <label class="form-check-label" for="radio2">Semi-Skimmed</label>
-                                        <div class="price-container">€0.50</div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="milk" id="radio2"
+                                            value="Semi-Skimmed" />
+                                        <div class="d-flex justify-content-between">
+                                            <label class="form-check-label" for="radio2">Semi-Skimmed</label>
+                                            <div class="price-container">€0.50</div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="milk" id="radio3"
-                                        value="almond" />
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="milk" id="radio3"
+                                            value="almond" />
 
-                                    <div class="d-flex justify-content-between">
-                                        <label class="form-check-label" for="radio3">Almond</label>
-                                        <div class="price-container">€0.75</div>
+                                        <div class="d-flex justify-content-between">
+                                            <label class="form-check-label" for="radio3">Almond</label>
+                                            <div class="price-container">€0.75</div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <!-- Extra Options -->
-                                <label for="" class="mb-0 mt-4">
-                                    <strong>extra options</strong></label>
-                                <!-- <div class="form-check">
+                                    <!-- Extra Options -->
+                                    <label for="" class="mb-0 mt-4">
+                                        <strong>extra options</strong></label>
+                                    <!-- <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="check1" value="Make it Decaf - Currently not
                                     available" name="options[]" disabled />
                                     <label class="form-check-label" for="check1">Make it Decaf - Currently not
                                         available</label>
                                 </div> -->
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="check2"
-                                        value="Extra Espresso Shot 2" name="options[]" />
-                                    <div class="d-flex justify-content-between">
-                                        <label class="form-check-label" for="check2">Extra Espresso Shot
-                                            2</label>
-                                        <div class="price-container">€3.50</div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="check2"
+                                            value="Extra Espresso Shot 2" name="options[]" />
+                                        <div class="d-flex justify-content-between">
+                                            <label class="form-check-label" for="check2">Extra Espresso Shot
+                                                2</label>
+                                            <div class="price-container">€3.50</div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="check3"
-                                        value="Extra Espresso Shot 3" name="options[]" />
-                                    <div class="d-flex justify-content-between">
-                                        <label class="form-check-label" for="check3">Extra Espresso Shot
-                                            3</label>
-                                        <div class="price-container">€2.50</div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="check3"
+                                            value="Extra Espresso Shot 3" name="options[]" />
+                                        <div class="d-flex justify-content-between">
+                                            <label class="form-check-label" for="check3">Extra Espresso Shot
+                                                3</label>
+                                            <div class="price-container">€2.50</div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <!-- Sugar -->
-                                <label for="" class="mb-0 mt-4">
-                                    <strong>add sugar</strong>
-                                </label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="sugar" id="sugar1"
-                                        value="1 Sugar" />
-                                    <label class="form-check-label" for="sugar1">1 sugar</label>
-                                </div>
+                                    <!-- Sugar -->
+                                    <label for="" class="mb-0 mt-4">
+                                        <strong>add sugar</strong>
+                                    </label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="sugar" id="sugar1"
+                                            value="1 Sugar" />
+                                        <label class="form-check-label" for="sugar1">1 sugar</label>
+                                    </div>
 
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="sugar" id="sugar2"
-                                        value="2 Sugar" />
-                                    <label class="form-check-label" for="sugar2">2 sugar</label>
-                                </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="sugar" id="sugar2"
+                                            value="2 Sugar" />
+                                        <label class="form-check-label" for="sugar2">2 sugar</label>
+                                    </div>
 
-                                <div class="form-check mb-4">
-                                    <input class="form-check-input" type="radio" name="sugar" id="sugar3"
-                                        value="No Sugar" />
-                                    <label class="form-check-label" for="sugar3">no sugar</label>
-                                </div>
+                                    <div class="form-check mb-4">
+                                        <input class="form-check-input" type="radio" name="sugar" id="sugar3"
+                                            value="No Sugar" />
+                                        <label class="form-check-label" for="sugar3">no sugar</label>
+                                    </div>
 
-                                <!-- <small class="text-danger">LIST ANY SPECIAL REQUESTS YOU MAY HAVE (IE. ALLERGIES,
+                                    <!-- <small class="text-danger">LIST ANY SPECIAL REQUESTS YOU MAY HAVE (IE. ALLERGIES,
                                     EXTRA SPICY, ETC.)</small>
 
                                     <!-- TAGS Input
@@ -238,127 +246,130 @@
                                      <input type="text" />
                                 </div> -->
 
-                                <div class="menu-item-container mb-4 d-flex justify-content-center">
-                                    <div class="menu-item-control p-3" id="minus">
-                                        <i class="fas fa-minus-circle"></i>
+                                    <div class="menu-item-container mb-4 d-flex justify-content-center">
+                                        <div class="menu-item-control p-3" id="minus">
+                                            <i class="fas fa-minus-circle"></i>
+                                        </div>
+                                        <div class="menu-item-quantity">1</div>
+                                        <div class="menu-item-control p-3" id="add">
+                                            <i class="fas fa-plus-circle"></i>
+                                        </div>
                                     </div>
-                                    <div class="menu-item-quantity">1</div>
-                                    <div class="menu-item-control p-3" id="add">
-                                        <i class="fas fa-plus-circle"></i>
+
+                                    <div
+                                        class="form-actions d-flex flex-column justify-content-center align-items-center">
+                                        <button id="cartBtn" class="btn btn-orange-br-5 mb-sm-2 w-25 text-uppercase">
+                                            Add to Cart
+                                        </button>
+
+                                        <a href="#" role="button" class="btn btn-outline-secondary w-25">Cancel</a>
                                     </div>
-                                </div>
-
-                                <div class="form-actions d-flex flex-column justify-content-center align-items-center">
-                                    <button id="cartBtn" class="btn btn-orange-br-5 mb-sm-2 w-25 text-uppercase">
-                                        Add to Cart
-                                    </button>
-
-                                    <a href="#" role="button" class="btn btn-outline-secondary w-25">Cancel</a>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Cart Section -->
+        <!-- End Cart Section -->
 
-    <!-- Start Footer Section -->
-    <section class="footer">
-        <div class="dark">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="list-content d-flex justify-content-center">
-                            <ul>
-                                <li>
-                                    <a href="endUserLicense.html" target="_blank">
-                                        coffeerun application end user license agreement
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="consumer_faq.html" target="_blank">
-                                        CoffeeRun Consumer FAQs
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="referral.html" target="_blank">
-                                        Referral Program Terms and Conditions
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="health_safety.html" target="_blank">
-                                        CoffeeRun Health And Safety
-                                    </a>
-                                </li>
-                            </ul>
+
+
+        <!-- Start Footer Section -->
+        <section class="footer">
+            <div class="dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="list-content d-flex justify-content-center">
+                                <ul>
+                                    <li>
+                                        <a href="endUserLicense.html" target="_blank">
+                                            coffeerun application end user license agreement
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="consumer_faq.html" target="_blank">
+                                            CoffeeRun Consumer FAQs
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="referral.html" target="_blank">
+                                            Referral Program Terms and Conditions
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="health_safety.html" target="_blank">
+                                            CoffeeRun Health And Safety
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="list-content d-flex justify-content-center">
+                                <ul>
+                                    <li>
+                                        <a href="privacy.html" target="_blank">
+                                            CoffeeRun Privacy Policy
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="">
+                                            coffeerun support help form
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="terms&conditions.html" target="_blank">
+                                            coffeerun terms and conditions
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="aboutus.html" target="_blank">
+                                            about us
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="contactus.html" target="_blank">
+                                            contactus
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="col-md-6">
-                        <div class="list-content d-flex justify-content-center">
-                            <ul>
-                                <li>
-                                    <a href="privacy.html" target="_blank">
-                                        CoffeeRun Privacy Policy
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="">
-                                        coffeerun support help form
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="terms&conditions.html" target="_blank">
-                                        coffeerun terms and conditions
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="aboutus.html" target="_blank">
-                                        about us
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="contactus.html" target="_blank">
-                                        contactus
-                                    </a>
-                                </li>
-                            </ul>
+                    <div class="row">
+                        <div class="icons text-center w-100 mb-3">
+                            <a href="https://twitter.com/CoffeeRunApp1">
+                                <i class="fab fa-twitter-square fa-2x mr-sm-2"></i>
+                            </a>
+                            <a href="https://www.instagram.com/thecoffeerunapp/">
+                                <i class="fab fa-instagram fa-2x mr-sm-2"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/company/coffeerunapp">
+                                <i class="fab fa-linkedin fa-2x"></i>
+                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="icons text-center w-100 mb-3">
-                        <a href="https://twitter.com/CoffeeRunApp1">
-                            <i class="fab fa-twitter-square fa-2x mr-sm-2"></i>
-                        </a>
-                        <a href="https://www.instagram.com/thecoffeerunapp/">
-                            <i class="fab fa-instagram fa-2x mr-sm-2"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/company/coffeerunapp">
-                            <i class="fab fa-linkedin fa-2x"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="copyright text-white text-center w-100">
-                        All &copy; copyright are reserved to CoffeeRun
-                        <span id="year"></span>.
+                    <div class="row">
+                        <div class="copyright text-white text-center w-100">
+                            All &copy; copyright are reserved to CoffeeRun
+                            <span id="year"></span>.
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- End Footer Section -->
+        </section>
+        <!-- End Footer Section -->
 
-    <!-- JavaScript liberaries -->
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Custom JS -->
-    <script type="module" src="js/main2.js"></script>
+        <!-- JavaScript liberaries -->
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Custom JS -->
+        <script type="module" src="js/main2.js"></script>
 </body>
 
 </html>
