@@ -1,19 +1,49 @@
 // A Basic Node server
-
-const http = require('http');
-
+const https = require('https');
 const PORT = 1234;
+function handleRequest(req, res) {
+    const data = JSON.stringify({
+        name: 'John Doe',
+        job: 'DevOps Specialist'
+    });
 
-const server = http.createServer(function (req, res) {
-    res.setHeader('Content-type', 'application/json');
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.writeHead(200); // status code HTTP 200 / OK
+    const options = {
+        protoco: 'https',
+        hostname: 'https://app.coffeerunstore.com/',
+        port: PORT,
+        path: '/api/Register',
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Content-Length': data.length
+        }
+    };
 
-    let dataObj = { "id": 1, "name": "ahmed", "age": 30 };
-    let data = JSON.stringify(dataObj);
-    res.end(data);
-});
+    https.request(options, (res) => {
+        let data = '';
 
+        res.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        res.on('end', () => {
+            console.log(JSON.parse(data));
+        });
+
+    }).on("error", (err) => {
+        console.log("Error: ", err.message);
+    });
+
+    req.write(data);
+    req.end();
+
+
+}
+
+// create a SERVER
+const server = https.createServer(handleRequest);
+
+// run A SERVER
 server.listen(PORT, function () {
-    console.log("Listening on port 1234");
+    console.log("Server listening on: https://localhost:" + PORT);
 })
