@@ -430,14 +430,14 @@ function isLogged() {
     let userData = getUserData();
 
     if (userData === null) {
-        // $("#signin-btn").show();
-        // $("#user-account").hide();
+        $("#signin-btn").show();
+        $("#user-account").hide();
 
         return;
     } else {
 
-        // $("#signin-btn").hide();
-        // $("#user-account").show();
+        $("#signin-btn").hide();
+        $("#user-account").show();
 
         userData.roles.forEach(role => {
             if (role === 'Admin') {
@@ -453,25 +453,25 @@ function isLogged() {
         });
     }
 
-    if (userData) {
+    // if (userData) {
 
-        $("#signin-btn").hide();
+    //     $("#signin-btn").hide();
 
-        // do stuff if user login
-        // $("#searchBox").on("change", function (e) {
-        //   console.log("This is login User");
-        //   e.preventDefault();
-        // });
-        return true;
-    } else {
+    //     // do stuff if user login
+    //     // $("#searchBox").on("change", function (e) {
+    //     //   console.log("This is login User");
+    //     //   e.preventDefault();
+    //     // });
+    //     return true;
+    // } else {
 
-        $("#signin-btn").show();
+    //     $("#signin-btn").show();
 
-        return false;
+    //     return false;
 
-        // do stuff if user not login
-        //searchForProduct();
-    }
+    //     // do stuff if user not login
+    //     //searchForProduct();
+    // }
 }
 
 
