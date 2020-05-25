@@ -983,16 +983,17 @@ background: rgba(38, 15, 7, 0.9);
 .d-container input[type="checkbox"]{
   position: absolute;
   opacity: 0;
-}
-.d-container input[type="checkbox"]:checked + label{
-    border: 2px solid #1bdbf8;
-    background-color: #12bbd4;
+ }
+/*
+ .d-container input[type="checkbox"]:checked + label{
+    border: 2px solid #d9751e;
+    background-color: #d9751e;
     color: #fff;
     transition: all .2s;
-}
+} */
 
 .d-container label{
-  padding: 8px 12px;
+    padding: 8px 12px;
     cursor: pointer;
     border-radius: 25px;
 }

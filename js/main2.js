@@ -56,12 +56,28 @@ function handleEvents(e) {
         });
     }
 
-
-
     // toggle password [show/hide] in login form
     let eyeIcon = document.getElementById("eye-icon");
     if (eyeIcon)
         eyeIcon.addEventListener("click", togglePassword);
+
+    // logout
+    $("#logout").on("click", function () {
+        localStorage.clear();
+        alert("Are you sure to logout?");
+        setTimeout(function () {
+            window.location.replace("index.html");
+        }, 500);
+    })
+
+    // pickup button
+    let orderType = document.getElementsByName("orderType[]");
+    orderType.forEach(item => {
+        if (item.checked) {
+            console.log("YES");
+        }
+    })
+
 
 }
 
@@ -83,7 +99,7 @@ function handlePlaceOrder() {
     // // if not login, redirect to login
     if (!isLogged()) {
 
-        alert("You should login first, you will redirecetd to login page after 5 seconds")
+        alert("You should login first, you will redirecetd to login page after 5 seconds");
         setTimeout(function () {
             window.location.replace("signin.html");
         }, 5000);
@@ -265,6 +281,7 @@ function loadFunctions() {
     showCookiesAlert();
     closeButton();
     initToolTip();
+    isLogged();
 }
 
 function initToolTip() {
