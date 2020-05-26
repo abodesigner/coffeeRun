@@ -980,10 +980,14 @@ background: rgba(38, 15, 7, 0.9);
   min-height: 350px;
 }
 
-.d-container input[type="checkbox"]{
+/* .d-container input[type="radio"]{
   position: absolute;
   opacity: 0;
  }
+
+ .current{
+   color: red
+ } */
 /*
  .d-container input[type="checkbox"]:checked + label{
     border: 2px solid #d9751e;
@@ -992,11 +996,11 @@ background: rgba(38, 15, 7, 0.9);
     transition: all .2s;
 } */
 
-.d-container label{
+/* .d-container label{
     padding: 8px 12px;
     cursor: pointer;
     border-radius: 25px;
-}
+} */
 
 /* .d-container label:before{
 

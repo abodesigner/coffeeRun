@@ -82,14 +82,17 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="delivery-section d-flex justify-content-center align-items-center">
+                    <div class="delivery-section d-flex justify-content-around align-items-center">
                         <div class="d-container">
-                            <input type="checkbox" class="test" name="orderType[]" value="Pick Up">
-                            <label for="pickUp"> <i class="fas fa-walking"></i> Pick Up</label>
+                            <input type="radio" name="orderType" value="PickUp">
+                            <label for="pickUp" class="label">
+                                <!-- <i class="fas fa-walking"></i>--> Pick Up</label>
                         </div>
-                        <div class="d-container p-2">
-                            <input type="checkbox" class="test" name="orderType[]" value="Delivery">
-                            <label for="delivery"><img src="img/delivery-man.svg" width="16px" alt=""> Delivery</label>
+                        <div class="d-container">
+                            <input type="radio" name="orderType" value="Delivery">
+                            <label for="delivery" class="label">
+                                <!--<img src="img/delivery-man.svg" width="16px"
+                                    alt="">--> Delivery</label>
                         </div>
                     </div>
                 </div>

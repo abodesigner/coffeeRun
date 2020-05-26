@@ -71,12 +71,11 @@ function handleEvents(e) {
     })
 
     // pickup button
-    let orderType = document.getElementsByName("orderType[]");
-    orderType.forEach(item => {
-        if (item.checked) {
-            console.log("YES");
-        }
-    })
+    let orderType = document.querySelectorAll(".label");
+
+
+
+
 
 
 }
