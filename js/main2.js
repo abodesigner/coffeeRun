@@ -99,16 +99,18 @@ function handlePlaceOrder() {
 
 
     // if not login, redirect to login
-    if (!isLogged()) {
+    if (isLogged()) {
 
+        window.location.replace("payment.html");
+        handlePayment();
+
+
+
+    } else { // else, go to stripe payment
         alert("You should login first, you will redirecetd to login page after 5 seconds");
         setTimeout(function () {
             window.location.replace("signin.html");
         }, 5000);
-
-    } else { // else, go to stripe payment
-        window.location.replace("payment.html");
-        handlePayment();
 
     }
 
@@ -529,25 +531,27 @@ function isLogged() {
         $("#signin-btn").show();
         $("#user-account").hide();
 
-        return;
+        return false;
 
     } else {
 
         $("#signin-btn").hide();
         $("#user-account").show();
 
-        userData.roles.forEach(role => {
-            if (role === 'Admin') {
-                console.log(`Welcome ${userData.name}`);
-            } else if (role === 'User') {
-                console.log(`Hello ${userData.name}`);
-            } else if (role === 'Provider') {
-                console.log(`HI ${userData.name}`);
-            }
-            else {
-                console.log(`Guest`);
-            }
-        });
+        // userData.roles.forEach(role => {
+        //     if (role === 'Admin') {
+        //         console.log(`Welcome ${userData.name}`);
+        //     } else if (role === 'User') {
+        //         console.log(`Hello ${userData.name}`);
+        //     } else if (role === 'Provider') {
+        //         console.log(`HI ${userData.name}`);
+        //     }
+        //     else {
+        //         console.log(`Guest`);
+        //     }
+        // });
+
+        return true;
 
     }
 
