@@ -47,10 +47,12 @@ function handleEvents(e) {
     }
 
     // placeBtn eventListener using Event Delegation
-    if (document.querySelector(".card-footer")) {
+    let card = document.querySelector(".card");
+    if (card) {
 
-        document.querySelector(".card-footer").addEventListener("click", function (e) {
-            if (e.target.id === 'placeBtn') {
+        card.addEventListener("click", function (e) {
+
+            if (e.target.id == 'placeBtn') {
                 handlePlaceOrder();
             }
         });
@@ -64,14 +66,13 @@ function handleEvents(e) {
     // logout
     $("#logout").on("click", function () {
         localStorage.clear();
-        alert("Are you sure to logout?");
+        alert("Are you sure to exist our app?");
         setTimeout(function () {
             window.location.replace("index.html");
         }, 500);
     })
 
-    // pickup button
-    let orderType = document.querySelectorAll(".label");
+
 
 
 
@@ -95,7 +96,9 @@ function togglePassword() {
 
 function handlePlaceOrder() {
 
-    // // if not login, redirect to login
+
+
+    // if not login, redirect to login
     if (!isLogged()) {
 
         alert("You should login first, you will redirecetd to login page after 5 seconds");
@@ -216,47 +219,124 @@ function getOrder(e) {
 
 function handleAddToCart(e) {
 
-    // get order
-    let order = getOrder(e);
+    // 1) remove the default body of cart
+    let emptyCard = document.querySelector(".cart-empty");
+    emptyCard.style.display = "none";
+
+
+
+    // 2) get order
+    let order = getOrder();
     console.log(order);
 
-    // 2) create Cart Elements
-    let shoppingCart = document.querySelector(".shopping-cart");
 
-    shoppingCart.innerHTML += `<div class="card border-0 mb-3 rounded-0">
-    <div class="card-header bg-warning border-transparent">
-        <div class="order-contentp-2">
-            <h2 class="r-name mb-0">V69 COFFEE (GRESHAM ST)</h2>
-            <p class="r-address text-white">30 Gresham Street</p>
-        </div>
-    </div>
-    <div class="card-body text-secondary" id="cart-items">
+    // 3) create Cart Elements
+    let restName = document.querySelector("h2.r-name");
+    let restAddress = document.querySelector("p.r-address");
 
-        <!-- cart items wil be added here by javascript -->
-        <div class="d-flex">
-            <div class="quantity mr-2">
-                <span>1</span>
-            </div>
-            <div class="description">
-                <span><strong> Flat White</strong></span>
-            </div>
-        </div>
-        <div class="d-flex justify-content-between">
-            <div class="addons">
-                <span>Regular, Whole</span>
-            </div>
-            <div class="total-price">$549</div>
-            <div class="buttons">
-                <i class="fas fa-minus-circle"></i>
+    // let shoppingCart = document.querySelector(".shopping-cart");
+    let cardContainer = document.querySelector(".card");
 
-            </div>
-        </div>
 
-    </div>
-    <div class="card-footer bg-transparent border-transparent">
-         <button id="placeBtn" class="btn btn-orange">Place Order</button>
-    </div>
-</div>`
+    // Create Card Header
+    let divHeader = document.createElement("div");
+    divHeader.setAttribute("class", "card-header bg-warning border-transparent");
+
+    // Create Restaurant Name & add value from user selection
+    let restNameElm = document.createElement("h4");
+    restNameElm.setAttribute("class", "r-name");
+    restNameElm.textContent = restName.textContent;
+
+    // Create Restaurant Address & add value from user selection
+    let restAddressElm = document.createElement("p");
+    restAddressElm.setAttribute("class", "r-address mb-0");
+    restAddressElm.textContent = restAddress.textContent;
+
+    //append children to divHeader
+    divHeader.appendChild(restNameElm);
+    divHeader.appendChild(restAddressElm);
+
+    // append divHeader to orderCartContainer
+    cardContainer.appendChild(divHeader);
+
+    cardContainer.innerHTML += `
+                        <div class="card-body text-secondary" id="cart-items">
+                            <div class="d-flex">
+                                <div class="quantity mr-2">
+                                    <span>1</span>
+                                </div>
+                                <div class="description">
+                                    <span><strong> Flat White</strong></span>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="addons">
+                                    <span>Regular, Whole</span>
+                                </div>
+                                <div class="total-price">$549</div>
+                                <div class="buttons">
+                                    <i class="fas fa-minus-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+`;
+
+
+    // create card footer
+    let divFooter = document.createElement("div");
+    divFooter.setAttribute("class", "card-footer text-center bg-transparent border-transparent");
+
+    //add place Order button
+    let placeBtn = document.createElement("button");
+    let btnText = document.createTextNode("Place Order");
+    placeBtn.appendChild(btnText);
+    placeBtn.id = "placeBtn";
+    placeBtn.setAttribute("class", "btn btn-orange");
+
+    divFooter.appendChild(placeBtn);
+    cardContainer.appendChild(divFooter);
+
+
+    // let btn = document.createElement("button");
+    // btn.classList.add("btn", "btn-danger");
+
+    // btn.appendChild(document.createTextNode("test"));
+
+    // cartContainer.appendChild(btn);
+
+
+    //     cartContainer.innerHTML = `<div class="card border-0 mb-3 rounded-0">
+    //     <div class="card-header bg-warning border-transparent">
+    //         <div class="order-contentp-2">
+    //             <h2 class="r-name mb-0">V69 COFFEE (GRESHAM ST)</h2>
+    //             <p class="r-address text-white">30 Gresham Street</p>
+    //         </div>
+    //     </div>
+
+    //     <div class="card-body text-secondary" id="cart-items">
+
+    //         <!-- cart items wil be added here by javascript -->
+    //         <div class="d-flex">
+    //             <div class="quantity mr-2">
+    //                 <span>1</span>
+    //             </div>
+    //             <div class="description">
+    //                 <span><strong> Flat White</strong></span>
+    //             </div>
+    //         </div>
+    //         <div class="d-flex justify-content-between">
+    //             <div class="addons">
+    //                 <span>Regular, Whole</span>
+    //             </div>
+    //             <div class="total-price">$549</div>
+    //             <div class="buttons">
+    //                 <i class="fas fa-minus-circle"></i>
+
+    //             </div>
+    //         </div>
+
+    //     </div>
+    // </div>`
 
 
 
@@ -450,6 +530,7 @@ function isLogged() {
         $("#user-account").hide();
 
         return;
+
     } else {
 
         $("#signin-btn").hide();
@@ -467,27 +548,9 @@ function isLogged() {
                 console.log(`Guest`);
             }
         });
+
     }
 
-    // if (userData) {
-
-    //     $("#signin-btn").hide();
-
-    //     // do stuff if user login
-    //     // $("#searchBox").on("change", function (e) {
-    //     //   console.log("This is login User");
-    //     //   e.preventDefault();
-    //     // });
-    //     return true;
-    // } else {
-
-    //     $("#signin-btn").show();
-
-    //     return false;
-
-    //     // do stuff if user not login
-    //     //searchForProduct();
-    // }
 }
 
 
