@@ -72,13 +72,6 @@ function handleEvents(e) {
         }, 500);
     })
 
-
-
-
-
-
-
-
 }
 
 // toggle Passoword
@@ -95,8 +88,6 @@ function togglePassword() {
 }
 
 function handlePlaceOrder() {
-
-
 
     // if not login, redirect to login
     if (isLogged()) {
@@ -343,13 +334,7 @@ function handleAddToCart(e) {
 
 
 
-
-
     // 3) add items to cart
-
-
-
-
 
     e.preventDefault();
 }
@@ -538,6 +523,8 @@ function isLogged() {
         $("#signin-btn").hide();
         $("#user-account").show();
 
+        getShops();
+
         // userData.roles.forEach(role => {
         //     if (role === 'Admin') {
         //         console.log(`Welcome ${userData.name}`);
@@ -620,12 +607,56 @@ function searchForProduct() {
                 },
                 error: function (err) {
                     console.log(err);
-                },
+                }
             });
         });
     } else {
         alert("Geolocation is not supported by this browser");
     }
 
+}
+
+
+// get shops
+function getShops() {
+
+
+    $.ajax({
+        type: "GET",
+        url: "https://app.coffeerunstore.com/api/Shop",
+        success: function (response) {
+            console.log(response);
+
+            let output = "";
+            response.data.forEach(function (shop) {
+
+                output += `<div class="media-list">
+                <a href="order-details.html" class="media">
+                  <img src="img/CR13.jpg" width="190px" class="mr-3" alt="..." />
+                  <div class="media-body">
+                    <h3 class="my-0">${shop.name}</h3>
+                    <p class="media-description">${shop.description}</p>
+                    <ul class="media-tags d-flex">
+                      <li class="media-tag media-tag-yellow mr-sm-2">
+                        fisrt-taste
+                      </li>
+                      <li class="media-tag">${shop.isClosed}</li>
+
+                    </ul>
+                    <div class="media-hourse">
+                      <span> Open ${shop.startTime} AM - ${shop.endTime} PM </span>
+                    </div>
+                  </div>
+                </a>
+              </div>`;
+            });
+
+            document.getElementById("product-list").innerHTML = output;
+        },
+        error: function (err) {
+            console.log(err);
+        }
+
+    });
 }
 
