@@ -427,6 +427,16 @@ background: rgba(38, 15, 7, 0.9);
 }
 
 /* ======================================
+    Download Section
+====================================== */
+.download-section h2{
+  color: #48321d;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* ======================================
     Footer Section
 ====================================== */
 .footer {
