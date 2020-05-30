@@ -524,6 +524,8 @@ function isLogged() {
         $("#user-account").show();
 
         getShops();
+        getCategories();
+        getProducts();
 
         // userData.roles.forEach(role => {
         //     if (role === 'Admin') {
@@ -620,21 +622,26 @@ function searchForProduct() {
 // get shops
 function getShops() {
 
-
     $.ajax({
         type: "GET",
         url: "https://app.coffeerunstore.com/api/Shop",
         success: function (response) {
             console.log(response);
 
-            let output = "";
+            let output1 = "";
+            let output2 = "";
             response.data.forEach(function (shop) {
 
-                output += `<div class="media-list">
+                output2 = ` <h2 class="mb-0">${shop.name} (${shop.address})</h2>
+                                <p>${shop.description}</p>
+                            `;
+
+                output1 += `
+                <div class="media-list">
                 <a href="order-details.html" class="media">
                   <img src="img/CR13.jpg" width="190px" class="mr-3" alt="..." />
                   <div class="media-body">
-                    <h3 class="my-0">${shop.name}</h3>
+                    <h3 class="my-0">${shop.name} (${shop.address})</h3>
                     <p class="media-description">${shop.description}</p>
                     <ul class="media-tags d-flex">
                       <li class="media-tag media-tag-yellow mr-sm-2">
@@ -651,7 +658,8 @@ function getShops() {
               </div>`;
             });
 
-            document.getElementById("product-list").innerHTML = output;
+            $("#shop-heading").html(output2);
+            $("#product-list").html(output1);
         },
         error: function (err) {
             console.log(err);
@@ -659,4 +667,59 @@ function getShops() {
 
     });
 }
+
+// get Categories
+function getCategories() {
+    $.ajax({
+        type: "GET",
+        url: "https://app.coffeerunstore.com/api/Category",
+        success: function (response) {
+            console.log(response);
+            let output = "";
+            response.data.forEach(function (cat) {
+
+                output += `<li>
+                                <a href="#" class="clickable">${cat.name}</a>
+                            </li>`
+
+            });
+
+            $("#categories").html(output);
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    })
+}
+
+// get products
+function getProducts() {
+    $.ajax({
+        type: "GET",
+        url: "https://app.coffeerunstore.com/api/Product",
+        success: function (response) {
+            console.log(response);
+            let output = "";
+            response.data.forEach(function (product) {
+
+                output += `<li class="menu-item">
+                <a href="addToCart.html" target="_blank" class="menu-item-inner">
+
+                    <h2 class="menu-item-title">${product.name}</h2>
+
+                    <p class="menu-item-description">${product.description}.</p>
+                </a>
+            </li>`
+
+            });
+
+            $("#menu-items").html(output);
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    })
+}
+
+
 
