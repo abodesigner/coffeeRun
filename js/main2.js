@@ -355,13 +355,14 @@ function getCurrentYear() {
 }
 
 function showCovidAlert() {
-    setTimeout(function () {
-        $(".covid-alert").fadeIn(2000);
-    }, 2000);
+    $(".covid-alert").fadeIn(2000);
+    // setTimeout(function () {
+    //     $(".covid-alert").fadeIn(2000);
+    // }, 2000);
 
-    setTimeout(function () {
-        $(".covid-alert").fadeOut(2000);
-    }, 10000);
+    // setTimeout(function () {
+    //     $(".covid-alert").fadeOut(2000);
+    // }, 10000);
 }
 
 function showCookiesAlert() {

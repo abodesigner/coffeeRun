@@ -489,7 +489,7 @@ background: rgba(38, 15, 7, 0.9);
 
 .cookies-alert {
   min-height: 80px;
-  padding: 15px 0;
+ line-height: 40px;
   font-size: 1rem;
   color: #fff;
   display: none;
@@ -507,10 +507,10 @@ background: rgba(38, 15, 7, 0.9);
 }
 
 .covid-alert{
-  height: 50px;
+  min-height: 50px;
   font-size: 1rem;
   color: #fff;
-  line-height: 25px;
+  line-height: 50px;
   display: none;
   position: fixed;
   left: 0;
@@ -518,7 +518,7 @@ background: rgba(38, 15, 7, 0.9);
   bottom: 0;
   width: 100%;
   z-index: 200;
-  background: #BD0000;
+  background: #00acee;
 }
 
 /* ======================================
