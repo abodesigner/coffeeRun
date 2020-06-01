@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", handleEvents);
 
 function handleEvents(e) {
@@ -41,7 +40,8 @@ function handleEvents(e) {
     // cartBtn eventListener
     let cart = document.getElementById("cartBtn");
     if (cart) {
-        cart.addEventListener("click", handleAddToCart)
+        //cart.addEventListener("click", handleAddToCart);
+        cart.addEventListener("click", addOrderToCart);
     }
 
     // placeBtn eventListener using Event Delegation
@@ -55,6 +55,13 @@ function handleEvents(e) {
             }
         });
     }
+
+    // remove item from cart list
+    $(".remove-item").on("click", function (e) {
+        console.log(e.target.parentElement.parentElement.parentElement.parentElement.parentElement.remove());
+
+        e.preventDefault();
+    })
 
     // toggle password [show/hide] in login form
     let eyeIcon = document.getElementById("eye-icon");
@@ -117,6 +124,11 @@ function getSugar() {
     });
 
     return checkedVal;
+}
+
+function getOrderQty() {
+    let qtyVal = document.querySelector(".menu-item-quantity");
+    return qtyVal.textContent;
 }
 
 // get checked value from Extra Options
@@ -193,23 +205,52 @@ function getOrder(e) {
         size: "",
         milkType: "",
         options: [],
-        sugar: ""
+        sugar: "",
+        qty: ""
     };
 
     order.size = getOrderSize(e);
     order.milkType = getMilkType();
     order.options.push(getExtraOptions());
     order.sugar = getSugar();
+    order.qty = getOrderQty();
 
     return order;
+}
+
+
+function removeEmptyText() {
+    let emptyCard = document.querySelector(".cart-empty");
+    return emptyCard.style.display = "none";
+}
+
+function addOrderToCart(e) {
+    let cartRow = document.createElement("div");
+    cartRow.innerHTML = `<div class="cart-row d-flex justify-content-around align-items-center mb-5">
+
+    <div class="d-flex">
+        <div class="quantity mr-2">
+            <span>1</span>
+        </div>
+        <div class="description">
+            <span><strong> Flat White</strong></span>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <a href="#"><i class="fas fa-minus-circle fa-2x" style="color:#e40707"></i></a>
+    </div>
+</div>`;
+    let cartItems = document.getElementsByClassName("cart-items")[0];
+    cartItems.append(cartRow);
+
+    e.preventDefault();
 }
 
 function handleAddToCart(e) {
 
     // 1) remove the default body of cart
-    let emptyCard = document.querySelector(".cart-empty");
-    emptyCard.style.display = "none";
-
+    removeEmptyText();
 
 
     // 2) get order
@@ -228,7 +269,7 @@ function handleAddToCart(e) {
     // Create Card Header
     let divHeader = document.createElement("div");
     divHeader.setAttribute("class", "card-header bg-warning border-transparent");
-
+    divHeader.id = "cardHeader";
     // Create Restaurant Name & add value from user selection
     let restNameElm = document.createElement("h4");
     restNameElm.setAttribute("class", "r-name");
@@ -244,13 +285,17 @@ function handleAddToCart(e) {
     divHeader.appendChild(restAddressElm);
 
     // append divHeader to orderCartContainer
+
     cardContainer.appendChild(divHeader);
+
+
+
 
     cardContainer.innerHTML += `
                         <div class="card-body text-secondary" id="cart-items">
                             <div class="d-flex">
                                 <div class="quantity mr-2">
-                                    <span>1</span>
+                                    <span>${order.qty}</span>
                                 </div>
                                 <div class="description">
                                     <span><strong> Flat White</strong></span>
@@ -281,7 +326,9 @@ function handleAddToCart(e) {
     placeBtn.setAttribute("class", "btn btn-orange");
 
     divFooter.appendChild(placeBtn);
+
     cardContainer.appendChild(divFooter);
+
 
 
     // let btn = document.createElement("button");
