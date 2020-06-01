@@ -1260,6 +1260,11 @@ ul.menu-items li.menu-item a.menu-item-inner span.menu-item-price {
   display: none;
 }
 
+input#chargeValue[type="text"] {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
 /* Message success for bank account */
 .message-wrapper {
   height: 100vh;
