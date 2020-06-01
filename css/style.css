@@ -19,6 +19,16 @@
 /*=======================
       Global Styles
 ========================*/
+.tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: #fff;
+  text-align: center;
+  background-color: #d9751e;
+  border-radius: .25rem;
+}
+
+
 a:hover,
 a:focus {
   text-decoration: none;
@@ -1244,6 +1254,10 @@ ul.menu-items li.menu-item a.menu-item-inner span.menu-item-price {
 
 .promote-menu ul.activation li {
   list-style-type: none;
+}
+
+#delivery-charge{
+  display: none;
 }
 
 /* Message success for bank account */

@@ -3,8 +3,6 @@ document.addEventListener("DOMContentLoaded", handleEvents);
 
 function handleEvents(e) {
 
-
-
     //  When signup button, register() function invoked
     $("#signup-form").on("submit", function (e) {
         register();
@@ -95,8 +93,6 @@ function handlePlaceOrder() {
         window.location.replace("payment.html");
         handlePayment();
 
-
-
     } else { // else, go to stripe payment
         alert("You should login first, you will redirecetd to login page after 5 seconds");
         setTimeout(function () {
@@ -108,7 +104,6 @@ function handlePlaceOrder() {
 }
 
 function handlePayment() { }
-
 
 
 // get checked value from Sugar radio buttons
@@ -147,7 +142,6 @@ function getExtraOptions() {
 
     return selected;
 }
-
 
 // get checked value from Milk radio buttons
 function getMilkType() {
@@ -339,15 +333,16 @@ function handleAddToCart(e) {
     e.preventDefault();
 }
 
-
-
 loadFunctions();
+
 function loadFunctions() {
     getCurrentYear();
     showCookiesAlert();
     closeButton();
     initToolTip();
     isLogged();
+    showDeliverCharge();
+
 }
 
 function initToolTip() {
@@ -720,6 +715,38 @@ function getProducts() {
         }
     })
 }
+
+function showDeliverCharge() {
+
+    let radioBtn = document.getElementsByName("deliveryOption");
+
+    let checkedVal;
+
+    radioBtn.forEach(function (item) {
+
+        item.addEventListener("click", function (e) {
+            if (e.target.value === 'Yes') {
+                // show the charge div
+                if (document.getElementById("delivery-charge").style.display = "none") {
+                    document.getElementById("delivery-charge").style.display = "block"
+                }
+            }
+            if (e.target.value === 'No') {
+                // show the charge div
+                if (document.getElementById("delivery-charge").style.display = "block") {
+                    document.getElementById("delivery-charge").style.display = "none"
+                }
+            }
+        });
+
+    });
+
+    return checkedVal;
+
+
+
+}
+
 
 
 

@@ -25,27 +25,28 @@
 </head>
 
 <body>
-    
+
     <!-- Start Navbar -->
     <nav class="navbar custom-navbar navbar-expand-lg">
         <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img src="img/logo.png" alt="coffeeRun_logo" class="img-fluid">
-        </a>
-        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
-            aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" alt="coffeeRun_logo" class="img-fluid">
+            </a>
+            <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+                data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="main-navbar">
+            <div class="collapse navbar-collapse" id="main-navbar">
 
-            <!-- <form class="form-inline ml-auto my-lg-0">
+                <!-- <form class="form-inline ml-auto my-lg-0">
                 <a href="#" class="btn btn-outline-brown font-weight-bold mr-sm-2" role="button">Log In</a>
                 <a href="merchant_signup_form.html" target="_blank" class="btn btn-orange my-2" role="button">Let's
                     begin</a>
             </form> -->
+            </div>
         </div>
-    </div>
     </nav>
     <!-- End Navbar -->
 
@@ -55,27 +56,32 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="promote-menu-card">
-                        <div class="card">       
+                        <div class="card">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <h2 class="mb-4 card-title text-dark font-weight-bold">Promote you business</h2>
                                     <span class="text-muted">Step 3/5</span>
                                 </div>
-                                
+
                                 <p class="mb-5 card-subtitle mb-2 text-muted">
-                                    Let customers see what you offer by uploading a website link, PDF or image of your menu.
+                                    Let customers see what you offer by uploading a website link, PDF or image of your
+                                    menu.
                                 </p>
 
                                 <div class="promote-menu">
                                     <h5>To speed up your activation, make sure you:</h5>
                                     <ul class="activation">
-                                       <li><span class="mr-3 prices"></span> Have prices clearly listed with each item.</li>
-                                       <li><span class="mr-3 modifiers"></span>Have modifiers listed with the associated item (e.g. with chicken or pork).</li>
-                                       <li><span class="mr-3 link"></span>Link directly to the menu, not to a search engine or review site.</li>
-                                       <li><span class="mr-3 alcohol"></span>Don't have alcohol, or tobacco products listed.
-                                        <p class="ml-4"> 
-                                            if you do, we won't add them to your CoffeeRun menu.</p>    
-                                    </li>
+                                        <li><span class="mr-3 prices"></span> Have prices clearly listed with each item.
+                                        </li>
+                                        <li><span class="mr-3 modifiers"></span>Have modifiers listed with the
+                                            associated item (e.g. with chicken or pork).</li>
+                                        <li><span class="mr-3 link"></span>Link directly to the menu, not to a search
+                                            engine or review site.</li>
+                                        <li><span class="mr-3 alcohol"></span>Don't have alcohol, or tobacco products
+                                            listed.
+                                            <p class="ml-4">
+                                                if you do, we won't add them to your CoffeeRun menu.</p>
+                                        </li>
                                     </ul>
 
                                     <form action="#" method="POST" id="promoteForm">
@@ -84,7 +90,8 @@
                                                 <div class="menu-website-input">
                                                     <div class="form-group">
                                                         <label for="m-website">Menu website</label>
-                                                        <input type="text" name="m-website" id="m-website" class="form-control" required>
+                                                        <input type="text" name="m-website" id="m-website"
+                                                            class="form-control" required>
                                                     </div>
                                                 </div>
                                             </div>
@@ -95,18 +102,59 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <fieldset class="form-group">
+                                            <div class="row">
+                                                <legend class="col-form-label col-sm-6 pt-0">Does your business operate
+                                                    it's own delivery?</legend>
+                                                <div class="col-sm-6">
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="deliveryOption" id="gridRadios1" value="Yes">
+                                                        <label class="form-check-label" for="gridRadios1">
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio"
+                                                            name="deliveryOption" id="gridRadios2" value="No">
+                                                        <label class="form-check-label" for="gridRadios2">
+                                                            No
+                                                        </label>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+
+                                        <div class="form-group" id="delivery-charge">
+                                            <div class="row">
+                                                <label for="chargeValue" class="col-sm-6 col-form-label">What is
+                                                    your standard delivery
+                                                    charge?</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" id="chargeValue">
+                                                </div>
+                                            </div>
+                                        </div>
+
+
                                         <div class="row">
-                                            <div class="col-md-12">
-                                                <textarea name="" id="openingHours" class="form-control mb-4" 
-                                                rows="4">
+                                            <div class="col-md-10">
+                                                <textarea name="" id="openingHours" class="form-control mb-4" rows="4">
 Monday - Friday:10am - 8pm
 Saturday - Sunday:10am - 10pm
                                                 </textarea>
                                                 <div id="err"></div>
                                             </div>
                                         </div>
-                                        <div class="text-right">
-                                            <a href="ordersPlans.html" id="submitBtn" class="mt-5 btn btn-info">Next</a>
+                                        <div class="row">
+                                            <div class="col-md-10">
+                                                <div class="text-right">
+                                                    <a href="ordersPlans.html" id="submitBtn"
+                                                        class="mt-5 btn btn-info">Next</a>
+                                                </div>
+                                            </div>
                                         </div>
                                         <!-- <input type="submit" value="next" class="btn btn-info"> -->
                                     </form>
@@ -122,7 +170,8 @@ Saturday - Sunday:10am - 10pm
                         <h4 class="font-weight-bold mb-4"> Merchant Portal on CoffeeRun</h4>
                         <ul class="fa-ul">
                             <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Fast and reliable</li>
-                            <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Dedicated tools for tracking sales and managing promotion</li>
+                            <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Dedicated tools for
+                                tracking sales and managing promotion</li>
                             <li><span class="fa-li"><i class="fas fa-check-square"></i></span>Cancel anytime</li>
                         </ul>
                     </div>
@@ -131,7 +180,7 @@ Saturday - Sunday:10am - 10pm
         </div>
     </div>
     <!-- End Business Form -->
-    
+
     <!-- Start Footer Section -->
     <section class="footer">
         <div class="container">
@@ -219,7 +268,7 @@ Saturday - Sunday:10am - 10pm
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <!-- Custom JS -->
-    <script src="js/main.js"></script>
+    <script src="js/main2.js"></script>
 </body>
 
 </html>
