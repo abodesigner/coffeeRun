@@ -241,7 +241,7 @@ function addOrderToCart(e) {
         <a href="#"><i class="fas fa-minus-circle fa-2x" style="color:#e40707"></i></a>
     </div>
 </div>`;
-    let cartItems = document.getElementsByClassName("cart-items")[0];
+    let cartItems = document.getElementsByClassName("cart-items-list")[0];
     cartItems.append(cartRow);
 
     e.preventDefault();
