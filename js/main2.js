@@ -133,23 +133,34 @@ function getOrderQty() {
 
 // get checked value from Extra Options
 function getExtraOptions() {
-    let options = document.getElementsByName("options[]");
+    let options = [...document.getElementsByName("options")];
     let extraOptions = {
         checkedVal: '',
         price: ''
     }
+
+    console.log(typeof options);
+
     let selected = [];
+    let arr = [];
     let price, finalPrice;
     // loop through nodeList using ES6
-    options.forEach(option => {
-        if (option.checked)
-            // selected.push(option.value);
-            extraOptions.checkedVal = option.value;
-        price = option.nextElementSibling.children[1].textContent;
-        finalPrice = price.slice(1);
-        extraOptions.price = finalPrice;
+    options.forEach(function (option, index) {
 
-        selected.push(extraOptions);
+        if (option.checked) {
+
+
+
+            extraOptions.checkedVal = option.value;
+            price = option.nextElementSibling.children[1].textContent;
+            finalPrice = price.slice(1);
+            extraOptions.price = finalPrice;
+
+
+            selected.push(extraOptions)
+
+        }
+
     });
 
     return selected;
@@ -225,24 +236,69 @@ function removeEmptyText() {
 }
 
 function addOrderToCart(e) {
+
+
+    let order = getOrder();
+    console.log(order);
+    let optionsItems;
+    order.options.forEach(function (item) {
+        optionsItems = item;
+    });
+
     let cartRow = document.createElement("div");
-    cartRow.innerHTML = `<div class="cart-row d-flex justify-content-around align-items-center mb-5">
 
-    <div class="d-flex">
-        <div class="quantity mr-2">
-            <span>1</span>
+
+    cartRow.innerHTML = ` <div class="cart-item">
+
+    <div class="cart-row mb-3 py-2 d-flex justify-content-between">
+
+        <div class="d-flex-flex-column">
+            <div class="item-info d-flex">
+                <div class="quantity mr-2">
+                    <span class="font-weight-bold">${order.qty}</span>
+                </div>
+                <div class="description">
+                    <span><strong> Flat White</strong></span>
+                </div>
+            </div>
+
+
+            <div class="item-addons-title">
+                <span class="text-muted mb-0">${order.size.checkedVal}, ${order.milkType.checkedVal}, ${order.sugar}</span>
+
+            </div>
         </div>
-        <div class="description">
-            <span><strong> Flat White</strong></span>
+
+
+        <div class="remove-item">
+            <a href="#"><i class="fas fa-minus-circle fa-2x" style="color:#e40707"></i></a>
         </div>
     </div>
-
-    <div class="buttons">
-        <a href="#"><i class="fas fa-minus-circle fa-2x" style="color:#e40707"></i></a>
-    </div>
-</div>`;
+</div>
+<div class="cart-subTotal">
+                            <div class="d-flex justify-content-between">
+                                <div class="prices-title">
+                                    <p class="mb-0 mr-5">Subtotal</p>
+                                    <p class="mb-0">Delivery Charge</p>
+                                    <p class="mb-0">Tax</p>
+                                    <p class="mb-0 text-danger">Total</p>
+                                </div>
+                                <div class="prices-value">
+                                    <p class="total-price mb-0"><i class="fas fa-pound-sign"></i>44.00</p>
+                                    <p class="total-price mb-0"><i class="fas fa-pound-sign"></i>2.5</p>
+                                    <p class="total-price mb-0"><i class="fas fa-pound-sign"></i>3.5</p>
+                                    <p class="total-price mb-0 text-danger"><i class="fas fa-pound-sign"></i>50.00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>`;
     let cartItems = document.getElementsByClassName("cart-items-list")[0];
     cartItems.append(cartRow);
+
+
+
+
+
 
     e.preventDefault();
 }
