@@ -2,23 +2,26 @@ document.addEventListener("DOMContentLoaded", handleEvents);
 
 function handleEvents(e) {
 
-    //  When signup button, register() function invoked
-    $("#signup-form").on("submit", function (e) {
-        register();
-        e.preventDefault();
+    // register() fire
+    $("#signup-form").on("submit", register);
+
+    // login() fire
+    $("#signin-form").on("submit", login);
+
+    // show/hide download app form
+    $(".app a").on("click", function () {
+        $(".app-download-form").slideToggle();
+        $(".rotate").toggleClass("down");
     });
 
-    // When signin button, login() function invoked
-    $("#signin-form").on("submit", function (event) {
-        login();
-        event.preventDefault();
-    });
+    // When User Search For a Product using Enter button
+    // $("#searchBox").on("change", searchForProduct);
 
-    // Search For Product
-    $("#searchBox").on("change", function (e) {
-        searchForProduct();
-        e.preventDefault();
-    });
+    // When User Search For a Product using click button
+    $("#search-btn").on("click", searchForProduct);
+
+    // When User click on shop from shoplist
+    $("#product-list").on("click", handleShops);
 
     // menu qty counter by +
     $("#add").on("click", function () {
@@ -38,35 +41,24 @@ function handleEvents(e) {
     });
 
     // cartBtn eventListener
-    let cart = document.getElementById("cartBtn");
-    if (cart) {
-        //cart.addEventListener("click", handleAddToCart);
-        cart.addEventListener("click", addOrderToCart);
-    }
+    $("#cartBtn").on("click", addOrderToCart);
 
     // placeBtn eventListener using Event Delegation
-    let card = document.querySelector(".card");
-    if (card) {
+    $(".card").on("click", function (e) {
+        if (e.target.id == 'placeBtn') {
+            handlePlaceOrder();
+        }
+    });
 
-        card.addEventListener("click", function (e) {
-
-            if (e.target.id == 'placeBtn') {
-                handlePlaceOrder();
-            }
-        });
-    }
 
     // remove item from cart list
     $(".remove-item").on("click", function (e) {
         console.log(e.target.parentElement.parentElement.parentElement.parentElement.parentElement.remove());
-
         e.preventDefault();
     })
 
     // toggle password [show/hide] in login form
-    let eyeIcon = document.getElementById("eye-icon");
-    if (eyeIcon)
-        eyeIcon.addEventListener("click", togglePassword);
+    $("#eye-icon").on("click", togglePassword);
 
     // logout
     $("#logout").on("click", function () {
@@ -77,7 +69,27 @@ function handleEvents(e) {
         }, 500);
     })
 
+} // End handleEvents() Function
+
+function handleShops(e) {
+
+    if (e.target.parentElement.id === 'shopName') {
+
+        shopId = e.target.parentElement.parentElement.getAttribute("id");
+
+        // save to LocaStorage
+        localStorage.setItem("shopId", JSON.stringify(shopId));
+
+        // redirect to order details page
+        window.location.href = "order-details.html";
+
+
+    }
+    e.preventDefault();
+
+
 }
+
 
 // toggle Passoword
 function togglePassword() {
@@ -238,6 +250,13 @@ function removeEmptyText() {
 function addOrderToCart(e) {
 
 
+    getProducts(function (result) {
+        result.data.forEach(function (product) {
+            console.log(product.id);
+        })
+    })
+
+
     let order = getOrder();
     console.log(order);
     let optionsItems;
@@ -344,9 +363,6 @@ function handleAddToCart(e) {
 
     cardContainer.appendChild(divHeader);
 
-
-
-
     cardContainer.innerHTML += `
                         <div class="card-body text-secondary" id="cart-items">
                             <div class="d-flex">
@@ -445,7 +461,6 @@ function loadFunctions() {
     initToolTip();
     isLogged();
     showDeliverCharge();
-
 }
 
 function initToolTip() {
@@ -459,13 +474,13 @@ function getCurrentYear() {
 
 function showCovidAlert() {
     $(".covid-alert").fadeIn(2000);
-    // setTimeout(function () {
-    //     $(".covid-alert").fadeIn(2000);
-    // }, 2000);
+    setTimeout(function () {
+        $(".covid-alert").fadeIn(2000);
+    }, 2000);
 
-    // setTimeout(function () {
-    //     $(".covid-alert").fadeOut(2000);
-    // }, 10000);
+    setTimeout(function () {
+        $(".covid-alert").fadeOut(2000);
+    }, 10000);
 }
 
 function showCookiesAlert() {
@@ -555,7 +570,9 @@ function register() {
 }
 
 // login function
-function login() {
+function login(e) {
+
+    e.preventDefault();
 
     //get values
     let userEmail = $("#email").val();
@@ -615,16 +632,110 @@ function isLogged() {
         $("#signin-btn").show();
         $("#user-account").hide();
 
-        return false;
+        return;
 
     } else {
 
         $("#signin-btn").hide();
         $("#user-account").show();
 
-        getShops();
-        getCategories();
-        getProducts();
+        // make ajax call to get categoriesByshopById
+        getCategoriesByShopId(function (result) {
+            let output = "";
+            result.data.forEach(function (category) {
+
+                output += `<li><a href="#" class="clickable">${category.name}</a></li>`;
+            });
+
+            $("#categories").html(output);
+        })
+
+        getProductsByShopId(function (result) {
+            let output = "";
+            result.data.forEach(function (product) {
+                console.log(product);
+                //     output += `<div class="card-header" id="headingOne">
+                //     <h5 class="mb-0">
+                //         <button class="btn btn-link" data-toggle="collapse"
+                //             data-target="#collapseOne" aria-expanded="true"
+                //             aria-controls="collapseOne">
+                //             ${product.name}
+                //         </button>
+                //     </h5>
+                // </div>`;
+
+            });
+
+            // $(".card").html(output);
+
+        })
+
+
+
+        // getAllShops(function (result) {
+        //     let output1 = "";
+        //     let shopHeader = "";
+        //     result.data.forEach(function (shop) {
+
+        //         shopHeader = ` <h2 class="mb-0">${shop.name} (${shop.address})</h2>
+        //                         <p>${shop.description}</p>
+        //                     `;
+
+        //         output1 += `
+        //         <div class="media-list">
+        //         <a href="#" id=${shop.id} class="media">
+        //           <img src="img/CR13.jpg" width="190px" class="mr-3" alt="..." />
+        //           <div class="media-body" id="shopName">
+        //             <h3 class="my-0">${shop.name} </h3>
+        //             <p class="media-description">${shop.description}</p>
+        //             <ul class="media-tags d-flex">
+        //               <li class="media-tag media-tag-yellow mr-sm-2">
+        //                 fisrt-taste
+        //               </li>
+        //               <li class="media-tag">${shop.isClosed}</li>
+
+        //             </ul>
+        //             <div class="media-hourse">
+        //               <span> Open ${shop.startTime} AM - ${shop.endTime} PM </span>
+        //             </div>
+        //           </div>
+        //         </a>
+        //       </div>`;
+        //     });
+
+        //     $("#shop-heading").html(shopHeader);
+        //     $("#product-list").html(output1);
+        // });
+
+        //getCategories(function (result) {
+        // let output = "";
+        // result.data.forEach(function (cat) {
+        //     output += `<li><a href="#" class="clickable">${cat.name}</a></li>`;
+        // });
+
+        // $("#categories").html(output);
+        //});
+
+        getProducts(function (result) {
+            let output = "";
+            result.data.forEach(function (product) {
+
+                output += `<li class="menu-item">
+                <a href="addToCart.html" target="_blank" class="menu-item-inner">
+
+                    <h2 class="menu-item-title">${product.name}</h2>
+
+                    <p class="menu-item-description">${product.description}.</p>
+                </a>
+            </li>`;
+
+            });
+
+            $("#menu-items").html(output);
+
+        });
+
+
 
         // userData.roles.forEach(role => {
         //     if (role === 'Admin') {
@@ -665,49 +776,52 @@ function searchForProduct() {
                 lng: lng,
             };
 
-            url = `https://app.coffeerunstore.com/api/Product/search-product?Keyword=${data.keyword}`;
 
             //make ajax GET request
             $.ajax({
                 type: "GET",
-                url: url,
+                url: `https://app.coffeerunstore.com/api/Product/search-product?Keyword=${data.keyword}`,
                 data: data,
                 success: function (response) {
 
                     console.log(response);
 
                     let output = "";
+
                     response.data.forEach(function (product) {
-                        console.log(`${product.name} - ${product.shopName})`);
 
                         output += `<div class="media-list">
-                        <a href="order-details.html" class="media">
-                          <img src="img/CR13.jpg" width="190px" class="mr-3" alt="..." />
-                          <div class="media-body">
-                            <h3 class="my-0">${product.shopName}</h3>
-                            <p class="media-description">${product.shopTypeName}</p>
-                            <ul class="media-tags d-flex">
-                              <li class="media-tag media-tag-yellow mr-sm-2">
-                                fisrt-taste
-                              </li>
-                              <li class="media-tag">closed</li>
-                              <li class="media-price text-right flex-grow-1">Price: $${product.price}</li>
-                            </ul>
-                            <div class="media-hourse">
-                              <span> Open 9:40 AM - 6:00 PM </span>
-                            </div>
-                          </div>
-                        </a>
-                      </div>`;
+                                        <a href="#" id="${product.shopId}" class="media">
+                                        <img src="img/RE1.jpg" width="190px" class="mr-3" alt="shop thumbnail" />
+                                        <div class="media-body" id="shopName">
+                                            <h3 class="mb-3">${product.shopName}</h3>
+                                            <p class="media-description">${product.name}</p>
+                                            <p class="media-description">${product.shopTypeName}</p>
+                                            <ul class="media-tags d-flex">
+                                                <li class="media-tag media-tag-yellow mr-sm-2">
+                                                    fisrt-taste
+                                                </li>
+                                                <li class="media-tag">closed</li>
+                                                <li class="media-price text-right flex-grow-1">Price: $${product.price}</li>
+                                            </ul>
+                                            <div class="media-hourse">
+                                                <span> Open 9:40 AM - 6:00 PM </span>
+                                            </div>
+                                        </div>
+                                        </a>
+                                    </div>`;
 
-                        document.getElementById("product-list").innerHTML = output;
+
+                        $("#product-list").html(output);
                     });
 
-                    //loop through th response, but loop through the value not all object
+                    $("#searchBox").val("");
+
+
 
                 },
                 error: function (err) {
-                    console.log(err);
+                    console.log("This product not exist ", err);
                 }
             });
         });
@@ -719,71 +833,30 @@ function searchForProduct() {
 
 
 // get shops
-function getShops() {
+function getAllShops(handleData) {
 
     $.ajax({
         type: "GET",
         url: "https://app.coffeerunstore.com/api/Shop",
         success: function (response) {
-            console.log(response);
-
-            let output1 = "";
-            let output2 = "";
-            response.data.forEach(function (shop) {
-
-                output2 = ` <h2 class="mb-0">${shop.name} (${shop.address})</h2>
-                                <p>${shop.description}</p>
-                            `;
-
-                output1 += `
-                <div class="media-list">
-                <a href="order-details.html" class="media">
-                  <img src="img/CR13.jpg" width="190px" class="mr-3" alt="..." />
-                  <div class="media-body">
-                    <h3 class="my-0">${shop.name} (${shop.address})</h3>
-                    <p class="media-description">${shop.description}</p>
-                    <ul class="media-tags d-flex">
-                      <li class="media-tag media-tag-yellow mr-sm-2">
-                        fisrt-taste
-                      </li>
-                      <li class="media-tag">${shop.isClosed}</li>
-
-                    </ul>
-                    <div class="media-hourse">
-                      <span> Open ${shop.startTime} AM - ${shop.endTime} PM </span>
-                    </div>
-                  </div>
-                </a>
-              </div>`;
-            });
-
-            $("#shop-heading").html(output2);
-            $("#product-list").html(output1);
+            handleData(response);
         },
         error: function (err) {
             console.log(err);
         }
-
     });
 }
 
 // get Categories
-function getCategories() {
+function getCategories(handleData) {
     $.ajax({
         type: "GET",
         url: "https://app.coffeerunstore.com/api/Category",
         success: function (response) {
-            console.log(response);
-            let output = "";
-            response.data.forEach(function (cat) {
 
-                output += `<li>
-                                <a href="#" class="clickable">${cat.name}</a>
-                            </li>`
+            handleData(response);
 
-            });
 
-            $("#categories").html(output);
         },
         error: function (err) {
             console.log(err);
@@ -792,27 +865,53 @@ function getCategories() {
 }
 
 // get products
-function getProducts() {
+function getProducts(handleData) {
     $.ajax({
         type: "GET",
         url: "https://app.coffeerunstore.com/api/Product",
         success: function (response) {
-            console.log(response);
-            let output = "";
-            response.data.forEach(function (product) {
 
-                output += `<li class="menu-item">
-                <a href="addToCart.html" target="_blank" class="menu-item-inner">
+            handleData(response);
 
-                    <h2 class="menu-item-title">${product.name}</h2>
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    })
+}
 
-                    <p class="menu-item-description">${product.description}.</p>
-                </a>
-            </li>`
 
-            });
+// get categories from specific
+function getCategoriesByShopId(handleData) {
 
-            $("#menu-items").html(output);
+    let shopId = JSON.parse(localStorage.getItem("shopId"));
+
+    $.ajax({
+        type: "GET",
+        url: `https://app.coffeerunstore.com/api/Shop/${shopId}/category`,
+
+        success: function (response) {
+
+            handleData(response);
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    })
+}
+
+// get categories from specific
+function getProductsByShopId(handleData) {
+
+    let shopId = JSON.parse(localStorage.getItem("shopId"));
+
+    $.ajax({
+        type: "GET",
+        url: `https://app.coffeerunstore.com​/api​/Shop​/${shopId}​/product`,
+
+        success: function (response) {
+
+            handleData(response);
         },
         error: function (err) {
             console.log(err);
