@@ -90,12 +90,16 @@ function handleShops(e) {
 
 function handleCategories(e) {
 
-    if (e.target.parentElement.parentElement.id === "categories") {
-        categoryId = e.target.getAttribute("id");
+    if (e.target.className === 'clickable') {
+
+        categoryId = e.target.parentElement.parentElement.getAttribute("id");
 
         //save to lpocalStorage
         localStorage.setItem("categoryId", JSON.stringify(categoryId));
+
     }
+
+
     e.preventDefault();
 }
 
@@ -652,10 +656,12 @@ function isLogged() {
         getCategoriesByShopId(function (result) {
             let output = "";
             result.data.forEach(function (category) {
-                output += `<li><a href="#" class="clickable" id=${category.id}>${category.name}</a></li>`;
+                //output += `<li><a href="#" class="clickable" id=${category.id}>${category.name}</a></li>`;
+                output += ` <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+                            role="tab" aria-controls="v-pills-home" aria-selected="true">${category.name}</a>`;
             });
 
-            $("#categories").html(output);
+            $("#v-pills-tab").html(output);
         });
 
         // get products from specific category
@@ -663,19 +669,17 @@ function isLogged() {
             let output = "";
             result.data.forEach(function (product) {
 
-                output += `<div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse"
-                        data-target="#collapseOne" aria-expanded="true"
-                        aria-controls="collapseOne">
-                        ${product.name}
-                    </button>
-                </h5>
-            </div>`;
-
+                output += ` <div class="card mb-2">
+                                <div class="card-header">
+                                    <a href="#">${product.name}</a>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">${product.description}</p>
+                                </div>
+                            </div>`;
             });
 
-            $("#products .card").html(output);
+            $("#products").html(output);
         })
 
 
@@ -733,11 +737,12 @@ function searchForProduct() {
                 data: data,
                 success: function (response) {
 
-                    //console.log(response);
+                    // console.log(response);
 
                     let output = "";
 
                     response.data.forEach(function (product) {
+
 
                         output += `<div class="media-list">
                                         <a href="#" id="${product.shopId}" class="media">
@@ -849,7 +854,7 @@ function getCategoriesByShopId(handleData) {
     })
 }
 
-// get products from specific category
+// // get products from specific category
 function getProductsByCategoryId(handleData) {
     let shopId = JSON.parse(localStorage.getItem("shopId"));
     let categoryId = JSON.parse(localStorage.getItem("categoryId"));
