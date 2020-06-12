@@ -71,6 +71,7 @@ function handleEvents(e) {
 
 } // End handleEvents() Function
 
+// handleShops
 function handleShops(e) {
 
     if (e.target.parentElement.id === 'shopName') {
@@ -88,6 +89,7 @@ function handleShops(e) {
 
 }
 
+// handleCategories
 function handleCategories(e) {
 
     if (e.target.className === 'clickable') {
@@ -103,7 +105,6 @@ function handleCategories(e) {
     e.preventDefault();
 }
 
-
 // toggle Passoword
 function togglePassword() {
     if (document.getElementById("password").type === 'password') {
@@ -117,6 +118,7 @@ function togglePassword() {
     }
 }
 
+// handle place order button
 function handlePlaceOrder() {
 
     // if not login, redirect to login
@@ -134,9 +136,6 @@ function handlePlaceOrder() {
     }
 
 }
-
-function handlePayment() { }
-
 
 // get checked value from Sugar radio buttons
 function getSugar() {
@@ -254,14 +253,12 @@ function getOrder(e) {
     return order;
 }
 
-
 function removeEmptyText() {
     let emptyCard = document.querySelector(".cart-empty");
     return emptyCard.style.display = "none";
 }
 
 function addOrderToCart(e) {
-
 
     getProducts(function (result) {
         result.data.forEach(function (product) {
@@ -326,11 +323,6 @@ function addOrderToCart(e) {
                         <hr>`;
     let cartItems = document.getElementsByClassName("cart-items-list")[0];
     cartItems.append(cartRow);
-
-
-
-
-
 
     e.preventDefault();
 }
@@ -464,6 +456,7 @@ function handleAddToCart(e) {
 
     e.preventDefault();
 }
+
 
 loadFunctions();
 
@@ -709,8 +702,6 @@ function isLogged() {
 
 }
 
-
-
 //Input Search For Product
 function searchForProduct() {
 
@@ -771,8 +762,6 @@ function searchForProduct() {
 
                     $("#searchBox").val("");
 
-
-
                 },
                 error: function (err) {
                     console.log("This product not exist ", err);
@@ -784,7 +773,6 @@ function searchForProduct() {
     }
 
 }
-
 
 // get shops
 function getAllShops(handleData) {
@@ -833,7 +821,6 @@ function getProducts(handleData) {
         }
     })
 }
-
 
 // get categories from specific
 function getCategoriesByShopId(handleData) {

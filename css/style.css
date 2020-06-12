@@ -670,7 +670,7 @@ background: rgba(38, 15, 7, 0.9);
   position: relative;
   overflow: hidden;
   min-height: 600px;
-}
+  }
 
 .custom-bg {
   background: url(../img/PR.jpg) no-repeat;
@@ -837,7 +837,7 @@ background: rgba(38, 15, 7, 0.9);
 }
 
 .orders-section .app {
-  background-color: #eddfbc;
+  background-color: #ffc107;
 }
 
 .orders-section .app a {
