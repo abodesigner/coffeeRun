@@ -20,8 +20,11 @@ function handleEvents(e) {
     // When User click on shop from shoplist
     $("#product-list").on("click", handleShops);
 
-    //when user click on category from categories
+    //when user click on category from category list
     $("#categories").on("click", handleCategories);
+
+    //when user click on product from category
+    $("#v-pills-tabContent").on("click", addProductToCart);
 
     // menu qty counter by +
     $("#add").on("click", function () {
@@ -104,6 +107,52 @@ function handleCategories(e) {
 
     e.preventDefault();
 }
+
+// handleProducts
+function addProductToCart(e) {
+
+
+
+
+
+    let cart = document.querySelector(".order-card");
+    if (e.target.parentElement.className === 'productName') {
+
+        removeEmptyText();
+
+
+        // check if the btn exist in dom
+
+
+
+        let productName = e.target.textContent;
+        let productDesc = e.target.parentElement.nextElementSibling.textContent;
+
+        cart.innerHTML += `<div class="item"><h4>${productName}</h4><p class='mb-4'>${productDesc}</p></div>`;
+
+
+
+        if (cart.children.length > 0) {
+
+
+            let checkoutBtn = document.createElement("button");
+            checkoutBtn.appendChild(document.createTextNode("checkOut"));
+            checkoutBtn.classList.add("btn", "btn-success", "mb-5");
+
+            cart.append(checkoutBtn);
+
+        }
+
+
+
+
+
+
+
+    }
+    e.preventDefault();
+}
+
 
 // toggle Passoword
 function togglePassword() {
@@ -255,7 +304,11 @@ function getOrder(e) {
 
 function removeEmptyText() {
     let emptyCard = document.querySelector(".cart-empty");
-    return emptyCard.style.display = "none";
+    if (emptyCard !== null) {
+        return emptyCard.parentNode.removeChild(emptyCard);
+    }
+
+    addCheckOutBtn();
 }
 
 function addOrderToCart(e) {
