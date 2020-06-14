@@ -1288,3 +1288,53 @@ input#chargeValue[type="text"] {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* ======================================
+    Order Help Page
+====================================== */
+
+.page-header{
+  min-height: 200px;
+
+}
+
+#order-menu .navbar-nav li a{
+  color : #333
+
+}
+
+.order-help{
+  position: relative;
+  overflow: hidden;
+}
+
+.map-section {
+  min-height: 600px;
+
+}
+
+.map-section #map{
+  position: absolute !important;
+  top: 25%
+}
+
+.one{
+  width: 600PX;
+  min-height: 500px;
+  padding: 5px;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  z-index: 100;
+}
+
+
+.two{
+  width: 300px;
+  min-height: 500px;
+  padding: 5px;
+  position: absolute;
+  top: 20%;
+  right: 20%;
+  z-index: 200;
+}
