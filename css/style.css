@@ -1295,6 +1295,9 @@ input#chargeValue[type="text"] {
 
 .page-header{
   min-height: 200px;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
 
 }
 
@@ -1315,18 +1318,31 @@ input#chargeValue[type="text"] {
 
 .map-section #map{
   position: absolute !important;
-  top: 25%
+  top: 0;
+}
+
+.child-div{
+  position: absolute;
+  width: 100%;
+  top: 20%;
 }
 
 .one{
-  width: 600PX;
+  width: 600px;
   min-height: 500px;
   padding: 5px;
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 20%;
-  z-index: 100;
+  z-index: 200;
 }
+
+@media (min-width: 400px) and (max-width : 1500px){
+  .one{
+    width: 200px;
+  }
+}
+
 
 
 .two{
@@ -1334,7 +1350,7 @@ input#chargeValue[type="text"] {
   min-height: 500px;
   padding: 5px;
   position: absolute;
-  top: 20%;
+  top: 15%;
   right: 20%;
-  z-index: 200;
+  z-index: 300;
 }
