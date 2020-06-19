@@ -1294,10 +1294,10 @@ input#chargeValue[type="text"] {
 ====================================== */
 
 .page-header{
-  min-height: 200px;
+  /*min-height: 200px;
   position: absolute;
   width: 100%;
-  z-index: 100;
+  z-index: 100; */
 
 }
 
@@ -1328,12 +1328,11 @@ input#chargeValue[type="text"] {
 }
 
 .one{
-  width: 600px;
-  min-height: 500px;
   padding: 5px;
   position: absolute;
-  top: 15%;
+  top: 25%;
   left: 20%;
+  right: 0;
   z-index: 200;
 }
 
@@ -1343,14 +1342,19 @@ input#chargeValue[type="text"] {
   }
 }
 
-
-
 .two{
-  width: 300px;
-  min-height: 500px;
-  padding: 5px;
+ padding: 5px;
   position: absolute;
-  top: 15%;
+  top: 25%;
   right: 20%;
+  left: 0;
   z-index: 300;
+}
+
+/* ======================================
+    Receipt Page
+====================================== */
+
+.receipt-section{
+  min-height: 600PX;
 }
