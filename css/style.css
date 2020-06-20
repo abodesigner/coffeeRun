@@ -1358,3 +1358,14 @@ input#chargeValue[type="text"] {
 .receipt-section{
   min-height: 600PX;
 }
+
+
+
+/* ======================================
+    Order help menu Page
+====================================== */
+.order-help-menu-section .card-header{
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
