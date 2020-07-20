@@ -17,13 +17,16 @@
     <!-- Social-Media Buttons Lib -->
     <link rel="stylesheet" href="css/bootstrap-social.css" />
 
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap-select.min.css">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
 
     <!-- Custom Media Query CSS -->
     <link rel="stylesheet" href="css/media.css" />
 
-    <title>Snowballing Form</title>
+    <title>not registered</title>
   </head>
 
   <body>
@@ -44,20 +47,33 @@
         class="bg-white text-center p-4 w-25"
       >
         <h5 class="text-blue font-weight-bold mb-2 text-uppercase">
-          CoffeeRun is better together
+          join teammate at:
         </h5>
-        <span class="text-muted text-uppercase d-block text-sm"
-          >get ahead when you connect with teammates</span
-        >
-        <i class="fas fa-users fa-9x text-blue"></i>
-        <h6 class="text-muted my-4 text-uppercase">
-          Snowballing let's you hob on a temmates's order earning them points
-        </h6>
+
+
+        <div class="form-group">
+            <label for="">select your address</label>
+            <select class="selectpicker" multiple>
+                <option>Mustard</option>
+                <option>Ketchup</option>
+                <option>Relish</option>
+              </select>
+
+        </div>
+
+        <div class="result">
+            <h6 class="text-capitalize">no result for mustard</h6>
+            <p>
+                your company may be not on coffeerun yet.you can continue without one for now.
+            </p>
+        </div>
+
+
         <a
-          href="joinTeammate.html"
-          class="btn btn-orange btn-block text-uppercase"
+          href="promocode.html"
+          class="btn btn-secondary btn-block text-uppercase"
           role="button"
-          >search for my company</a
+          >skip for now</a
         >
       </form>
     </div>
@@ -153,6 +169,8 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="js/bootstrap-select.min.js"></script>
     <!-- Custom JS -->
     <script src="js/main.js"></script>
   </body>
